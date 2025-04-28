@@ -1,0 +1,555 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\views\\products\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\views\\products\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\models\\viewmodel\\temporarycart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\models\\viewmodel\\temporarycart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\models\\viewmodel\\cartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\models\\viewmodel\\cartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\views\\home\\contactus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\views\\home\\contactus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\views\\shared\\mainlayoutheaderfooter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\views\\shared\\mainlayoutheaderfooter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\views\\products\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\views\\products\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\models\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\models\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\views\\user\\signin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\views\\user\\signin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\models\\analytic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\models\\analytic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\models\\contactfeedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\models\\contactfeedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\views\\user\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\views\\user\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\views\\products\\productdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\views\\products\\productdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\models\\viewmodel\\singledetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\models\\viewmodel\\singledetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\views\\products\\shop.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\views\\products\\shop.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\views\\home\\aboutus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\views\\home\\aboutus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\views\\user\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\views\\user\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\wwwroot\\assets\\css\\style.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\wwwroot\\assets\\css\\style.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\wwwroot\\assets\\css\\vendor\\font-awesome.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\wwwroot\\assets\\css\\vendor\\font-awesome.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\wwwroot\\assets\\css\\vendor\\jquery-ui.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\wwwroot\\assets\\css\\vendor\\jquery-ui.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\wwwroot\\assets\\css\\vendor\\magnific-popup.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\wwwroot\\assets\\css\\vendor\\magnific-popup.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\wwwroot\\assets\\css\\vendor\\slick.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\wwwroot\\assets\\css\\vendor\\slick.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\wwwroot\\assets\\css\\vendor\\slick-theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\wwwroot\\assets\\css\\vendor\\slick-theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|c:\\users\\orange\\desktop\\finalmastr\\webapplication1\\webapplication1\\models\\viewmodel\\indexviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839AC8EC-D0E0-402B-AA30-B141683538B2}|WebApplication1\\SemiColon.csproj|solutionrelative:webapplication1\\models\\viewmodel\\indexviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "checkout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\Products\\checkout.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Products\\checkout.cshtml",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\Products\\checkout.cshtml*",
+              "RelativeToolTip": "WebApplication1\\Views\\Products\\checkout.cshtml*",
+              "ViewState": "AgIAAL0AAAAAAAAAAAAIwMoAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-26T00:03:21.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "temporaryCart.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\ViewModel\\temporaryCart.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\ViewModel\\temporaryCart.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\ViewModel\\temporaryCart.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\ViewModel\\temporaryCart.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T17:52:04.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Controllers\\UserController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAApwGAAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T20:41:14.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAMwDgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T00:45:02.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Controllers\\ProductsController.cs*",
+              "RelativeToolTip": "WebApplication1\\Controllers\\ProductsController.cs*",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAAwIQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T20:16:04.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "contactUs.cshtml",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\Home\\contactUs.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\contactUs.cshtml",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\Home\\contactUs.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Home\\contactUs.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-22T21:54:21.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "cartViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\ViewModel\\cartViewModel.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\ViewModel\\cartViewModel.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\ViewModel\\cartViewModel.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\ViewModel\\cartViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T18:18:53.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "mainLayoutHeaderFooter.cshtml",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\Shared\\mainLayoutHeaderFooter.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\mainLayoutHeaderFooter.cshtml",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\Shared\\mainLayoutHeaderFooter.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Shared\\mainLayoutHeaderFooter.cshtml",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAgwNUAAABrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-21T11:11:08.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApplication1\\appsettings.json",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\appsettings.json",
+              "RelativeToolTip": "WebApplication1\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-26T11:54:46.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "cart.cshtml",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\Products\\cart.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Products\\cart.cshtml",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\Products\\cart.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Products\\cart.cshtml",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAswKUAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-24T08:58:53.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MyDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\MyDbContext.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\MyDbContext.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\MyDbContext.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\MyDbContext.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAA/wDsAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T20:23:42.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\CartItem.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\CartItem.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\CartItem.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAawBkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T13:30:59.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Program.cs",
+              "RelativeToolTip": "WebApplication1\\Program.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAwwBUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T00:32:29.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "signIn.cshtml",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\User\\signIn.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\User\\signIn.cshtml",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\User\\signIn.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\User\\signIn.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-24T11:46:04.208Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Analytic.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\Analytic.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Analytic.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\Analytic.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\Analytic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T08:50:00.797Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ContactFeedBack.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\ContactFeedBack.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\ContactFeedBack.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\ContactFeedBack.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\ContactFeedBack.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA6wA0AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T21:51:13.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SingleDetailsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\ViewModel\\SingleDetailsViewModel.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\ViewModel\\SingleDetailsViewModel.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\ViewModel\\SingleDetailsViewModel.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\ViewModel\\SingleDetailsViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T21:09:09.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "productDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\Products\\productDetails.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Products\\productDetails.cshtml",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\Products\\productDetails.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Products\\productDetails.cshtml",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAowI8AAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-21T21:23:03.686Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "aboutUs.cshtml",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\Home\\aboutUs.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\aboutUs.cshtml",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\Home\\aboutUs.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Home\\aboutUs.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-22T21:57:23.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "shop.cshtml",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\Products\\shop.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Products\\shop.cshtml",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\Products\\shop.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Products\\shop.cshtml",
+              "ViewState": "AgIAAFsAAAAAAAAAAAASwGwAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-22T22:12:24.906Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\User\\profile.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\User\\profile.cshtml",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\User\\profile.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\User\\profile.cshtml",
+              "ViewState": "AgIAALQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-23T17:31:37.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "signUp.cshtml",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\User\\signUp.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\User\\signUp.cshtml",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\User\\signUp.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\User\\signUp.cshtml",
+              "ViewState": "AgIAADIAAAAAAAAAAAAWwD4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-21T21:17:08.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Cart.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\Cart.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Cart.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\Cart.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\Cart.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAowA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T20:22:14.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\User.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\User.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\User.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T20:18:44.588Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "font-awesome.css",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\font-awesome.css",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\assets\\css\\vendor\\font-awesome.css",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\font-awesome.css",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\assets\\css\\vendor\\font-awesome.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-21T19:26:58.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "jquery-ui.min.css",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\jquery-ui.min.css",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\assets\\css\\vendor\\jquery-ui.min.css",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\jquery-ui.min.css",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\assets\\css\\vendor\\jquery-ui.min.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-21T19:26:52.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "magnific-popup.css",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\magnific-popup.css",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\assets\\css\\vendor\\magnific-popup.css",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\magnific-popup.css",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\assets\\css\\vendor\\magnific-popup.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-21T19:26:50.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "slick.css",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\slick.css",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\assets\\css\\vendor\\slick.css",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\slick.css",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\assets\\css\\vendor\\slick.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-21T19:26:46.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "slick-theme.css",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\slick-theme.css",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\assets\\css\\vendor\\slick-theme.css",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\slick-theme.css",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\assets\\css\\vendor\\slick-theme.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-21T19:26:41.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "indexViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\ViewModel\\indexViewModel.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\ViewModel\\indexViewModel.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Models\\ViewModel\\indexViewModel.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\ViewModel\\indexViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T11:19:32.389Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "style.min.css",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\style.min.css",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\assets\\css\\style.min.css",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\style.min.css",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\assets\\css\\style.min.css",
+              "ViewState": "AgIAAAVQAAAAAAAAAAAAABJQAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-21T01:10:35.444Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAADEBAAAAAAAAAAAcwEQBAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-21T00:45:44.639Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

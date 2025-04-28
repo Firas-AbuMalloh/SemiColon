@@ -1,0 +1,2205 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SemiColon.bundle.scp.css",
+      "PackagePath": "staticwebassets\\SemiColon.eklnvre39d.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\style.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\base.css",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\base.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\flaticon\\flaticon.css",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\flaticon\\flaticon.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\flaticon\\flaticon2916.eot",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\flaticon\\flaticon2916.eot"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\flaticon\\flaticon2916.svg",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\flaticon\\flaticon2916.svg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\flaticon\\flaticon2916.ttf",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\flaticon\\flaticon2916.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\flaticon\\flaticon2916.woff",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\flaticon\\flaticon2916.woff"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\flaticon\\flaticon2916.woff2",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\flaticon\\flaticon2916.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\font-awesome.css",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\font-awesome.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\images\\ui-bg_glass_75_d0e5f5_1x400.html",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\images\\ui-bg_glass_75_d0e5f5_1x400.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\images\\ui-bg_glass_85_dfeffc_1x400.html",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\images\\ui-bg_glass_85_dfeffc_1x400.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\images\\ui-bg_glass_95_fef1ec_1x400.html",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\images\\ui-bg_glass_95_fef1ec_1x400.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\images\\ui-bg_gloss-wave_55_5c9ccc_500x100.html",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\images\\ui-bg_gloss-wave_55_5c9ccc_500x100.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\images\\ui-bg_inset-hard_100_f5f8f9_1x100.html",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\images\\ui-bg_inset-hard_100_f5f8f9_1x100.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\images\\ui-bg_inset-hard_100_fcfdfd_1x100.html",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\images\\ui-bg_inset-hard_100_fcfdfd_1x100.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\images\\ui-icons_217bc0_256x240.html",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\images\\ui-icons_217bc0_256x240.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\images\\ui-icons_2e83ff_256x240.html",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\images\\ui-icons_2e83ff_256x240.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\images\\ui-icons_469bdd_256x240.html",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\images\\ui-icons_469bdd_256x240.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\images\\ui-icons_6da8d5_256x240.html",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\images\\ui-icons_6da8d5_256x240.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\images\\ui-icons_cd0a0a_256x240.html",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\images\\ui-icons_cd0a0a_256x240.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\images\\ui-icons_d8e7f3_256x240.html",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\images\\ui-icons_d8e7f3_256x240.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\images\\ui-icons_f9bd01_256x240.html",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\images\\ui-icons_f9bd01_256x240.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\jquery-ui.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\jquery-ui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\magnific-popup.css",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\magnific-popup.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\sal.css",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\sal.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\slick-theme.css",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\slick-theme.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\css\\vendor\\slick.css",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor\\slick.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\fonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\fonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\fonts\\fa-duotone-900.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-duotone-900.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\fonts\\fa-duotone-900.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-duotone-900.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\fonts\\fa-light-300.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-light-300.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\fonts\\fa-light-300.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-light-300.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\fonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\fonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\fonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\fonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\fonts\\fa-thin-100.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-thin-100.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\fonts\\fa-thin-100.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-thin-100.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\fonts\\fa-v4compatibility.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-v4compatibility.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\fonts\\fa-v4compatibility.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-v4compatibility.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\fonts\\slick.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\slick.eot"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\fonts\\slick.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\slick.svg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\fonts\\slick.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\slick.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\fonts\\slick.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\slick.woff"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\fonts\\slickd41d.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\slickd41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\about\\about-01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\about\\about-01.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\about\\about-02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\about\\about-02.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\about\\about-03.png",
+      "PackagePath": "staticwebassets\\assets\\images\\about\\about-03.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\about\\about-04.png",
+      "PackagePath": "staticwebassets\\assets\\images\\about\\about-04.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\about\\about-05.png",
+      "PackagePath": "staticwebassets\\assets\\images\\about\\about-05.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\about\\about-06.png",
+      "PackagePath": "staticwebassets\\assets\\images\\about\\about-06.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\about\\about-07.png",
+      "PackagePath": "staticwebassets\\assets\\images\\about\\about-07.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\about\\shape-01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\about\\shape-01.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\about\\shape-02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\about\\shape-02.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\about\\shape-03.png",
+      "PackagePath": "staticwebassets\\assets\\images\\about\\shape-03.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\assets\\images\\ajax-loader.gif"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\axil_file_example.mp3",
+      "PackagePath": "staticwebassets\\assets\\images\\axil_file_example.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\banner\\delivery_1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\banner\\delivery_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\banner\\delivery_2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\banner\\delivery_2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\banner\\sale_banner.png",
+      "PackagePath": "staticwebassets\\assets\\images\\banner\\sale_banner.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\banner\\women_sunglass.png",
+      "PackagePath": "staticwebassets\\assets\\images\\banner\\women_sunglass.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-10.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-11.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-12.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-13.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-13.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-14.html",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-14.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-15.html",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-15.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-16.html",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-16.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-17.html",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-17.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-18.html",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-18.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-19.html",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-19.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-20.html",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-20.html"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-7.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-8.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\bg\\bg-image-9.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg\\bg-image-9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\author-image-1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\author-image-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\author-image-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\author-image-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\author-image-3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\author-image-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\author-image-4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\author-image-4.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\author-image-5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\author-image-5.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\blog-01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\blog-01.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\blog-02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\blog-02.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\blog-03.png",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\blog-03.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\blog-04.png",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\blog-04.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\blog-05.png",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\blog-05.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\blog-06.png",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\blog-06.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\blog-07.png",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\blog-07.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\blog-08.png",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\blog-08.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\blog-09.png",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\blog-09.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\blog-10.png",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\blog-10.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\blog-11.png",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\blog-11.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\blog-12.png",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\blog-12.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\blog-single-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\blog-single-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\blog-single-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\blog-single-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\blog-single-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\blog-single-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\blog-single-5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\blog-single-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\blog\\blog-single.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\blog-single.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\favicon.png",
+      "PackagePath": "staticwebassets\\assets\\images\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\arrow-icon.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\arrow-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\arrow-icon2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\arrow-icon2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\cart\\cart-1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\cart\\cart-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\cart\\cart-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\cart\\cart-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\cart\\cart-3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\cart\\cart-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\cart\\cart-4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\cart\\cart-4.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\cart\\cart-5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\cart\\cart-5.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\cart\\cart-6.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\cart\\cart-6.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\choose.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\choose.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\dancing.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\dancing.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\protection.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\protection.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\purchasing.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\purchasing.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\rate.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\rate.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\service1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\service1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\service10.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\service10.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\service2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\service2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\service3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\service3.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\service4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\service4.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\service5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\service5.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\service6.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\service6.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\service7.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\service7.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\service8.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\service8.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\icons\\service9.png",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\service9.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\logo\\image_red_neon.png",
+      "PackagePath": "staticwebassets\\assets\\images\\logo\\image_red_neon.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\logo\\logo-large.png",
+      "PackagePath": "staticwebassets\\assets\\images\\logo\\logo-large.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\logo\\logo-light.png",
+      "PackagePath": "staticwebassets\\assets\\images\\logo\\logo-light.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\logo\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\images\\logo\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\others\\404.png",
+      "PackagePath": "staticwebassets\\assets\\images\\others\\404.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\others\\app-store.png",
+      "PackagePath": "staticwebassets\\assets\\images\\others\\app-store.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\others\\author1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\others\\author1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\others\\author2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\others\\author2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\others\\author3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\others\\author3.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\others\\author4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\others\\author4.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\others\\campaign-bg.png",
+      "PackagePath": "staticwebassets\\assets\\images\\others\\campaign-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\others\\campaign-bg2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\others\\campaign-bg2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\others\\campaign-bg3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\others\\campaign-bg3.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\others\\payment.png",
+      "PackagePath": "staticwebassets\\assets\\images\\others\\payment.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\others\\play-store.png",
+      "PackagePath": "staticwebassets\\assets\\images\\others\\play-store.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\others\\popup-bg.png",
+      "PackagePath": "staticwebassets\\assets\\images\\others\\popup-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\others\\qr.png",
+      "PackagePath": "staticwebassets\\assets\\images\\others\\qr.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\others\\shape-1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\others\\shape-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\others\\shape-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\others\\shape-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\banner-bg.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\banner-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\banner-mockup.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\banner-mockup.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\bs5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\bs5.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\comming-soon.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\comming-soon.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\css.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\css.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\cta-mockup.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\cta-mockup.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\feature-icon-01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\feature-icon-01.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\feature-icon-02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\feature-icon-02.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\feature-icon-03.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\feature-icon-03.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\feature-icon-04.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\feature-icon-04.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\feature-icon-05.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\feature-icon-05.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\feature-icon-09.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\feature-icon-09.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\home-01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\home-01.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\home-02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\home-02.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\home-03.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\home-03.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\home-04.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\home-04.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\home-05.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\home-05.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\home-06.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\home-06.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\home-07.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\home-07.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\html.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\html.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\jquery.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\jquery.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\scss.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\scss.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\shop-sidebar.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\shop-sidebar.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\shop.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\shop.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\variation-1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\variation-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\variation-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\variation-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\variation-3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\variation-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\variation-4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\variation-4.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\variation-5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\variation-5.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\variation-6.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\variation-6.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\variation-7.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\variation-7.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\preview\\variation-8.png",
+      "PackagePath": "staticwebassets\\assets\\images\\preview\\variation-8.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\FortniteCard.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\FortniteCard.webp"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\GooglePlayCard.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\GooglePlayCard.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\MinecraftCard.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\MinecraftCard.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\OrangBalanceRecharge.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\OrangBalanceRecharge.webp"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\Roblox.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\Roblox.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\author1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\author1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\Prepaid Cards.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\Prepaid Cards.webp"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\baby.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\baby.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\beauty.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\beauty.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\cat-01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\cat-01.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\cat-02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\cat-02.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\cat-03.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\cat-03.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\cat-04.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\cat-04.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\cat-05.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\cat-05.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\cat-06.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\cat-06.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\cat-07.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\cat-07.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\cat-08.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\cat-08.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\cat-09.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\cat-09.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\cat-10.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\cat-10.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\cat-11.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\cat-11.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\cat-12.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\cat-12.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\cat-13.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\cat-13.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\cat-14.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\cat-14.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\cat-15.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\cat-15.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\cleaner.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\cleaner.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\elec-1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\elec-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\elec-10.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\elec-10.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\elec-11.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\elec-11.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\elec-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\elec-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\elec-4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\elec-4.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\elec-5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\elec-5.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\elec-6.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\elec-6.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\elec-7.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\elec-7.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\elec-8.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\elec-8.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\elec-9.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\elec-9.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\etesalat recharge.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\etesalat recharge.webp"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\fortnite.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\fortnite.webp"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\furni-1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\furni-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\furni-11.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\furni-11.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\furni-12.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\furni-12.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\furni-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\furni-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\furni-3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\furni-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\furni-4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\furni-4.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\furni-5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\furni-5.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\furni-6.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\furni-6.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\furni-7.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\furni-7.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\furni-8.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\furni-8.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\furni-9.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\furni-9.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\gameKeys.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\gameKeys.webp"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\garden.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\garden.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\giftCard.png.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\giftCard.png.webp"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\googleplay.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\googleplay.webp"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\itunes.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\itunes.webp"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\jewelry-1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\jewelry-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\jewelry-10.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\jewelry-10.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\jewelry-11.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\jewelry-11.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\jewelry-12.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\jewelry-12.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\jewelry-13.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\jewelry-13.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\jewelry-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\jewelry-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\jewelry-3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\jewelry-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\jewelry-4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\jewelry-4.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\jewelry-5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\jewelry-5.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\jewelry-6.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\jewelry-6.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\jewelry-7.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\jewelry-7.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\jewelry-8.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\jewelry-8.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\jewelry-9.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\jewelry-9.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\kid.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\kid.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\men.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\men.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\minecraft.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\minecraft.webp"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\pet.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\pet.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\phone.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\phone.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\playstation.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\playstation.webp"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\pubgmobile.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\pubgmobile.webp"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\roblox.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\roblox.webp"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\steam.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\steam.webp"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\toy.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\toy.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\visa.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\visa.webp"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\women.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\women.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\categories\\xbox.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\categories\\xbox.webp"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\collection_1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\collection_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\collection_2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\collection_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\collection_3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\collection_3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\collection_4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\collection_4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\collection_5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\collection_5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\collection_5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\collection_5.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\collection_6.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\collection_6.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\collection_7.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\collection_7.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\collection_8.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\collection_8.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\electric\\product-01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\electric\\product-01.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\electric\\product-02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\electric\\product-02.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\electric\\product-03.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\electric\\product-03.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\electric\\product-04.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\electric\\product-04.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\electric\\product-05.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\electric\\product-05.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\electric\\product-06.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\electric\\product-06.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\electric\\product-07.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\electric\\product-07.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\electric\\product-08.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\electric\\product-08.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\electric\\product-09.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\electric\\product-09.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\electric\\product-10.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\electric\\product-10.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\electric\\product-11.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\electric\\product-11.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\electric\\product-12.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\electric\\product-12.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\electric\\product-13.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\electric\\product-13.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\electric\\product-14.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\electric\\product-14.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\electric\\product-15.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\electric\\product-15.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\electric\\product-16.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\electric\\product-16.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-10.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-10.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-11.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-11.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-12.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-12.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-13.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-13.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-14.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-14.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-15.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-15.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-16.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-16.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-17.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-17.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-18.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-18.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-19.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-19.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-20.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-20.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-21.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-21.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-22.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-22.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-23.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-23.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-24.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-24.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-25.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-25.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-26.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-26.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-27.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-27.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-28.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-28.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-29.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-29.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-30.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-30.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-31.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-31.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-32.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-32.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-33.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-33.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-34.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-34.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-35.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-35.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-36.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-36.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-37.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-37.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-4.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-5.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-6.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-6.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-7.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-7.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-8.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-8.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\fashion\\product-9.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\fashion\\product-9.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-10.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-10.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-11.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-11.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-12.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-12.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-13.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-13.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-14.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-14.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-15.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-15.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-18.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-18.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-19.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-19.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-20.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-20.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-21.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-21.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-22.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-22.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-23.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-23.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-24.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-24.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-25.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-25.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-4.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-5.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-6.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-6.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-7.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-7.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-8.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-8.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\furniture\\product-9.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\furniture\\product-9.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\jewellery\\product-1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\jewellery\\product-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\jewellery\\product-10.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\jewellery\\product-10.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\jewellery\\product-11.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\jewellery\\product-11.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\jewellery\\product-12.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\jewellery\\product-12.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\jewellery\\product-13.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\jewellery\\product-13.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\jewellery\\product-14.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\jewellery\\product-14.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\jewellery\\product-15.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\jewellery\\product-15.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\jewellery\\product-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\jewellery\\product-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\jewellery\\product-3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\jewellery\\product-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\jewellery\\product-4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\jewellery\\product-4.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\jewellery\\product-5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\jewellery\\product-5.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\jewellery\\product-6.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\jewellery\\product-6.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\jewellery\\product-7.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\jewellery\\product-7.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\jewellery\\product-8.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\jewellery\\product-8.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\jewellery\\product-9.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\jewellery\\product-9.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-10.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-10.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-15.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-15.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-16.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-16.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-17.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-17.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-18.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-18.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-19.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-19.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-20.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-20.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-22.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-22.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-23.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-23.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-24.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-24.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-25.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-25.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-26.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-26.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-28.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-28.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-29.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-29.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-30.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-30.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-31.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-31.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-32.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-32.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-33.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-33.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-4.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-5.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-6.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-6.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-7.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-7.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\nft\\product-8.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\nft\\product-8.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\poster\\poster-01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\poster\\poster-01.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\poster\\poster-02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\poster\\poster-02.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\poster\\poster-03.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\poster\\poster-03.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\poster\\poster-05.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\poster\\poster-05.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\poster\\poster-07.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\poster\\poster-07.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\poster\\poster-08.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\poster\\poster-08.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\poster\\poster-09.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\poster\\poster-09.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-10.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-11.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-12.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-14.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-14.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-15.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-15.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-16.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-16.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-17.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-17.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-18.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-18.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-19.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-19.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-20.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-20.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-21.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-21.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-22.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-22.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-38.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-38.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-39.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-39.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-40.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-40.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-41.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-41.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-45.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-45.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-46.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-46.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-47.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-47.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-48.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-48.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-7.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-7.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-8.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-8.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-9.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-9.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-big-01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-big-01.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-big-02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-big-02.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-big-03.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-big-03.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-big-04.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-big-04.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-big-05.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-big-05.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-big-06.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-big-06.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-big-07.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-big-07.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-big-08.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-big-08.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-big-10.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-big-10.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-big-11.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-big-11.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-big-12.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-big-12.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-big-13.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-big-13.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-big-14.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-big-14.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-big-15.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-big-15.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-big-16.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-big-16.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-feature1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-feature1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-feature2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-feature2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-feature3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-feature3.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-feature4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-feature4.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\icon-1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\icon-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\icon-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\icon-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\icon-3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\icon-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\thumb-01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\thumb-01.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\thumb-02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\thumb-02.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\thumb-03.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\thumb-03.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\thumb-04.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\thumb-04.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\thumb-05.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\thumb-05.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\thumb-07.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\thumb-07.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\thumb-08.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\thumb-08.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\thumb-09.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\thumb-09.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\thumb-10.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\thumb-10.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\thumb-11.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\thumb-11.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\thumb-12.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\thumb-12.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\thumb-13.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\thumb-13.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\thumb-14.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\thumb-14.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\thumb-15.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\thumb-15.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\thumb-16.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\thumb-16.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\thumb-17.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\thumb-17.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\thumb-18.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\thumb-18.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\thumb-19.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\thumb-19.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\product-thumb\\thumb-20.png",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\product-thumb\\thumb-20.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\product\\pubgmobileCard.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\pubgmobileCard.webp"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\profile\\profileImg.png",
+      "PackagePath": "staticwebassets\\assets\\images\\profile\\profileImg.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\send-mail.png",
+      "PackagePath": "staticwebassets\\assets\\images\\send-mail.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\team\\team-01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\team\\team-01.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\team\\team-02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\team\\team-02.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\team\\team-03.png",
+      "PackagePath": "staticwebassets\\assets\\images\\team\\team-03.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\team\\team-04.png",
+      "PackagePath": "staticwebassets\\assets\\images\\team\\team-04.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\testimonial\\image-1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\testimonial\\image-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\testimonial\\image-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\testimonial\\image-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\testimonial\\image-3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\testimonial\\image-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\testimonial\\image-4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\testimonial\\image-4.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\images\\testimonial\\quote-left.png",
+      "PackagePath": "staticwebassets\\assets\\images\\testimonial\\quote-left.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\js\\main.js",
+      "PackagePath": "staticwebassets\\assets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\js\\vendor\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\js\\vendor\\counterup.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\counterup.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\js\\vendor\\imagesloaded.pkgd.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\imagesloaded.pkgd.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\js\\vendor\\isotope.pkgd.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\isotope.pkgd.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\js\\vendor\\jquery-ui.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\jquery-ui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\js\\vendor\\jquery.countdown.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\jquery.countdown.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\js\\vendor\\jquery.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\js\\vendor\\jquery.magnific-popup.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\jquery.magnific-popup.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\js\\vendor\\jquery.ui.touch-punch.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\jquery.ui.touch-punch.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\js\\vendor\\js.cookie.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\js.cookie.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\js\\vendor\\modernizr.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\modernizr.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\js\\vendor\\popper.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\popper.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\js\\vendor\\sal.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\sal.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\js\\vendor\\slick.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\slick.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\assets\\js\\vendor\\waypoints.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\waypoints.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Finalmastr\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SemiColon.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SemiColon.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.SemiColon.props",
+      "PackagePath": "build\\SemiColon.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.SemiColon.props",
+      "PackagePath": "buildMultiTargeting\\SemiColon.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.SemiColon.props",
+      "PackagePath": "buildTransitive\\SemiColon.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

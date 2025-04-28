@@ -1,0 +1,186 @@
+﻿@{
+    Layout = "~/Views/Shared/mainLayoutHeaderFooter.cshtml";
+}
+
+@model SemiColon.Models.ViewModel.cartViewModel
+
+<main class="main-wrapper">
+    @{
+        float totalBeforeDiscount = 0;
+        float discount = 99;
+        float totalAfterDiscount = 0;
+
+    }
+    <!-- Start Cart Area  -->
+    <div class="axil-product-cart-area axil-section-gap">
+        <div class="container">
+            <div class="axil-product-cart-wrap">
+                <div class="product-table-heading">
+                    <h4 class="title">Your Cart</h4>
+                    <a asp-action="removeFromCart" asp-controller="Products" class="cart-clear">Clear Shoping Cart</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table axil-product-table axil-cart-table mb--40">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="product-remove"></th>
+                                <th scope="col" class="product-thumbnail">Product</th>
+                                <th scope="col" class="product-title"></th>
+                                <th scope="col" class="product-price">Price</th>
+                                <th scope="col" class="product-quantity">Quantity</th>
+                                <th scope="col" class="product-subtotal">Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model._cartItem != null && Model._tempCart == null)
+                            {
+                                @foreach (var item in Model._cartItem)                            
+                                {
+                                    float subtotal = item.Quantity * (float)item.Price;
+
+                                    totalBeforeDiscount += subtotal;
+
+                                    <tr>
+                                        <td class="product-remove"><a asp-action="removeFromCart" asp-controller="Products" asp-route-id="@item.Id" class="remove-wishlist"><i class="fal fa-times"></i></a></td>
+                                        <td class="product-thumbnail"><a asp-action="productDetails" asp-controller="Products" asp-route-id="@item.Card.Id"><img src="~/assets/images/product/@item.Card.ImageUrl" alt="Digital Product"></a></td>
+                                        <td class="product-title"><a asp-action="productDetails" asp-controller="Products" asp-route-id="@item.Card.Id">@item.Card.CardName</a></td>
+                                        <td class="product-price" data-title="Price"><span class="currency-symbol">$</span>@item.Price</td>
+                                        <td class="product-quantity" data-title="Qty">
+                                            <div class="pro-qty">
+                                                <input type="number" class="quantity-input" value="@item.Quantity">
+                                            </div>
+                                        </td>
+                                        <td class="product-subtotal" data-title="Subtotal"><span class="currency-symbol">$</span>@subtotal</td>
+                                    </tr>
+                                }
+
+                                totalAfterDiscount = totalBeforeDiscount;
+                                discount = discount / 100 * totalBeforeDiscount;
+
+
+                            }
+                            else if (Model._tempCart != null && Model._cartItem == null)
+                            {
+                                @foreach (var item in Model._tempCart)                            
+                                {
+                                    float subtotal = item.Quantity * (float)item.Price;
+
+                                    totalBeforeDiscount += subtotal;
+
+                                    <tr>
+                                        <td class="product-remove"><a asp-action="removeFromCart" asp-controller="Products" asp-route-id="@item.Id" class="remove-wishlist"><i class="fal fa-times"></i></a></td>
+                                        <td class="product-thumbnail"><a asp-action="productDetails" asp-controller="Products" asp-route-id="@item.CardID"><img src="~/assets/images/product/@item.ImageUrl" alt="Digital Product"></a></td>
+                                        <td class="product-title"><a asp-action="productDetails" asp-controller="Products" asp-route-id="@item.CardID">@item.CardName</a></td>
+                                        <td class="product-price" data-title="Price"><span class="currency-symbol">$</span>@item.Price</td>
+                                        <td class="product-quantity" data-title="Qty">
+                                            <div class="pro-qty">
+                                                <input type="number" class="quantity-input" value="@item.Quantity">
+                                            </div>
+                                        </td>
+                                        <td class="product-subtotal" data-title="Subtotal"><span class="currency-symbol">$</span>@subtotal</td>
+                                    </tr>
+                                }
+
+                                totalAfterDiscount = totalBeforeDiscount;
+                                discount = discount / 100 * totalBeforeDiscount;
+
+
+                            }
+                            else 
+                            {
+
+                                <tr>
+                                    <td colspan="6" class="text-center">Your cart is empty</td>
+                                </tr>
+                                discount = 0;
+                            }
+
+                        </tbody>
+                    </table>
+                    <br />
+                    <br />
+                    <br />
+                </div>
+                <div class="cart-update-btn-area" style="display:flex;justify-content:center;align-items:center;width:100%">
+                    <div class="input-group product-cupon" style="display:flex;justify-content:center;align-items:center">
+                        <input placeholder="Enter coupon code" type="text" style="width:70vh; padding-left:2vh">
+                        <div class="product-cupon-btn">
+                            <button type="submit" class="axil-btn btn-outline">Apply</button>
+                        </div>
+                    </div>
+                    @* <div class="update-btn"> *@
+                    @*     <a href="#" class="axil-btn btn-outline">Update Cart</a> *@
+                    @* </div> *@
+                </div>
+                <div class="row">
+                    <div class="col-xl-5 col-lg-7 offset-xl-7 offset-lg-5" style="width:90%;margin-left:7vh;">
+                        <div class="axil-order-summery mt--80">
+                            <h5 class="title mb--20">Order Summary</h5>
+                            <div class="summery-table-wrap">
+                                <table class="table summery-table mb--30">
+                                    <tbody>
+                                        <tr class="order-subtotal" style="text-align:center;background-color:white">
+                                            <td>Subtotal</td>
+                                            <td >$@totalBeforeDiscount</td>
+                                        </tr>
+                                        <tr class="order-shipping" style="text-align:center;background-color:white">
+                                            @* <td>Shipping</td> *@
+                                            @* <td style="text-align:center;background-color:white" > *@
+                                            @*     <div class="input-group"> *@
+                                            @*         <input type="radio" id="radio1" name="shipping" checked> *@
+                                            @*         <label for="radio1">Free Shippping</label> *@
+                                            @*     </div> *@
+                                            @*     <div class="input-group"> *@
+                                            @*         <input type="radio" id="radio2" name="shipping"> *@
+                                            @*         <label for="radio2">Local: $35.00</label> *@
+                                            @*     </div> *@
+                                            @*     <div class="input-group"> *@
+                                            @*         <input type="radio" id="radio3" name="shipping"> *@
+                                            @*         <label for="radio3">Flat rate: $12.00</label> *@
+                                            @*     </div> *@
+                                            @* </td> *@
+                                        </tr style="text-align:center;background-color:white" >
+                                        <tr class="order-tax" style="text-align:center;background-color:white" >
+                                            <td>Discount</td>
+                                            <td>$@discount</td>
+                                        </tr>
+                                        <tr class="order-total" style="text-align:center;background-color:white" >
+                                            <td>Total</td>
+                                            <td class="order-total-amount">$@(totalAfterDiscount - discount)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            @*  <a asp-action="@(User.Identity.IsAuthenticated ? "checkout" : "signIn")" asp-controller="@(User.Identity.IsAuthenticated ? "Products" : "User")" class="axil-btn btn-bg-primary checkout-btn"> *@
+                            @*     @(User.Identity.IsAuthenticated?"Process to Checkout" :"Login to Checkout") *@
+                            @* </a> *@
+                            @if (Context.Session.GetString("UserId") != null )
+                            {
+                                if (Model._cartItem != null)
+                                {
+                                    <a asp-action="checkout" asp-controller="Products" class="axil-btn btn-bg-primary checkout-btn" >
+                                        Process to Checkout
+                                    </a>
+                                }
+                                else{
+                                 <a asp-action="shop" asp-controller="Products" class="axil-btn btn-bg-primary checkout-btn" >
+                                        Shop First To Checkout
+                                    </a>
+                                }
+                            }
+                            else
+                            {
+                                
+                                <a asp-action="signIn" asp-controller="User" class="axil-btn btn-bg-primary checkout-btn">
+                                    Login to Checkout
+                                </a>
+                            }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Cart Area  -->
+
+</main>
