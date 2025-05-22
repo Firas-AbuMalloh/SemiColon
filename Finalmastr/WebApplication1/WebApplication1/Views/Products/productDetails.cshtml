@@ -3,9 +3,34 @@
 
 @{
     Layout = "~/Views/Shared/mainLayoutHeaderFooter.cshtml";
+    ViewBag.Title = "Product Details";
+
+    // Get active promotion once for use throughout the page
+    var activePromotion = Model.singleCard.Promotions?
+        .Where(p => p.StartDate <= DateTime.Now && p.EndDate >= DateTime.Now)
+        .OrderByDescending(p => p.Discount)
+        .FirstOrDefault();
 }
 
 @model SingleDetailsViewModel
+
+<style>
+    .old-price {
+        text-decoration: line-through;
+        color: #777;
+        margin-right: 10px;
+        font-size: 0.85em;
+    }
+    
+    .discount-badge {
+        background-color: #FF497C;
+        color: white;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.85em;
+        font-weight: 600;
+    }
+</style>
 
 <main class="main-wrapper">
     <!-- Start Shop Area  -->
@@ -45,7 +70,13 @@
                                         @* </div> *@
                                     </div>
                                     <div class="label-block">
-                                        <div class="product-badget">20% OFF</div>
+                                        @if(Model.singleCard.Promotions != null && Model.singleCard.Promotions.Any())
+                                        {
+                                            if(activePromotion != null)
+                                            {
+                                                <div class="product-badget">@activePromotion.Discount%OFF</div>
+                                            }
+                                        }
                                     </div>
                                     @* <div class="product-quick-view position-view"> *@
                                     @*     <a href="~/assets/images/product/product-big-04.png" class="popup-zoom"> *@
@@ -79,23 +110,39 @@
                         <div class="single-product-content">
                             <div class="inner">
                                 <h2 class="product-title">@Model.singleCard.CardName</h2>
-                                <span class="price-amount">$@Model.singleCard.Price</span>
-                                <div class="product-rating">
-                                    <div class="star-rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                    <div class="review-link">
-                                        <a href="#">(<span>2</span> customer reviews)</a>
-                                    </div>
-                                </div>
+                                @{
+                                    if(activePromotion != null)
+                                    {
+                                        var discountedPrice = Model.singleCard.Price - (Model.singleCard.Price * activePromotion.Discount / 100);
+                                        <span class="price-amount">
+                                            <span class="old-price">$@Model.singleCard.Price.ToString("0.00")</span>
+                                            $@discountedPrice.ToString("0.00")
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="price-amount">$@Model.singleCard.Price.ToString("0.00")</span>
+                                    }
+                                }
+                                @* <div class="product-rating"> *@
+                                @*     <div class="star-rating"> *@
+                                @*         <i class="fas fa-star"></i> *@
+                                @*         <i class="fas fa-star"></i> *@
+                                @*         <i class="fas fa-star"></i> *@
+                                @*         <i class="fas fa-star"></i> *@
+                                @*         <i class="far fa-star"></i> *@
+                                @*     </div> *@
+                                @*     <div class="review-link"> *@
+                                @*         <a href="#">(<span>2</span> customer reviews)</a> *@
+                                @*     </div> *@
+                                @* </div> *@
                                 <ul class="product-meta">
                                     <li><i class="fal fa-check"></i>In stock  @Model.singleCard.StockQuantity</li>
                                     <li><i class="fal fa-check"></i>Fast delivery on Buying Time</li>
-                                    <li><i class="fal fa-check"></i>Sales 30% Off Use Code: MOTIVE30</li>
+                                    @if(activePromotion != null)
+                                    {
+                                        <li><i class="fal fa-check"></i>Sales @activePromotion.Discount% Off</li>
+                                    }
                                 </ul>
                                 <p class="description">@Model.singleCard.Description</p>
 
@@ -142,30 +189,55 @@
                                 <!-- Start Product Action Wrapper  -->
                                 <div class="product-action-wrapper d-flex-center">
                                     <!-- Start Quentity Action  -->
-                                    <div class="pro-qty mr--20"><input type="number" value="1" min="1"></div>
+                                    <div class="pro-qty mr--20">
+                                        <span class="dec qtybtn">-</span>
+                                        <input type="number" id="product-quantity" value="1" min="1" max="@Model.singleCard.StockQuantity">
+                                        <span class="inc qtybtn">+</span>
+                                    </div>
                                     <!-- End Quentity Action  -->
                                     <!-- Start Product Action  -->
                                     <ul class="product-action d-flex-center mb--0">
-                                        <li class="add-to-cart"><a asp-action="addToCart" asp-controller="Products" asp-route-id="@Model.singleCard.Id" class="axil-btn btn-bg-primary">Add to Cart</a></li>
-                                        <li class="wishlist"><a href="wishlist.html" class="axil-btn wishlist-btn"><i class="far fa-heart"></i></a></li>
+                                        <li class="add-to-cart select-option">
+                                            <a href="#" data-product-id="@Model.singleCard.Id" class="axil-btn btn-bg-primary addToCartBtn">Add to Cart</a>
+                                        </li>
+                                        <li class="wishlist">
+                                            <a href="#" class="axil-btn wishlist-btn addToFavoritesBtn" data-product-id="@Model.singleCard.Id">
+                                                <i class="far fa-heart"></i>
+                                            </a>
+                                        </li>
                                     </ul>
                                     <!-- End Product Action  -->
-
                                 </div>
                                 <!-- End Product Action Wrapper  -->
 
                                 <div class="product-desc-wrapper pt--80 pt_sm--60">
                                     <h4 class="primary-color mb--40 desc-heading">Description</h4>
                                     <div class="single-desc mb--30">
-                                        <h5 class="title">Specifications:</h5>
-                                        <p>
-                                            We’ve created a full-stack structure for our working workflow processes, were from the funny the century initial all the made, have spare to negatives. But the structure was from the funny the century rather,
-                                            initial all the made, have spare to negatives.
-                                        </p>
+                                        <h5 class="title">Details:</h5>
+                                        <p>@Model.singleCard.Description</p>
                                     </div>
+                                    @if(!string.IsNullOrEmpty(Model.singleCard.Platform) || !string.IsNullOrEmpty(Model.singleCard.Region))
+                                    {
+                                        <div class="single-desc mb--5">
+                                            <h5 class="title">Specifications:</h5>
+                                            <p>
+                                                @if(!string.IsNullOrEmpty(Model.singleCard.Platform))
+                                                {
+                                                    <span><strong>Platform:</strong> @Model.singleCard.Platform</span><br />
+                                                }
+                                                @if(!string.IsNullOrEmpty(Model.singleCard.Region))
+                                                {
+                                                    <span><strong>Region:</strong> @Model.singleCard.Region</span>
+                                                }
+                                            </p>
+                                        </div>
+                                    }
                                     <div class="single-desc mb--5">
-                                        <h5 class="title">Care & Maintenance:</h5>
-                                        <p>Use warm water to describe us as a product team that creates amazing UI/UX experiences, by crafting top-notch user experience.</p>
+                                        <h5 class="title">Additional Information:</h5>
+                                        <p>
+                                            <span><strong>Added:</strong> @(Model.singleCard.CreatedAt?.ToString("MMM dd, yyyy") ?? "N/A")</span><br />
+                                            <span><strong>Category:</strong> @(Model.singleCard.Category?.CategoryName ?? "N/A")</span>
+                                        </p>
                                     </div>
                                     <ul class="pro-des-features pro-desc-style-two pt-10">
                                         <li class="single-features">
@@ -216,14 +288,33 @@
                                 <a asp-action="productDetails" asp-controller="Products" asp-route-id="@cardsItem.Id">
                                     <img src="~/assets/images/product/@cardsItem.ImageUrl" alt="Product Images">
                                 </a>
+                                @{
+                                    var relatedPromotion = cardsItem.Promotions?
+                                        .Where(p => p.StartDate <= DateTime.Now && p.EndDate >= DateTime.Now)
+                                        .OrderByDescending(p => p.Discount)
+                                        .FirstOrDefault();
+                                }
                                 <div class="label-block label-right">
-                                    <div class="product-badget">20% OFF</div>
+                                    @if(relatedPromotion != null)
+                                    {
+                                        <div class="product-badget">@relatedPromotion.Discount%OFF</div>
+                                    }
                                 </div>
                                 <div class="product-hover-action">
                                     <ul class="cart-action">
-                                        <li class="wishlist"><a href="wishlist.html"><i class="far fa-heart"></i></a></li>
-                                        <li class="select-option"><a href="cart.html">Add to Cart</a></li>
-                                        <li class="quickview"><a asp-action="productDetails" asp-controller="Products" asp-route-id="@cardsItem.Id" data-bs-toggle="modal" data-bs-target="#quick-view-modal"><i class="far fa-eye"></i></a></li>
+                                        <li class="wishlist">
+                                            <a href="#" class="addToFavoritesBtn" data-product-id="@cardsItem.Id">
+                                                <i class="far fa-heart"></i>
+                                            </a>
+                                        </li>
+                                        <li class="select-option">
+                                            <a href="#" class="addToCartBtn" data-product-id="@cardsItem.Id">Add to Cart</a>
+                                        </li>
+                                        <li class="quickview">
+                                            <a asp-action="productDetails" asp-controller="Products" asp-route-id="@cardsItem.Id">
+                                                <i class="far fa-eye"></i>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -231,8 +322,16 @@
                                 <div class="inner">
                                     <h5 class="title"><a asp-action="productDetails" asp-controller="Products" asp-route-id="@cardsItem.Id">@cardsItem.CardName</a></h5>
                                     <div class="product-price-variant">
-                                        <span class="price old-price">@cardsItem.Price</span>
-                                        <span class="price current-price">@cardsItem.Price</span>
+                                        @if(relatedPromotion != null)
+                                        {
+                                            var itemDiscountedPrice = cardsItem.Price - (cardsItem.Price * relatedPromotion.Discount / 100);
+                                            <span class="price old-price">$@cardsItem.Price.ToString("0.00")</span>
+                                            <span class="price current-price">$@itemDiscountedPrice.ToString("0.00")</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="price current-price">$@cardsItem.Price.ToString("0.00")</span>
+                                        }
                                     </div>
                                
                                 </div>
@@ -266,3 +365,248 @@
     </div>
     <!-- End Axil Newsletter Area  -->
 </main>
+
+<script>
+    $(document).ready(function () {
+        // Prevent multiple clicks processing
+        let isCartProcessing = false;
+        
+        // إزالة جميع معالجات الأحداث السابقة لأزرار المفضلة لمنع التنفيذ المزدوج
+        $(document).off('click', '.addToFavoritesBtn');
+        $('.addToFavoritesBtn').off('click');
+        
+        // تحميل المفضلات عند تحميل الصفحة
+        loadUserFavorites();
+        
+        // Quantity change handlers
+        $('.qtybtn').on('click', function() {
+            var $button = $(this);
+            var $input = $button.parent().find('input');
+            var oldValue = parseFloat($input.val());
+            var maxValue = parseInt($input.attr('max'));
+            
+            if ($button.hasClass('inc')) {
+                // Don't allow incrementing beyond stock quantity
+                if (oldValue < maxValue) {
+                    var newVal = oldValue + 1;
+                } else {
+                    newVal = maxValue;
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Maximum Stock',
+                        text: 'You\'ve reached the maximum available stock.',
+                        timer: 1500,
+                        showConfirmButton: false
+                    });
+                }
+            } else {
+                // Don't allow decrementing below 1
+                if (oldValue > 1) {
+                    var newVal = oldValue - 1;
+                } else {
+                    newVal = 1;
+                }
+            }
+            
+            $input.val(newVal);
+            $input.trigger('change');
+        });
+        
+        // Add to cart with quantity - prevent double submissions
+        $('.addToCartBtn').click(function (e) {
+            e.preventDefault();
+            
+            var $button = $(this);
+            if ($button.hasClass('disabled')) return; // منع الضغط المتكرر على نفس الزر
+
+            $button.addClass('disabled');
+            var originalText = $button.text();
+            $button.text('Adding...');
+
+            var productId = $button.data('product-id');
+            var quantity = $('#product-quantity').val();
+            
+            if (quantity < 1) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Invalid Quantity',
+                    text: 'Please select a quantity of at least 1.',
+                    timer: 1500,
+                    showConfirmButton: false
+                });
+                $button.removeClass('disabled').text(originalText);
+                return;
+            }
+
+            $.ajax({
+                url: '/Products/addToCart',
+                type: 'POST',
+                data: { 
+                    id: productId,
+                    quantity: quantity
+                },
+                success: function (response) {
+                    if (response.success) {
+                        // Update cart count
+                        $('.cart-count').text(response.cartCount);
+                        if (response.cartCount > 0) {
+                            $('.cart-count').removeClass('hidden');
+                        }
+
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Added To Cart',
+                            text: response.message,
+                            timer: 1500,
+                            showConfirmButton: false
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: response.message
+                        });
+                    }
+                },
+                error: function () {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'An error occurred while adding to cart.'
+                    });
+                },
+                complete: function() {
+                    $button.removeClass('disabled').text(originalText);
+                }
+            });
+        });
+        
+        // معالج أحداث المفضلة - يتم إعادة تعريفه لضمان عمله بعد إضافة/إزالة المنتج
+        function attachFavoritesHandlers() {
+            const favProcessingSet = new Set();
+            $('.addToFavoritesBtn').off('click').on('click', function (e) {
+                e.preventDefault();
+                e.stopImmediatePropagation(); // منع أي معالج حدث آخر من التنفيذ
+                var $button = $(this);
+                var $heartIcon = $button.find('i');
+                var productId = $button.data('product-id');
+                if (favProcessingSet.has(productId)) return;
+                favProcessingSet.add(productId);
+                $button.addClass('disabled');
+                // Show loading state
+                $heartIcon.removeClass('far fas').addClass('fa-spinner fa-spin');
+                $.ajax({
+                    url: '/Products/addToFavorites',
+                    type: 'POST',
+                    data: { id: productId },
+                    success: function(response) {
+                        if (response.success) {
+                            // Update favorites count in header
+                            $.ajax({
+                                url: '/Products/GetFavoritesCount',
+                                type: 'GET',
+                                success: function(countResponse) {
+                                    if (countResponse.success) {
+                                        const favCount = parseInt(countResponse.favoritesCount);
+                                        $('.favorites-count').text(favCount);
+                                        if (favCount === 0) {
+                                            $('.favorites-count').addClass('hidden');
+                                        } else {
+                                            $('.favorites-count').removeClass('hidden');
+                                        }
+                                    }
+                                },
+                                complete: function() {
+                                    $heartIcon.removeClass('fa-spinner fa-spin');
+                                }
+                            });
+                            // Toggle heart icon between filled and outline
+                            if (response.added) {
+                                $heartIcon.removeClass('far').addClass('fas');
+                                // تحديث جميع أيقونات المفضلة لنفس المنتج
+                                $('.addToFavoritesBtn[data-product-id="' + productId + '"] i').removeClass('far').addClass('fas');
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Added to wishlist!',
+                                    text: response.message,
+                                    timer: 1500,
+                                    showConfirmButton: false
+                                });
+                            } else {
+                                $heartIcon.removeClass('fas').addClass('far');
+                                // تحديث جميع أيقونات المفضلة لنفس المنتج
+                                $('.addToFavoritesBtn[data-product-id="' + productId + '"] i').removeClass('fas').addClass('far');
+                                Swal.fire({
+                                    icon: 'info',
+                                    title: 'Removed from wishlist',
+                                    text: response.message,
+                                    timer: 1500,
+                                    showConfirmButton: false
+                                });
+                            }
+                        } else {
+                            $heartIcon.removeClass('fa-spinner fa-spin').addClass('far');
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: response.message
+                            });
+                        }
+                    },
+                    error: function() {
+                        $heartIcon.removeClass('fa-spinner fa-spin').addClass('far');
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'An error occurred while updating your wishlist.'
+                        });
+                    },
+                    complete: function() {
+                        $button.removeClass('disabled');
+                        favProcessingSet.delete(productId);
+                        // إعادة تعريف معالجات الأحداث لضمان عمل الزر بعد التغيير
+                        attachFavoritesHandlers();
+                    }
+                });
+            });
+        }
+        
+        // تشغيل معالج أحداث المفضلة مباشرة بعد التحميل
+        attachFavoritesHandlers();
+    });
+    
+    // Function to load and display user's favorites
+    function loadUserFavorites() {
+        console.log("Loading user favorites...");
+        $.ajax({
+            url: '/Products/GetUserFavorites',
+            type: 'GET',
+            success: function(response) {
+                console.log("Favorites response:", response);
+                if (response.success && response.favorites) {
+                    // Check if current product is in favorites
+                    $('.addToFavoritesBtn').each(function() {
+                        const $btn = $(this);
+                        const productId = $btn.data('product-id');
+                        if (response.favorites.includes(productId)) {
+                            console.log("Product " + productId + " is in favorites, updating icon");
+                            $btn.find('i').removeClass('far').addClass('fas');
+                        } else {
+                            console.log("Product " + productId + " is not in favorites");
+                            $btn.find('i').removeClass('fas').addClass('far');
+                        }
+                    });
+                }
+                else {
+                    console.log("No favorites found or error in response");
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error("Error loading favorites:", error);
+            }
+        });
+    }
+</script>
+
+
+

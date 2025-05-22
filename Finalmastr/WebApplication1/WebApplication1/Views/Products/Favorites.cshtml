@@ -1,0 +1,228 @@
+@model IEnumerable<SemiColon.Models.Favorite>
+@{
+    Layout = "~/Views/Shared/mainLayoutHeaderFooter.cshtml";
+    ViewBag.Title = "My Wishlist";
+}
+
+<main class="main-wrapper">
+    <!-- Start Breadcrumb Area  -->
+    <div class="axil-breadcrumb-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="inner">
+                        <ul class="axil-breadcrumb">
+                            <li class="axil-breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li class="separator"></li>
+                            <li class="axil-breadcrumb-item active" aria-current="page">Wishlist</li>
+                        </ul>
+                        <h1 class="title">My Wishlist</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb Area  -->
+
+    <!-- Start Wishlist Area  -->
+    <div class="axil-product-area axil-section-gap">
+        <div class="container">
+            @if (Model != null && Model.Any())
+            {
+                <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 row--15">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col" data-favorite-id="@item.Id" data-product-id="@item.CardId">
+                            <div class="axil-product product-style-one">
+                                <div class="thumbnail">
+                                    <a asp-action="productDetails" asp-controller="Products" asp-route-id="@item.CardId">
+                                        <img class="main-img" src="~/assets/images/product/@item.Card.ImageUrl" alt="Product">
+                                        <img class="hover-img" src="~/assets/images/product/@item.Card.ImageUrl" alt="Product">
+                                    </a>
+                                    <div class="product-hover-action">
+                                        <ul class="cart-action">
+                                            <li class="select-option">
+                                                <a href="#" class="addToCartBtn" data-product-id="@item.CardId">Add to Cart</a>
+                                            </li>
+                                            <li class="quickview">
+                                                <a asp-action="productDetails" asp-controller="Products" asp-route-id="@item.CardId">
+                                                    <i class="far fa-eye"></i>
+                                                </a>
+                                            </li>
+                                            <li class="wishlist">
+                                                <a href="#" class="remove-wishlist" data-product-id="@item.CardId">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <div class="inner">
+                                        <h5 class="title">
+                                            <a asp-action="productDetails" asp-controller="Products" asp-route-id="@item.CardId">
+                                                @item.Card.CardName
+                                            </a>
+                                        </h5>
+                                        <div class="product-price-variant">
+                                            <span class="price current-price">$@item.Card.Price</span>
+                                        </div>
+                                        <div class="product-rating">
+                                            @if (item.Card.StockQuantity > 0)
+                                            {
+                                                <span class="badge bg-success">In Stock</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge bg-danger">Out of Stock</span>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="empty-wishlist-wrapper text-center py-5">
+                    <div class="empty-wishlist-icon mb-4">
+                        <i class="far fa-heart" style="font-size: 80px; color: #FF497C; opacity: 0.5;"></i>
+                    </div>
+                    <h3 class="fw-bold">Your wishlist is empty</h3>
+                    <p class="mb-4 text-muted">Explore our products and add your favorites to the wishlist.</p>
+                    <a asp-controller="Products" asp-action="shop" class="axil-btn btn-bg-primary">Explore Products</a>
+                </div>
+            }
+        </div>
+    </div>
+    <!-- End Wishlist Area  -->
+</main>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            // منع تكرار الطلبات لنفس المنتج
+            const favRemoveProcessingSet = new Set();
+            // Remove from wishlist
+            $('.remove-wishlist').click(function(e) {
+                e.preventDefault();
+                var $btn = $(this);
+                var $productCard = $btn.closest('.col');
+                var productId = $btn.data('product-id');
+                if (favRemoveProcessingSet.has(productId)) return;
+                favRemoveProcessingSet.add(productId);
+                $btn.addClass('disabled');
+                $.ajax({
+                    url: '/Products/addToFavorites',
+                    type: 'POST',
+                    data: { id: productId },
+                    success: function(response) {
+                        if (response.success) {
+                            // Animate card removal
+                            $productCard.fadeOut(300, function() {
+                                $(this).remove();
+                                // Check if wishlist is empty
+                                if ($('.axil-product-area .col').length === 0) {
+                                    $('.axil-product-area .row').remove();
+                                    // Show empty state
+                                    $('.axil-product-area .container').html(`
+                                        <div class="empty-wishlist-wrapper text-center py-5">
+                                            <div class="empty-wishlist-icon mb-4">
+                                                <i class="far fa-heart" style="font-size: 80px; color: #FF497C; opacity: 0.5;"></i>
+                                            </div>
+                                            <h3 class="fw-bold">Your wishlist is empty</h3>
+                                            <p class="mb-4 text-muted">Explore our products and add your favorites to the wishlist.</p>
+                                            <a href="/Products/shop" class="axil-btn btn-bg-primary">Explore Products</a>
+                                        </div>
+                                    `);
+                                }
+                            });
+                            // Update favorites count in header
+                            $.ajax({
+                                url: '/Products/GetFavoritesCount',
+                                type: 'GET',
+                                success: function(countResponse) {
+                                    if (countResponse.success) {
+                                        const favCount = parseInt(countResponse.favoritesCount);
+                                        $('.favorites-count').text(favCount);
+                                        if (favCount === 0) {
+                                            $('.favorites-count').addClass('hidden');
+                                        } else {
+                                            $('.favorites-count').removeClass('hidden');
+                                        }
+                                    }
+                                }
+                            });
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Removed from wishlist',
+                                text: response.message,
+                                timer: 1500,
+                                showConfirmButton: false
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: response.message
+                            });
+                        }
+                    },
+                    error: function() {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'An error occurred while updating your wishlist.'
+                        });
+                    },
+                    complete: function() {
+                        $btn.removeClass('disabled');
+                        favRemoveProcessingSet.delete(productId);
+                    }
+                });
+            });
+            
+            // Add to cart
+            $('.addToCartBtn').click(function(e) {
+                e.preventDefault();
+                
+                var productId = $(this).data('product-id');
+                
+                $.ajax({
+                    url: '/Products/addToCart',
+                    type: 'POST',
+                    data: { id: productId },
+                    success: function(response) {
+                        if (response.success) {
+                            // Update cart count
+                            $('.cart-count').text(response.cartCount);
+                            
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Added to Cart',
+                                text: response.message,
+                                timer: 1500,
+                                showConfirmButton: false
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: response.message
+                            });
+                        }
+                    },
+                    error: function() {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'An error occurred while adding to cart.'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+} 

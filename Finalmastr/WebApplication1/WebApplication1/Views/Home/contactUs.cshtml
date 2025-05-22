@@ -1,8 +1,10 @@
 ﻿@{
     Layout = "~/Views/Shared/mainLayoutHeaderFooter.cshtml";
+    ViewBag.Title = "Contact Us";
 }
 
 @model SemiColon.Models.ContactFeedBack
+
 
 <main class="main-wrapper">
     <!-- Start Breadcrumb Area  -->
@@ -12,20 +14,20 @@
                 <div class="col-lg-6 col-md-8">
                     <div class="inner">
                         <ul class="axil-breadcrumb">
-                            <li class="axil-breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="axil-breadcrumb-item"><a asp-action="index" asp-controller="Home">Home</a></li>
                             <li class="separator"></li>
                             <li class="axil-breadcrumb-item active" aria-current="page">Contact</li>
                         </ul>
                         <h1 class="title">Contact With Us</h1>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-4">
-                    <div class="inner">
-                        <div class="bradcrumb-thumb">
-                            <img src="~/assets/images/product/product-45.png" alt="Image">
-                        </div>
-                    </div>
-                </div>
+                @* <div class="col-lg-6 col-md-4"> *@
+                @*     <div class="inner"> *@
+                @*         <div class="bradcrumb-thumb"> *@
+                @*             <img src="~/assets/images/product/product-45.png" alt="Image"> *@
+                @*         </div> *@
+                @*     </div> *@
+                @* </div> *@
             </div>
         </div>
     </div>
@@ -39,24 +41,44 @@
                         <div class="contact-form">
                             <h3 class="title mb--10">We would love to hear from you.</h3>
                             <p>If you’ve got great products your making or looking to work with us then drop us a line.</p>
-
+                            @if (TempData["SuccessMessage"] != null)
+                            {
+                                <div class="alert alert-success">
+                                    @TempData["SuccessMessage"]
+                                </div>
+                            }
 
                             @using (Html.BeginForm("ContactUs", "Home", FormMethod.Post))
                             {
+                                @Html.AntiForgeryToken()
+
                                 <div class="row row--10">
-                                    
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Name) <span>*</span>
+                                            @Html.TextBoxFor(model => model.Name, new { @class = "form-control", id = "contact-Name" })
+                                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
                                         <div class="form-group">
                                             @Html.LabelFor(model => model.Phone) <span>*</span>
                                             @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", id = "contact-phone" })
                                             @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-4">
                                         <div class="form-group">
                                             @Html.LabelFor(model => model.Email) <span>*</span>
                                             @Html.TextBoxFor(model => model.Email, new { @class = "form-control", id = "contact-email", type = "email" })
                                             @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Subject) <span>*</span>
+                                            @Html.TextBoxFor(model => model.Subject, new { @class = "form-control", id = "contact-Subject", type = "text" })
+                                            @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -70,6 +92,12 @@
                                     <div class="col-12">
                                         <div class="form-group">
                                             <div class="g-recaptcha" data-sitekey="6LdpQCIrAAAAAD4j6UK6E43Fzl3ewK7dgTz1yRQL"></div>
+                                            @if (ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Any(e => e.ErrorMessage == "Please complete the CAPTCHA." || e.ErrorMessage == "CAPTCHA validation failed. Please try again." || e.ErrorMessage == "Error verifying ReCaptcha. Please try again."))
+                                            {
+                                                <div class="text-danger">
+                                                    @ViewData.ModelState[""].Errors.FirstOrDefault(e => e.ErrorMessage == "Please complete the CAPTCHA." || e.ErrorMessage == "CAPTCHA validation failed. Please try again." || e.ErrorMessage == "Error verifying ReCaptcha. Please try again.").ErrorMessage
+                                                </div>
+                                            }
                                             <div class="col-12">
                                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                             </div>
@@ -88,33 +116,37 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="contact-location mb--40">
-                            <h4 class="title mb--20">Our Store</h4>
-                            <span class="address mb--20">8212 E. Glen Creek Street Orchard Park, NY 14127, United States of America</span>
-                            <span class="phone">Phone: +123 456 7890</span>
-                            <span class="email">Email: Hello@etrade.com</span>
+                            <h4 class="title mb--20">About Semicolon</h4>
+                            <span class="address mb--20">
+                                Semicolon is an online platform for buying and sending digital gift cards with ease and at the best prices.
+                            </span>
+                            <span class="email">Email: support@semicolon.com</span>
                         </div>
+
                         <div class="contact-career mb--40">
-                            <h4 class="title mb--20">Careers</h4>
-                            <p>Instead of buying six things, one that you really like.</p>
+                            <h4 class="title mb--20">Join Our Team</h4>
+                            <p>We're always looking for passionate people who believe in the power of digital gifting. Contact us to learn more.</p>
                         </div>
+
                         <div class="opening-hour">
-                            <h4 class="title mb--20">Opening Hours:</h4>
+                            <h4 class="title mb--20">Support Hours:</h4>
                             <p>
-                                Monday to Saturday: 9am - 10pm
-                                <br> Sundays: 10am - 6pm
+                                Our website is available 24/7.<br>
+                                Customer support: Daily from 9am - 6pm (GMT)
                             </p>
                         </div>
                     </div>
+
                 </div>
             </div>
             <!-- Start Google Map Area  -->
-            <div class="axil-google-map-wrap axil-section-gap pb--0">
-                <div class="mapouter">
-                    <div class="gmap_canvas">
-                        <iframe width="1080" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=melbourne&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
-                    </div>
-                </div>
-            </div>
+            @* <div class="axil-google-map-wrap axil-section-gap pb--0"> *@
+            @*     <div class="mapouter"> *@
+            @*         <div class="gmap_canvas"> *@
+            @*             <iframe width="1080" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=melbourne&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe> *@
+            @*         </div> *@
+            @*     </div> *@
+            @* </div> *@
             <!-- End Google Map Area  -->
         </div>
     </div>

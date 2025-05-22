@@ -23,7 +23,7 @@
             axilInit.menuLinkActive();
             axilInit.headerIconToggle();
             axilInit.priceRangeSlider();
-            axilInit.quantityRanger();
+            //axilInit.quantityRanger();
             axilInit.axilSlickActivation();
             axilInit.countdownInit('.coming-countdown', '2025/10/01');
             axilInit.campaignCountdown('.campaign-countdown', '2025/10/01');
@@ -194,12 +194,20 @@
             });
         },
 
-        headerIconToggle: function() {
+        headerIconToggle: function () {
+            $('.my-account').on('mouseenter', function () {
+                $(this).children('a').addClass('open');
+                $(this).children('.my-account-dropdown').addClass('open');
+            });
 
-            $('.my-account > a').on('click', function(e) {
-                $(this).toggleClass('open').siblings().toggleClass('open');
-            })
+            $('.my-account').on('mouseleave', function () {
+                $(this).children('a').removeClass('open');
+                $(this).children('.my-account-dropdown').removeClass('open');
+            });
         },
+
+
+       
 
         priceRangeSlider: function(e) {
             $('#slider-range').slider({
@@ -216,25 +224,25 @@
 
         },
 
-        quantityRanger: function() {
-            $('.pro-qty').prepend('<span class="dec qtybtn">-</span>');
-            $('.pro-qty').append('<span class="inc qtybtn">+</span>');
-            $('.qtybtn').on('click', function() {
-                var $button = $(this);
-                var oldValue = $button.parent().find('input').val();
-                if ($button.hasClass('inc')) {
-                    var newVal = parseFloat(oldValue) + 1;
-                } else {
-                    // Don't allow decrementing below zero
-                    if (oldValue > 0) {
-                        var newVal = parseFloat(oldValue) - 1;
-                    } else {
-                        newVal = 0;
-                    }
-                }
-                $button.parent().find('input').val(newVal);
-            });
-        },
+        //quantityRanger: function() {
+        //    $('.pro-qty').prepend('<span class="dec qtybtn">-</span>');
+        //    $('.pro-qty').append('<span class="inc qtybtn">+</span>');
+        //    $('.qtybtn').on('click', function() {
+        //        var $button = $(this);
+        //        var oldValue = $button.parent().find('input').val();
+        //        if ($button.hasClass('inc')) {
+        //            var newVal = parseFloat(oldValue) + 1;
+        //        } else {
+        //            // Don't allow decrementing below zero
+        //            if (oldValue > 0) {
+        //                var newVal = parseFloat(oldValue) - 1;
+        //            } else {
+        //                newVal = 0;
+        //            }
+        //        }
+        //        $button.parent().find('input').val(newVal);
+        //    });
+        //},
 
         axilSlickActivation: function(e) {
             $('.categrie-product-activation').slick({
@@ -244,7 +252,7 @@
                 arrows: true,
                 dots: false,
                 autoplay: false,
-                speed: 1000,
+                speed: 500,
                 prevArrow: '<button class="slide-arrow prev-arrow"><i class="fal fa-long-arrow-left"></i></button>',
                 nextArrow: '<button class="slide-arrow next-arrow"><i class="fal fa-long-arrow-right"></i></button>',
                 responsive: [
@@ -294,7 +302,7 @@
                 arrows: true,
                 dots: false,
                 autoplay: false,
-                speed: 1000,
+                speed: 500,
                 prevArrow: '<button class="slide-arrow prev-arrow"><i class="fal fa-long-arrow-left"></i></button>',
                 nextArrow: '<button class="slide-arrow next-arrow"><i class="fal fa-long-arrow-right"></i></button>',
                 responsive: [
@@ -344,7 +352,7 @@
                 arrows: true,
                 dots: false,
                 autoplay: false,
-                speed: 1000,
+                speed: 500,
                 prevArrow: '<button class="slide-arrow prev-arrow"><i class="fal fa-angle-left"></i></button>',
                 nextArrow: '<button class="slide-arrow next-arrow"><i class="fal fa-angle-right"></i></button>',
             });
@@ -356,7 +364,7 @@
                 arrows: true,
                 dots: false,
                 autoplay: true,
-                speed: 1000,
+                speed: 500,
                 prevArrow: '<button class="slide-arrow prev-arrow"><i class="fal fa-long-arrow-left"></i></button>',
                 nextArrow: '<button class="slide-arrow next-arrow"><i class="fal fa-long-arrow-right"></i></button>',
                 responsive: [
@@ -648,7 +656,7 @@
                 slidesToScroll: 1,
                 arrows: false,
                 dots: false,
-                speed: 800,
+                speed: 400,
                 draggable: false,
                 asNavFor: '.product-small-thumb'
             });
@@ -660,7 +668,7 @@
                 arrows: false,
                 dots: false,
                 focusOnSelect: true,
-                speed: 800,
+                speed: 400,
                 asNavFor: '.product-large-thumbnail-2',
                 responsive: [{
                         breakpoint: 768,
@@ -684,7 +692,7 @@
                 slidesToScroll: 1,
                 arrows: true,
                 dots: false,
-                speed: 800,
+                speed: 400,
                 draggable: false,
                 asNavFor: '.product-small-thumb-2',
                 prevArrow: '<button class="slide-arrow prev-arrow"><i class="fal fa-long-arrow-left"></i></button>',
@@ -699,7 +707,7 @@
                 dots: false,
                 focusOnSelect: true,
                 vertical: true,
-                speed: 800,
+                speed: 400,
                 draggable: false,
                 swipe: false,
                 asNavFor: '.product-large-thumbnail-3',
@@ -719,7 +727,7 @@
                 slidesToScroll: 1,
                 arrows: false,
                 dots: false,
-                speed: 800,
+                speed: 400,
                 draggable: false,
                 swipe: false,
                 asNavFor: '.product-small-thumb-3'
@@ -733,7 +741,7 @@
                 arrows: true,
                 dots: false,
                 focusOnSelect: true,
-                speed: 800,
+                speed: 400,
                 asNavFor: '.product-large-thumbnail-4',
                 prevArrow: '<button class="slide-arrow prev-arrow"><i class="fal fa-angle-left"></i></button>',
                 nextArrow: '<button class="slide-arrow next-arrow"><i class="fal fa-angle-right"></i></button>',
@@ -759,7 +767,7 @@
                 slidesToScroll: 1,
                 arrows: false,
                 dots: false,
-                speed: 800,
+                speed: 400,
                 draggable: false,
                 swipe: false,
                 asNavFor: '.product-small-thumb-4'
@@ -814,7 +822,7 @@
                 arrows: false,
                 dots: true,
                 focusOnSelect: false,
-                speed: 1000,
+                speed: 500,
                 autoplay: false,
                 asNavFor: '.slider-content-activation-one',
                 prevArrow: '<button class="slide-arrow prev-arrow"><i class="fal fa-long-arrow-left"></i></button>',
@@ -835,7 +843,7 @@
                 centerPadding: '0',
                 arrows: false,
                 dots: true,
-                speed: 1500,
+                speed: 750,
                 autoplay: false,
                 centerMode: true,
                 responsive: [{
@@ -854,7 +862,7 @@
                 arrows: false,
                 dots: false,
                 focusOnSelect: false,
-                speed: 1500,
+                speed: 750,
                 autoplay: true,
                 responsive: [{
                         breakpoint: 1199,
@@ -873,7 +881,7 @@
                 arrows: false,
                 dots: false,
                 focusOnSelect: false,
-                speed: 500,
+                speed: 250,
                 fade: true,
                 autoplay: false,
                 asNavFor: '.slider-thumb-activation-one',
@@ -888,7 +896,7 @@
                 dots: true,
                 fade: true,
                 focusOnSelect: false,
-                speed: 400
+                speed: 200
 
             });
 
@@ -902,7 +910,7 @@
                 fade: true,
                 adaptiveHeight: true,
                 cssEase: 'linear',
-                speed: 400
+                speed: 200
             });
 
             $('.team-slide-activation').slick({

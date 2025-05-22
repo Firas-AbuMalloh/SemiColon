@@ -53,6 +53,8 @@ C:\Users\Orange\Desktop\Finalmastr\WebApplication1\WebApplication1\bin\Debug\net
 C:\Users\Orange\Desktop\Finalmastr\WebApplication1\WebApplication1\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\Users\Orange\Desktop\Finalmastr\WebApplication1\WebApplication1\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Orange\Desktop\Finalmastr\WebApplication1\WebApplication1\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\Orange\Desktop\Finalmastr\WebApplication1\WebApplication1\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Orange\Desktop\Finalmastr\WebApplication1\WebApplication1\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
 C:\Users\Orange\Desktop\Finalmastr\WebApplication1\WebApplication1\bin\Debug\net8.0\System.ClientModel.dll
 C:\Users\Orange\Desktop\Finalmastr\WebApplication1\WebApplication1\bin\Debug\net8.0\System.CodeDom.dll
 C:\Users\Orange\Desktop\Finalmastr\WebApplication1\WebApplication1\bin\Debug\net8.0\System.Composition.AttributedModel.dll
@@ -170,5 +172,3 @@ C:\Users\Orange\Desktop\Finalmastr\WebApplication1\WebApplication1\obj\Debug\net
 C:\Users\Orange\Desktop\Finalmastr\WebApplication1\WebApplication1\obj\Debug\net8.0\SemiColon.pdb
 C:\Users\Orange\Desktop\Finalmastr\WebApplication1\WebApplication1\obj\Debug\net8.0\SemiColon.genruntimeconfig.cache
 C:\Users\Orange\Desktop\Finalmastr\WebApplication1\WebApplication1\obj\Debug\net8.0\ref\SemiColon.dll
-C:\Users\Orange\Desktop\Finalmastr\WebApplication1\WebApplication1\bin\Debug\net8.0\Newtonsoft.Json.dll
-C:\Users\Orange\Desktop\Finalmastr\WebApplication1\WebApplication1\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

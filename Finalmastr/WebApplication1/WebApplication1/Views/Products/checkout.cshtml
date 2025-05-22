@@ -1,186 +1,222 @@
-﻿
-
-@{
-	Layout = "~/Views/Shared/mainLayoutHeaderFooter.cshtml"; 
+﻿@{
+    Layout = "~/Views/Shared/mainLayoutHeaderFooter.cshtml"; 
+    ViewBag.Title = "Check out";
+    decimal discountValue = Model.FirstOrDefault()?.discount ?? 0;
+    decimal subtotalValue = Model.FirstOrDefault()?.Subtotal ?? 0;
+    decimal totalValue = Model.FirstOrDefault()?.Total ?? 0;
 }
 
 @model IEnumerable<SemiColon.Models.ViewModel.temporaryCart>
-
+@* @{ *@
+@*     decimal subTotal = 0; *@
+@*     decimal Total = 0; *@
+@* } *@
 
 <main class="main-wrapper">
     <!-- Start Checkout Area  -->
     <div class="axil-checkout-area axil-section-gap">
         <div class="container">
-            <form action="#">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="axil-checkout-notice">
+            <div class="axil-toggle-box">
+                <div class="toggle-bar">
+                    <i class="fas fa-pencil"></i> Have a coupon?
+                    <a href="javascript:void(1)" class="toggle-btn">
+                        Click here to enter your code
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                </div>
+
+
+                <div class="axil-checkout-coupon toggle-open">
+                    <p>If you have a coupon code, please apply it below.</p>
+                    @using (Html.BeginForm("checkDiscountCheckout", "Products", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="input-group">
+                            @Html.TextBox("discount", null, new { @class = "form-control", placeholder = "Enter coupon code" })
+                            <div class="apply-btn">
+                                <button type="submit" class="axil-btn btn-bg-primary">
+                                    Apply
+                                </button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            @using (Html.BeginForm("checkoutBtn", "Products", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="axil-checkout-notice">
                             @* <div class="axil-toggle-box"> *@
-                                @* <div class="toggle-bar"> *@
-                                @*     <i class="fas fa-user"></i> Returning customer? *@
-                                @*     <a href="javascript:void(0)" class="toggle-btn"> *@
-                                @*         Click here to login <i class="fas fa-angle-down"></i> *@
-                                @*     </a> *@
-                                @* </div> *@
-                                @* <div class="axil-checkout-login toggle-open"> *@
-                                @*     <p>If you didn't Logged in, Please Log in first.</p> *@
-                                @*     <div class="signin-box"> *@
-                                @*         <div class="form-group"> *@
-                                @*             <label>Email</label> *@
-                                @*             <input type="email" *@
-                                @*                    class="form-control" *@
-                                @*                    name="email" /> *@
-                                @*         </div> *@
-                                @*         <div class="form-group"> *@
-                                @*             <label>Password</label> *@
-                                @*             <input type="password" *@
-                                @*                    class="form-control" *@
-                                @*                    name="password" /> *@
-                                @*         </div> *@
-                                @*         <div class="form-group mb--0"> *@
-                                @*             <button type="submit" *@
-                                @*                     class="axil-btn btn-bg-primary submit-btn"> *@
-                                @*                 Sign In *@
-                                @*             </button> *@
-                                @*         </div> *@
-                                @*     </div> *@
-                                @* </div> *@
+                            @* <div class="toggle-bar"> *@
+                            @* <i class="fas fa-user"></i> Returning customer? *@
+                            @* <a href="javascript:void(0)" class="toggle-btn"> *@
+                            @* Click here to login <i class="fas fa-angle-down"></i> *@
+                            @* </a> *@
                             @* </div> *@
-                            <div class="axil-toggle-box">
-                                <div class="toggle-bar">
-                                    <i class="fas fa-pencil"></i> Have a coupon?
-                                    <a href="javascript:void(0)" class="toggle-btn">
-                                        Click here to enter your code
-                                        <i class="fas fa-angle-down"></i>
-                                    </a>
-                                </div>
-
-                                <div class="axil-checkout-coupon toggle-open">
-                                    <p>If you have a coupon code, please apply it below.</p>
-                                    <div class="input-group">
-                                        <input placeholder="Enter coupon code" type="text" />
-                                        <div class="apply-btn">
-                                            <button type="submit" class="axil-btn btn-bg-primary">
-                                                Apply
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @* <div class="axil-checkout-login toggle-open"> *@
+                            @* <p>If you didn't Logged in, Please Log in first.</p> *@
+                            @* <div class="signin-box"> *@
+                            @* <div class="form-group"> *@
+                            @* <label>Email</label> *@
+                            @* <input type="email" *@
+                            @* class="form-control" *@
+                            @* name="email" /> *@
+                            @* </div> *@
+                            @* <div class="form-group"> *@
+                            @* <label>Password</label> *@
+                            @* <input type="password" *@
+                            @* class="form-control" *@
+                            @* name="password" /> *@
+                            @* </div> *@
+                            @* <div class="form-group mb--0"> *@
+                            @* <button type="submit" *@
+                            @* class="axil-btn btn-bg-primary submit-btn"> *@
+                            @* Sign In *@
+                            @* </button> *@
+                            @* </div> *@
+                            @* </div> *@
+                            @* </div> *@
+                            @* </div> *@
                         </div>
                         <div class="axil-checkout-billing">
                             <h4 class="title mb--40">Billing details</h4>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label>First Name <span>*</span></label>
-                                        <input type="text" id="first-name" placeholder="Firas" />
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label>Last Name <span>*</span></label>
-                                        <input type="text" id="last-name" placeholder="AbuMalloh" />
-                                    </div>
-                                </div>
+                            @* <div class="row"> *@
+                            @* <div class="col-lg-6"> *@
+                            @* <div class="form-group"> *@
+                            @* <label>First Name <span>*</span></label> *@
+                            @* <input type="text" id="first-name" placeholder="Firas" /> *@
+                            @* </div> *@
+                            @* </div> *@
+                            @* <div class="col-lg-6"> *@
+                            @* <div class="form-group"> *@
+                            @* <label>Last Name <span>*</span></label> *@
+                            @* <input type="text" id="last-name" placeholder="AbuMalloh" /> *@
+                            @* </div> *@
+                            @* </div> *@
+                            @* </div> *@
+                            @* <div class="form-group"> *@
+                            @* <label>Company Name</label> *@
+                            @* <input type="text" id="company-name" /> *@
+                            @* </div> *@
+                            @* <div class="form-group"> *@
+                            @* <label>Country/ Region <span>*</span></label> *@
+                            @* <select id="Region"> *@
+                            @* <option value="3">Australia</option> *@
+                            @* <option value="4">England</option> *@
+                            @* <option value="6">New Zealand</option> *@
+                            @* <option value="5">Switzerland</option> *@
+                            @* <option value="1">United Kindom (UK)</option> *@
+                            @* <option value="2">United States (USA)</option> *@
+                            @* </select> *@
+                            @* </div> *@
+                            @* <div class="form-group"> *@
+                            @* <label>Street Address <span>*</span></label> *@
+                            @* <input type="text" *@
+                            @* id="address1" *@
+                            @* class="mb--15" *@
+                            @* placeholder="House number and street name" /> *@
+                            @* <input type="text" *@
+                            @* id="address2" *@
+                            @* placeholder="Apartment, suite, unit, etc. (optonal)" /> *@
+                            @* </div> *@
+                            @* <div class="form-group"> *@
+                            @* <label>Town/ City <span>*</span></label> *@
+                            @* <input type="text" id="town" /> *@
+                            @* </div> *@
+                            @* <div class="form-group"> *@
+                            @* <label>Country</label> *@
+                            @* <input type="text" id="country" /> *@
+                            @* </div> *@
+                            <div class="form-group">
+                                <label for="phone">Phone <span>*</span></label>
+                                @Html.TextBox("phone", null, new { type = "tel", id = "phone", required = "required" })
+                                <span class="text-danger">@Html.ValidationMessage("Phone")</span>
                             </div>
                             <div class="form-group">
-                                <label>Company Name</label>
-                                <input type="text" id="company-name" />
+                                <label for="email">Email Address <span>*</span></label>
+                                @Html.TextBox("email", null, new { type = "email", id = "email", required = "required" })
+                                <span class="text-danger">@Html.ValidationMessage("Email")</span>
                             </div>
-                            <div class="form-group">
-                                <label>Country/ Region <span>*</span></label>
-                                <select id="Region">
-                                    <option value="3">Australia</option>
-                                    <option value="4">England</option>
-                                    <option value="6">New Zealand</option>
-                                    <option value="5">Switzerland</option>
-                                    <option value="1">United Kindom (UK)</option>
-                                    <option value="2">United States (USA)</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Street Address <span>*</span></label>
-                                <input type="text"
-                                       id="address1"
-                                       class="mb--15"
-                                       placeholder="House number and street name" />
-                                <input type="text"
-                                       id="address2"
-                                       placeholder="Apartment, suite, unit, etc. (optonal)" />
-                            </div>
-                            <div class="form-group">
-                                <label>Town/ City <span>*</span></label>
-                                <input type="text" id="town" />
-                            </div>
-                            <div class="form-group">
-                                <label>Country</label>
-                                <input type="text" id="country" />
-                            </div>
-                            <div class="form-group">
-                                <label>Phone <span>*</span></label>
-                                <input type="tel" id="phone" />
-                            </div>
-                            <div class="form-group">
-                                <label>Email Address <span>*</span></label>
-                                <input type="email" id="email" />
-                            </div>
-                            <div class="form-group input-group">
-                                <input type="checkbox"
-                                       id="checkbox1"
-                                       name="account-create" />
-                                <label for="checkbox1">Create an account</label>
-                            </div>
+                            @* <div class="form-group input-group"> *@
+                            @* <input type="checkbox" *@
+                            @* id="checkbox1" *@
+                            @* name="account-create" /> *@
+                            @* <label for="checkbox1">Create an account</label> *@
+                            @* </div> *@
                             <div class="form-group different-shippng">
                                 <div class="toggle-bar">
                                     <a href="javascript:void(0)" class="toggle-btn">
-                                        <input type="checkbox"
-                                               id="checkbox2"
-                                               name="diffrent-ship" />
-                                        <label for="checkbox2">Ship to a different address?</label>
+                                        @Html.CheckBox("sendAsGift", false, new { id = "sendAsGiftCheckbox" })
+                                        <label for="sendAsGiftCheckbox">Send it as a Gift</label>
                                     </a>
                                 </div>
                                 <div class="toggle-open">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="firstNameGift">First Name (send to) <span>*</span></label>
+                                                @Html.TextBox("firstNameGift", null, new { type = "text", placeholder = "Firas", id = "firstNameGift" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="lastNameGift">Last Name (send to) <span>*</span></label>
+                                                @Html.TextBox("lastNameGift", null, new { type = "text", placeholder = "AbuMalloh", id = "lastNameGift" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @* <div class="form-group"> *@
+                                    @* <label>Country/ Region <span>*</span></label> *@
+                                    @* <select id="Region"> *@
+                                    @* <option value="3">Australia</option> *@
+                                    @* <option value="4">England</option> *@
+                                    @* <option value="6">New Zealand</option> *@
+                                    @* <option value="5">Switzerland</option> *@
+                                    @* <option value="1">United Kindom (UK)</option> *@
+                                    @* <option value="2">United States (USA)</option> *@
+                                    @* </select> *@
+                                    @* </div> *@
+                                    @* <div class="form-group"> *@
+                                    @* <label>Street Address <span>*</span></label> *@
+                                    @* <input type="text" *@
+                                    @* id="address1" *@
+                                    @* class="mb--15" *@
+                                    @* placeholder="House number and street name" /> *@
+                                    @* <input type="text" *@
+                                    @* id="address2" *@
+                                    @* placeholder="Apartment, suite, unit, etc. (optonal)" /> *@
+                                    @* </div> *@
+                                    @* <div class="form-group"> *@
+                                    @* <label>Town/ City <span>*</span></label> *@
+                                    @* <input type="text" id="town" /> *@
+                                    @* </div> *@
+                                    @* <div class="form-group"> *@
+                                    @* <label>Country</label> *@
+                                    @* <input type="text" id="country" /> *@
+                                    @* </div> *@
                                     <div class="form-group">
-                                        <label>Country/ Region <span>*</span></label>
-                                        <select id="Region">
-                                            <option value="3">Australia</option>
-                                            <option value="4">England</option>
-                                            <option value="6">New Zealand</option>
-                                            <option value="5">Switzerland</option>
-                                            <option value="1">United Kindom (UK)</option>
-                                            <option value="2">United States (USA)</option>
-                                        </select>
+                                        <label for="phoneGift">Phone (send to) <span>*</span></label>
+                                        @Html.TextBox("phoneGift", null, new { type = "tel", id = "phoneGift" })
                                     </div>
                                     <div class="form-group">
-                                        <label>Street Address <span>*</span></label>
-                                        <input type="text"
-                                               id="address1"
-                                               class="mb--15"
-                                               placeholder="House number and street name" />
-                                        <input type="text"
-                                               id="address2"
-                                               placeholder="Apartment, suite, unit, etc. (optonal)" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Town/ City <span>*</span></label>
-                                        <input type="text" id="town" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Country</label>
-                                        <input type="text" id="country" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Phone <span>*</span></label>
-                                        <input type="tel" id="phone" />
+                                        <label for="emailGift">Email Address (send to) <span>*</span></label>
+                                        @Html.TextBox("emailGift", null, new { type = "tel", id = "emailGift" })
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Other Notes (optional)</label>
-                                <textarea id="notes"
-                                          rows="2"
-                                          placeholder="Notes about your order, e.g. speacial notes for delivery."></textarea>
+                                <label for="massegeGift">Your Massege (optional)</label>
+                                @Html.TextArea("massegeGift", null, new { rows = "2", placeholder = "Notes about your gift, e.g. Thank you for what you have provided. I wish you more creativity..", id = "massegeGift" })
                             </div>
                         </div>
                     </div>
@@ -196,85 +232,95 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
-                                        @foreach(var item in Model){
-                                        <tr class="order-product">
-                                            <td>
-                                                @item.CardName <span class="quantity">x @item.Quantity</span>
-                                            </td>
-                                            <td>@(item.Price * item.Quantity)</td>
-                                        </tr>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr class="order-product">
+                                                <td>
+                                                    @item.CardName <span class="quantity">x @item.Quantity</span>
+                                                </td>
+                                                <td>@(item.Price * item.Quantity)</td>
+                                            </tr>
+                                            @* subTotal = subTotal + (item.Price * item.Quantity); *@
                                         }
                                         <tr class="order-subtotal">
+                                            <td>Discount</td>
+                                            <td>$@discountValue</td>
+                                        </tr>
+                                        <tr class="order-subtotal">
                                             <td>Subtotal</td>
-                                            <td>$117.00</td>
+                                            <td>$@subtotalValue</td>
                                         </tr>
-                                        <tr class="order-shipping">
-                                            <td colspan="2">
-                                                <div class="shipping-amount">
-                                                    <span class="title">Shipping Method</span>
-                                                    <span class="amount">$35.00</span>
-                                                </div>
-                                                <div class="input-group">
-                                                    <input type="radio"
-                                                           id="radio1"
-                                                           name="shipping"
-                                                           checked />
-                                                    <label for="radio1">Free Shippping</label>
-                                                </div>
-                                                <div class="input-group">
-                                                    <input type="radio" id="radio2" name="shipping" />
-                                                    <label for="radio2">Local</label>
-                                                </div>
-                                                <div class="input-group">
-                                                    <input type="radio" id="radio3" name="shipping" />
-                                                    <label for="radio3">Flat rate</label>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        @* <tr class="order-shipping"> *@
+                                        @* <td colspan="2"> *@
+                                        @* <div class="shipping-amount"> *@
+                                        @* <span class="title">Shipping Method</span> *@
+                                        @* <span class="amount">$35.00</span> *@
+                                        @* </div> *@
+                                        @* <div class="input-group"> *@
+                                        @* <input type="radio" *@
+                                        @* id="radio1" *@
+                                        @* name="shipping" *@
+                                        @* checked /> *@
+                                        @* <label for="radio1">Free Shippping</label> *@
+                                        @* </div> *@
+                                        @* <div class="input-group"> *@
+                                        @* <input type="radio" id="radio2" name="shipping" /> *@
+                                        @* <label for="radio2">Local</label> *@
+                                        @* </div> *@
+                                        @* <div class="input-group"> *@
+                                        @* <input type="radio" id="radio3" name="shipping" /> *@
+                                        @* <label for="radio3">Flat rate</label> *@
+                                        @* </div> *@
+                                        @* </td> *@
+                                        @* </tr> *@
                                         <tr class="order-total">
                                             <td>Total</td>
-                                            <td class="order-total-amount">$323.00</td>
+                                            @* @(Total=subTotal*) *@
+                                            <td class="order-total-amount">$@totalValue</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="order-payment-method">
+                                @* <div class="single-payment"> *@
+                                @* <div class="input-group"> *@
+                                @* <input type="radio" id="radio4" name="payment" /> *@
+                                @* <label for="radio4">Direct bank transfer</label> *@
+                                @* </div> *@
+                                @* <p> *@
+                                @* Make your payment directly into our bank account. Please *@
+                                @* use your Order ID as the payment reference. Your order *@
+                                @* will not be shipped until the funds have cleared in our *@
+                                @* account. *@
+                                @* </p> *@
+                                @* </div> *@
                                 <div class="single-payment">
                                     <div class="input-group">
-                                        <input type="radio" id="radio4" name="payment" />
-                                        <label for="radio4">Direct bank transfer</label>
+                                        @Html.RadioButton("payment", "balance", false, new { id = "radio5", required = "required" })
+                                        <label for="radio5">Cash on from balance</label>
                                     </div>
-                                    <p>
-                                        Make your payment directly into our bank account. Please
-                                        use your Order ID as the payment reference. Your order
-                                        will not be shipped until the funds have cleared in our
-                                        account.
-                                    </p>
-                                </div>
-                                <div class="single-payment">
-                                    <div class="input-group">
-                                        <input type="radio" id="radio5" name="payment" />
-                                        <label for="radio5">Cash on delivery</label>
-                                    </div>
-                                    <p>Pay with cash upon delivery.</p>
+                                    <p>Pay with cash from balance.</p>
                                 </div>
                                 <div class="single-payment">
                                     <div class="input-group justify-content-between align-items-center">
-                                        <input type="radio"
-                                               id="radio6"
-                                               name="payment"
-                                               checked />
+                                        @Html.RadioButton("payment", "paypal", true, new { id = "radio6", required = "required" })
                                         <label for="radio6">Paypal</label>
-                                        <img src="~/assets/images/others/payment.png"
+                                        <img src="@Url.Content("~/assets/images/others/payment.png")"
                                              alt="Paypal payment" />
                                     </div>
                                     <p>
                                         Pay via PayPal; you can pay with your credit card if you
-                                        don’t have a PayPal account.
+                                        don't have a PayPal account.
                                     </p>
                                 </div>
+                                <span class="text-danger">@Html.ValidationMessage("PaymentMethod")</span>
                             </div>
+
+                            @* Use string format to ensure proper decimal format *@
+                            <input type="hidden" name="discount" value="@discountValue.ToString("0.00")" />
+                            <input type="hidden" name="subtotal" value="@subtotalValue.ToString("0.00")" />
+                            <input type="hidden" name="total" value="@totalValue.ToString("0.00")" />
+
                             <button type="submit"
                                     class="axil-btn btn-bg-primary checkout-btn">
                                 Process to Checkout
@@ -282,8 +328,94 @@
                         </div>
                     </div>
                 </div>
-            </form>
+            }
         </div>
-    </div>
     <!-- End Checkout Area  -->
 </main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form[action*="checkoutBtn"]');
+        const phoneInput = document.getElementById('phone');
+        const emailInput = document.getElementById('email');
+        const paymentInputs = document.querySelectorAll('input[name="payment"]');
+        const giftCheckbox = document.getElementById('sendAsGiftCheckbox');
+        const giftFields = document.querySelectorAll('#firstNameGift, #lastNameGift, #phoneGift, #emailGift');
+
+        // Toggle gift fields based on checkbox
+        giftCheckbox.addEventListener('change', function() {
+            const isGift = this.checked;
+            giftFields.forEach(field => {
+                field.required = isGift;
+            });
+        });
+
+        form.addEventListener('submit', function(event) {
+            let isValid = true;
+
+            // Check phone
+            if (!phoneInput.value) {
+                phoneInput.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                phoneInput.classList.remove('is-invalid');
+            }
+
+            // Check email
+            if (!emailInput.value) {
+                emailInput.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                emailInput.classList.remove('is-invalid');
+            }
+
+            // Check payment method
+            let paymentSelected = false;
+            paymentInputs.forEach(input => {
+                if (input.checked) {
+                    paymentSelected = true;
+                }
+            });
+
+            if (!paymentSelected) {
+                isValid = false;
+                document.querySelector('.order-payment-method').classList.add('has-error');
+            } else {
+                document.querySelector('.order-payment-method').classList.remove('has-error');
+            }
+
+            // Check gift fields if gift option is selected
+            if (giftCheckbox.checked) {
+                giftFields.forEach(field => {
+                    if (!field.value && field.id !== 'massegeGift') {
+                        field.classList.add('is-invalid');
+                        isValid = false;
+                    } else {
+                        field.classList.remove('is-invalid');
+                    }
+                });
+            }
+
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+    });
+</script>
+
+<style>
+    .is-invalid {
+        border-color: #dc3545 !important;
+    }
+    .has-error {
+        border: 1px solid #dc3545;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .text-danger {
+        color: #dc3545;
+        font-size: 14px;
+        margin-top: 5px;
+        display: block;
+    }
+</style>

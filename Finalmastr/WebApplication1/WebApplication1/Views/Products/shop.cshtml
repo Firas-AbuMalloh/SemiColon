@@ -1,10 +1,68 @@
-﻿
-
-@{
+﻿@{
     Layout = "~/Views/Shared/mainLayoutHeaderFooter.cshtml";
+    ViewBag.Title = "ٍShop";
 }
 @model IEnumerable<SemiColon.Models.Card>
 
+<style>
+    .productss {
+        height: 800px !important;
+        padding-bottom: 40rem !important;
+        overflow-y: scroll !important;
+        scrollbar-width: auto; /* يظهر شريط التمرير بشكل واضح في Firefox */
+        scrollbar-color: #3A3A3A #F5F5F5; /* لون الشريط + الخلفية */
+    }
+
+        /* تنسيق شريط التمرير لمتصفحات Chrome/Edge/Safari */
+        .productss::-webkit-scrollbar {
+            width: 12px; /* عرض أكبر للوضوح */
+        }
+
+        .productss::-webkit-scrollbar-track {
+            background: #F5F5F5;
+            border-radius: 10px;
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); /* تأثير عمق */
+            border: 1px solid #E0E0E0; /* حدود لتوضيح المسار */
+        }
+
+        .productss::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #3A3A3A, #6D6D6D); /* تدرج لوني */
+            border-radius: 10px;
+            border: 2px solid #F5F5F5; /* حدود بيضاء لفصل الشريط عن المسار */
+            transition: all 0.3s ease; /* حركة سلسة */
+        }
+
+            .productss::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(45deg, #2C2C2C, #5A5A5A); /* تدرج داكن عند التحويم */
+                transform: scale(1.05); /* تكبير بسيط للإشارة إلى التفاعل */
+                cursor: grab; /* أيقونة اليد للإمساك */
+            }
+
+            .productss::-webkit-scrollbar-thumb:active {
+                cursor: grabbing; /* أيقونة اليد أثناء السحب */
+                background: linear-gradient(45deg, #1E1E1E, #4A4A4A);
+            }
+
+    /* رسوم متحركة لفتح الانتباه */
+    @@keyframes pulse-scrollbar {
+        0% {
+            opacity: 0.7;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0.7;
+        }
+    }
+
+    /* تطبيق الرسوم المتحركة عند التحميل */
+    .productss::-webkit-scrollbar-thumb {
+        animation: pulse-scrollbar 2s infinite;
+    }
+</style>
 <main class="main-wrapper">
     <!-- Start Breadcrumb Area  -->
     <div class="axil-breadcrumb-area">
@@ -34,60 +92,62 @@
     <!-- Start Shop Area  -->
     <div class="axil-shop-area axil-section-gap bg-color-white">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="axil-shop-top">
-                        <div class="row">
-                            <div class="col-lg-9">
-                                <div class="category-select">
+            @* <div class="row"> *@
+            @*     <div class="col-lg-12"> *@
+            @*         <div class="axil-shop-top"> *@
+            @*             <div class="row"> *@
 
-                                    <!-- Start Single Select  -->
-                                    <select class="single-select">
-                                        <option>Categories</option>
-                                        <option>Fashion</option>
-                                        <option>Electronics</option>
-                                        <option>Furniture</option>
-                                        <option>Beauty</option>
-                                    </select>
-                                    <!-- End Single Select  -->
-                                    <!-- Start Single Select  -->
-                                    <select class="single-select">
-                                        <option>Color</option>
-                                        <option>Red</option>
-                                        <option>Blue</option>
-                                        <option>Green</option>
-                                        <option>Pink</option>
-                                    </select>
-                                    <!-- End Single Select  -->
-                                    <!-- Start Single Select  -->
-                                    <select class="single-select">
-                                        <option>Price Range</option>
-                                        <option>0 - 100</option>
-                                        <option>100 - 500</option>
-                                        <option>500 - 1000</option>
-                                        <option>1000 - 1500</option>
-                                    </select>
-                                    <!-- End Single Select  -->
+            @*                 <div class="col-lg-9"> *@
+            @*                     <div class="category-select"> *@
 
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="category-select mt_md--10 mt_sm--10 justify-content-lg-end">
-                                    <!-- Start Single Select  -->
-                                    <select class="single-select">
-                                        <option>Sort by Latest</option>
-                                        <option>Sort by Name</option>
-                                        <option>Sort by Price</option>
-                                        <option>Sort by Viewed</option>
-                                    </select>
-                                    <!-- End Single Select  -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row row--15">
+            @*                         <!-- Start Single Select  --> *@
+            @*                         <select class="single-select"> *@
+            @*                             <option>Categories</option> *@
+            @*                             <option>Fashion</option> *@
+            @*                             <option>Electronics</option> *@
+            @*                             <option>Furniture</option> *@
+            @*                             <option>Beauty</option> *@
+            @*                         </select> *@
+            @*                         <!-- End Single Select  --> *@
+            @*                         <!-- Start Single Select  --> *@
+            @*                         <select class="single-select"> *@
+            @*                             <option>Color</option> *@
+            @*                             <option>Red</option> *@
+            @*                             <option>Blue</option> *@
+            @*                             <option>Green</option> *@
+            @*                             <option>Pink</option> *@
+            @*                         </select> *@
+            @*                         <!-- End Single Select  --> *@
+            @*                         <!-- Start Single Select  --> *@
+            @*                         <select class="single-select"> *@
+            @*                             <option>Price Range</option> *@
+            @*                             <option>0 - 100</option> *@
+            @*                             <option>100 - 500</option> *@
+            @*                             <option>500 - 1000</option> *@
+            @*                             <option>1000 - 1500</option> *@
+            @*                         </select> *@
+            @*                         <!-- End Single Select  --> *@
+
+            @*                     </div> *@
+            @*                 </div> *@
+
+            @*                 <div class="col-lg-3"> *@
+            @*                     <div class="category-select mt_md--10 mt_sm--10 justify-content-lg-end"> *@
+            @*                         <!-- Start Single Select  --> *@
+            @*                         <select class="single-select"> *@
+            @*                             <option>Sort by Latest</option> *@
+            @*                             <option>Sort by Name</option> *@
+            @*                             <option>Sort by Price</option> *@
+            @*                             <option>Sort by Viewed</option> *@
+            @*                         </select> *@
+            @*                         <!-- End Single Select  --> *@
+            @*                     </div> *@
+            @*                 </div> *@
+            @*             </div> *@
+            @*         </div> *@
+            @*     </div> *@
+            @* </div> *@
+            <div class="row row--15 productss">
                 <!-- start Single Product  -->
 
                 @foreach (var products in Model)
@@ -101,13 +161,23 @@
 
                                 </a>
                                 <div class="label-block label-right">
-                                    <div class="product-badget">20% OFF</div>
+                                    @* <div class="product-badget">20% OFF</div> *@
                                 </div>
                                 <div class="product-hover-action">
                                     <ul class="cart-action">
-                                        <li class="wishlist"><a href="wishlist.html"><i class="far fa-heart"></i></a></li>
-                                        <li class="select-option"><a asp-action="addToCart" asp-controller="Products" asp-route-id="@products.Id">Add to Cart</a></li>
-                                        <li class="quickview"><a href="#" data-bs-toggle="modal" data-bs-target="#quick-view-modal"><i class="far fa-eye"></i></a></li>
+                                        <li class="wishlist">
+                                            <a href="#" class="addToFavoritesBtn" data-product-id="@products.Id">
+                                                <i class="far fa-heart"></i>
+                                            </a>
+                                        </li>
+                                        <li class="select-option">
+                                            <a href="#" class="addToCartBtn" data-product-id="@products.Id">Add to Cart</a>
+                                        </li>
+                                        <li class="quickview">
+                                            <a asp-action="productDetails" asp-controller="Products" asp-route-id="@products.Id">
+                                                <i class="far fa-eye"></i>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -140,12 +210,12 @@
             <div class="etrade-newsletter-wrapper bg_image bg_image--5">
                 <div class="newsletter-content">
                     <span class="title-highlighter highlighter-primary2"><i class="fas fa-envelope-open"></i>Newsletter</span>
-                    <h2 class="title mb--40 mb_sm--30">Get weekly update</h2>
+                    <h2 class="title mb--40 mb_sm--30" style="color:aliceblue">Get weekly update</h2>
                     <div class="input-group newsletter-form">
                         <div class="position-relative newsletter-inner mb--15">
                             <input placeholder="example@gmail.com" type="text">
                         </div>
-                        <button type="submit" class="axil-btn mb--15">Subscribe</button>
+                        <button type="submit" class="axil-btn mb--15 ">Subscribe</button>
                     </div>
                 </div>
             </div>
@@ -154,3 +224,209 @@
     </div>
     <!-- End Axil Newsletter Area  -->
 </main>
+
+<script>
+    document.querySelector('.productss').addEventListener('scroll', function() {
+        this.style.setProperty('--scrollbar-animation', 'none');
+    }, { once: true });
+</script>
+
+@section Scripts {
+    <script>
+        // Create Toast notification style
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        });
+
+        $(document).ready(function () {
+            // Prevent multiple clicks processing
+            let isProcessing = false;
+            
+            // Load user's favorites
+            loadUserFavorites();
+            
+            // إعادة ربط أحداث المفضلة لعلاج مشكلة عدم القدرة على إزالة المنتج بعد إضافته
+            function attachFavoritesHandlers() {
+                // إزالة معالجات الأحداث السابقة ثم ربط معالج جديد
+                $('.addToFavoritesBtn').off('click').on('click', function (e) {
+                e.preventDefault();
+                
+                if (isProcessing) return;
+                isProcessing = true;
+                
+                var $button = $(this);
+                var $heartIcon = $button.find('i');
+                var productId = $button.data('product-id');
+                
+                // Show loading state
+                $heartIcon.removeClass('far fas').addClass('fa-spinner fa-spin');
+                
+                $.ajax({
+                    url: '/Products/addToFavorites',
+                    type: 'POST',
+                    data: { id: productId },
+                    success: function(response) {
+                        if (response.success) {
+                            // Update favorites count in header
+                            $.ajax({
+                                url: '/Products/GetFavoritesCount',
+                                type: 'GET',
+                                success: function(countResponse) {
+                                    if (countResponse.success) {
+                                        const favCount = parseInt(countResponse.favoritesCount);
+                                        $('.favorites-count').text(favCount);
+                                        if (favCount === 0) {
+                                            $('.favorites-count').addClass('hidden');
+                                        } else {
+                                            $('.favorites-count').removeClass('hidden');
+                                        }
+                                    }
+                                }
+                            });
+                            
+                            // Toggle heart icon
+                            $heartIcon.removeClass('fa-spinner fa-spin');
+                            if (response.added) {
+                                $heartIcon.removeClass('far').addClass('fas'); // Solid heart - مفضل
+                                // تحديث جميع الأيقونات لنفس المنتج
+                                $('.addToFavoritesBtn[data-product-id="' + productId + '"] i').removeClass('far').addClass('fas');
+                                
+                                // Direct toast notification
+                                Toast.fire({
+                                    icon: 'success',
+                                    title: 'Added to Wishlist'
+                                });
+                            } else {
+                                $heartIcon.removeClass('fas').addClass('far'); // Outline heart - غير مفضل
+                                // تحديث جميع الأيقونات لنفس المنتج
+                                $('.addToFavoritesBtn[data-product-id="' + productId + '"] i').removeClass('fas').addClass('far');
+                                
+                                // Direct toast notification
+                                Toast.fire({
+                                    icon: 'info',
+                                    title: 'Removed from Wishlist'
+                                });
+                            }
+                        } else {
+                            // Reset icon
+                            $heartIcon.removeClass('fa-spinner fa-spin').addClass('far');
+                            
+                            Toast.fire({
+                                icon: 'error',
+                                title: 'Failed to update wishlist'
+                            });
+                        }
+                    },
+                    error: function() {
+                        // Reset icon
+                        $heartIcon.removeClass('fa-spinner fa-spin').addClass('far');
+                        
+                        Toast.fire({
+                            icon: 'error',
+                            title: 'Error occurred'
+                        });
+                    },
+                    complete: function() {
+                        isProcessing = false;
+                        // إعادة ربط معالجات الأحداث بعد الانتهاء
+                        attachFavoritesHandlers();
+                    }
+                });
+            }
+            
+            // تفعيل معالج الأحداث الأول
+            attachFavoritesHandlers();
+            
+            // Add to cart with preventing double submissions
+            $('.addToCartBtn').click(function (e) {
+                e.preventDefault();
+                
+                if (isProcessing) return;
+                isProcessing = true;
+                
+                var $button = $(this);
+                var productId = $button.data('product-id');
+                
+                // Show loading state
+                var originalText = $button.text();
+                $button.text('Adding...').addClass('disabled');
+                
+                $.ajax({
+                    url: '/Products/addToCart',
+                    type: 'POST',
+                    data: { id: productId },
+                    success: function (response) {
+                        if (response.success) {
+                            // Update cart count
+                            $('.cart-count').text(response.cartCount);
+                            if (response.cartCount > 0) {
+                                $('.cart-count').removeClass('hidden');
+                            }
+                            
+                            // Direct toast notification
+                            Toast.fire({
+                                icon: 'success',
+                                title: 'Added to Cart'
+                            });
+                        } else {
+                            Toast.fire({
+                                icon: 'error',
+                                title: 'Failed to add to cart'
+                            });
+                        }
+                    },
+                    error: function () {
+                        Toast.fire({
+                            icon: 'error',
+                            title: 'Error occurred'
+                        });
+                    },
+                    complete: function () {
+                        // Reset button state
+                        $button.text(originalText).removeClass('disabled');
+                        isProcessing = false;
+                    }
+                });
+            });
+        });
+        
+        // Function to load and display user's favorites
+        function loadUserFavorites() {
+            console.log("Shop: Loading user favorites...");
+            $.ajax({
+                url: '/Products/GetUserFavorites',
+                type: 'GET',
+                success: function(response) {
+                    console.log("Shop: Favorites response received", response);
+                    if (response.success && response.favorites) {
+                        // Update heart icons for user's favorite items
+                        $('.addToFavoritesBtn').each(function() {
+                            const $btn = $(this);
+                            const productId = $btn.data('product-id');
+                            if (response.favorites.includes(productId)) {
+                                console.log("Product " + productId + " is in favorites");
+                                $btn.find('i').removeClass('far').addClass('fas');
+                            } else {
+                                $btn.find('i').removeClass('fas').addClass('far');
+                            }
+                        });
+                    }
+                    else {
+                        console.log("No favorites found or error in response");
+                    }
+                },
+                error: function() {
+                    console.log('Error loading user favorites');
+                }
+            });
+        }
+    </script>
+}

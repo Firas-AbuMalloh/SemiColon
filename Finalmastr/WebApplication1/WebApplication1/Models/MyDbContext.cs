@@ -33,11 +33,15 @@ public partial class MyDbContext : DbContext
 
     public virtual DbSet<ContactFeedBack> ContactFeedBacks { get; set; }
 
+    public virtual DbSet<Discount> Discounts { get; set; }
+
     public virtual DbSet<Dispute> Disputes { get; set; }
 
     public virtual DbSet<Favorite> Favorites { get; set; }
 
     public virtual DbSet<Image> Images { get; set; }
+
+    public virtual DbSet<MainCategory> MainCategories { get; set; }
 
     public virtual DbSet<Order> Orders { get; set; }
 
@@ -53,11 +57,13 @@ public partial class MyDbContext : DbContext
 
     public virtual DbSet<Seller> Sellers { get; set; }
 
+    public virtual DbSet<Testimonial> Testimonials { get; set; }
+
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=DESKTOP-HBCC5GE;Database=SemiColon;Trusted_Connection=True;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server= DESKTOP-HBCC5GE ;Database= SemiColon ;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -248,6 +254,11 @@ public partial class MyDbContext : DbContext
                 .HasMaxLength(255)
                 .IsUnicode(false)
                 .HasColumnName("image_url");
+            entity.Property(e => e.MainCategoryId).HasColumnName("MainCategoryID");
+
+            entity.HasOne(d => d.MainCategory).WithMany(p => p.Categories)
+                .HasForeignKey(d => d.MainCategoryId)
+                .HasConstraintName("FK_Categories_MainCategories");
         });
 
         modelBuilder.Entity<ContactFeedBack>(entity =>
@@ -257,15 +268,43 @@ public partial class MyDbContext : DbContext
             entity.Property(e => e.Email)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.Message)
-                .HasMaxLength(300)
+            entity.Property(e => e.IsPublished).HasColumnName("isPublished");
+            entity.Property(e => e.Message).HasColumnName("message");
+            entity.Property(e => e.Name)
+                .HasMaxLength(255)
                 .IsUnicode(false)
-                .HasColumnName("message");
+                .HasDefaultValue("");
             entity.Property(e => e.Phone)
                 .HasMaxLength(20)
                 .IsUnicode(false)
                 .HasColumnName("phone");
+            entity.Property(e => e.Subject)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasDefaultValue("");
             entity.Property(e => e.UserId).HasColumnName("userId");
+        });
+
+        modelBuilder.Entity<Discount>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Discount__3214EC271BEC36FD");
+
+            entity.HasIndex(e => e.DiscountCode, "UQ__Discount__A1120AF5AB7EA47D").IsUnique();
+
+            entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.Description).HasMaxLength(255);
+            entity.Property(e => e.DiscountCode).HasMaxLength(50);
+            entity.Property(e => e.DiscountValue).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.EndDate).HasColumnType("datetime");
+            entity.Property(e => e.IsActive).HasDefaultValue(true);
+            entity.Property(e => e.IsPercentage).HasDefaultValue(true);
+            entity.Property(e => e.StartDate).HasColumnType("datetime");
+            entity.Property(e => e.UpdatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
         });
 
         modelBuilder.Entity<Dispute>(entity =>
@@ -350,6 +389,19 @@ public partial class MyDbContext : DbContext
                 .HasConstraintName("FK__Images__SellerID__4C6B5938");
         });
 
+        modelBuilder.Entity<MainCategory>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__MainCate__3214EC2764DE5F4A");
+
+            entity.HasIndex(e => e.MainCategoryName, "UQ__MainCate__121AD3E3DA96277A").IsUnique();
+
+            entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.MainCategoryName).HasMaxLength(255);
+        });
+
         modelBuilder.Entity<Order>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Orders__3214EC27F9B43D32");
@@ -360,13 +412,36 @@ public partial class MyDbContext : DbContext
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
+            entity.Property(e => e.DiscountValue).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.Email)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+            entity.Property(e => e.EmailGift)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+            entity.Property(e => e.FirstNameGift)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.LastNameGift)
+                .HasMaxLength(50)
+                .IsUnicode(false);
             entity.Property(e => e.OrderDate)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
+            entity.Property(e => e.PaymentMethod)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.PhoneNumber)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.PhoneNumberGift)
+                .HasMaxLength(20)
+                .IsUnicode(false);
             entity.Property(e => e.Status)
                 .HasMaxLength(20)
                 .IsUnicode(false)
                 .HasDefaultValue("Pending");
+            entity.Property(e => e.Subtotal).HasColumnType("decimal(10, 2)");
             entity.Property(e => e.TotalAmount).HasColumnType("decimal(10, 2)");
             entity.Property(e => e.UserId).HasColumnName("UserID");
 
@@ -540,6 +615,24 @@ public partial class MyDbContext : DbContext
                 .HasConstraintName("FK__Sellers__UserID__395884C4");
         });
 
+        modelBuilder.Entity<Testimonial>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Testimon__3214EC075B9E6E6F");
+
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.Subject).HasMaxLength(255);
+            entity.Property(e => e.UserEmail)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.UserName).HasMaxLength(255);
+
+            entity.HasOne(d => d.User).WithMany(p => p.Testimonials)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK_ContactFeedBack_Users");
+        });
+
         modelBuilder.Entity<User>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Users__3214EC2708B8AEB2");
@@ -551,6 +644,7 @@ public partial class MyDbContext : DbContext
             entity.HasIndex(e => e.Email, "idx_users_email");
 
             entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.Country).HasMaxLength(25);
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");

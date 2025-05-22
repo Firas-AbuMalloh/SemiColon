@@ -1,0 +1,181 @@
+@using SemiColon.Models
+@model SemiColon.Models.ViewModel.adminProfileViewModel
+@{
+    Layout = "~/Views/Shared/mainLayoutHeaderFooter.cshtml";
+    ViewBag.Title = "Admin Dashboard";
+    
+    <!-- Add ApexCharts reference -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+    // Define common variables here to avoid redefinition errors
+    var globalToday = DateTime.Today;
+    var startOfWeek = globalToday.AddDays(-(int)globalToday.DayOfWeek);
+    var startOfMonth = new DateTime(globalToday.Year, globalToday.Month, 1);
+    var lastMonth = startOfMonth.AddMonths(-1);
+    
+    // Orders Stats - Using all orders for the entire system, not just current user
+    var allOrders = Model._orders.ToList();
+    var totalOrderCount = allOrders.Count();
+    var ordersTodayCount = allOrders.Count(o => o.CreatedAt.HasValue && o.CreatedAt.Value.Date == globalToday.Date);
+    var ordersYesterdayCount = allOrders.Count(o => o.CreatedAt.HasValue && o.CreatedAt.Value.Date == globalToday.Date.AddDays(-1));
+    var ordersThisWeekCount = allOrders.Count(o => o.CreatedAt.HasValue && o.CreatedAt.Value.Date >= startOfWeek && o.CreatedAt.Value.Date <= globalToday);
+    var ordersThisMonthCount = allOrders.Count(o => o.CreatedAt.HasValue && o.CreatedAt.Value.Date >= startOfMonth && o.CreatedAt.Value.Date <= globalToday);
+    var ordersLastMonthCount = allOrders.Count(o => o.CreatedAt.HasValue && o.CreatedAt.Value.Month == lastMonth.Month && o.CreatedAt.Value.Year == lastMonth.Year);
+    var orderPercentChange = ordersYesterdayCount > 0 ? ((decimal)(ordersTodayCount - ordersYesterdayCount) / ordersYesterdayCount * 100) : (ordersTodayCount > 0 ? 100 : 0);
+    var orderChangeIcon = orderPercentChange >= 0 ? "fa-arrow-up" : "fa-arrow-down";
+    var orderChangeClass = orderPercentChange == 0 ? "text-muted" : (orderPercentChange > 0 ? "text-success" : "text-danger");
+    
+    // Count unique users who made orders
+    var uniqueUserCount = allOrders.Select(o => o.UserId).Distinct().Count();
+    
+    // Revenue Stats
+    var completedOrdersForRevenue = allOrders.Where(o => o.Status != null && (o.Status.Equals("Completed", StringComparison.OrdinalIgnoreCase) || o.Status.Equals("Delivered", StringComparison.OrdinalIgnoreCase))).ToList();
+    var totalRevenue = completedOrdersForRevenue.Sum(o => o.TotalAmount);
+    
+    var ordersTodayForRevenue = allOrders.Where(o => o.CreatedAt.HasValue && o.CreatedAt.Value.Date == globalToday.Date && o.Status != null && (o.Status.Equals("Completed", StringComparison.OrdinalIgnoreCase) || o.Status.Equals("Delivered", StringComparison.OrdinalIgnoreCase))).ToList();
+    var revenueToday = ordersTodayForRevenue.Sum(o => o.TotalAmount);
+    
+    var ordersYesterdayForRevenue = allOrders.Where(o => o.CreatedAt.HasValue && o.CreatedAt.Value.Date == globalToday.Date.AddDays(-1) && o.Status != null && (o.Status.Equals("Completed", StringComparison.OrdinalIgnoreCase) || o.Status.Equals("Delivered", StringComparison.OrdinalIgnoreCase))).ToList();
+    var revenueYesterday = ordersYesterdayForRevenue.Sum(o => o.TotalAmount);
+    
+    var revenueThisWeek = allOrders
+        .Where(o => o.CreatedAt.HasValue && o.CreatedAt.Value.Date >= startOfWeek && o.CreatedAt.Value.Date <= globalToday && o.Status != null && (o.Status.Equals("Completed", StringComparison.OrdinalIgnoreCase) || o.Status.Equals("Delivered", StringComparison.OrdinalIgnoreCase)))
+        .Sum(o => o.TotalAmount);
+        
+    var revenueThisMonth = allOrders
+        .Where(o => o.CreatedAt.HasValue && o.CreatedAt.Value.Date >= startOfMonth && o.CreatedAt.Value.Date <= globalToday && o.Status != null && (o.Status.Equals("Completed", StringComparison.OrdinalIgnoreCase) || o.Status.Equals("Delivered", StringComparison.OrdinalIgnoreCase)))
+        .Sum(o => o.TotalAmount);
+    
+    var revenuePercentChange = revenueYesterday > 0 ? ((revenueToday - revenueYesterday) / revenueYesterday * 100) : (revenueToday > 0 ? 100 : 0);
+    var revenueIcon = revenuePercentChange >= 0 ? "fa-arrow-up" : "fa-arrow-down";
+    var revenueChangeClass = revenuePercentChange == 0 ? "text-muted" : (revenuePercentChange > 0 ? "text-success" : "text-danger");
+    
+    // Average Order Value
+    var avgOrderValue = totalOrderCount > 0 ? totalRevenue / totalOrderCount : 0;
+    
+    // User Stats
+    var allUsers = Model._allUsers.ToList();
+    var totalUserCount = allUsers.Count();
+    var newUsersTodayCount = allUsers.Count(u => u.CreatedAt.HasValue && u.CreatedAt.Value.Date == globalToday.Date);
+    var newUsersYesterdayCount = allUsers.Count(u => u.CreatedAt.HasValue && u.CreatedAt.Value.Date == globalToday.Date.AddDays(-1));
+    var newUsersThisWeekCount = allUsers.Count(u => u.CreatedAt.HasValue && u.CreatedAt.Value.Date >= startOfWeek && u.CreatedAt.Value.Date <= globalToday.Date);
+    var newUsersThisMonthCount = allUsers.Count(u => u.CreatedAt.HasValue && u.CreatedAt.Value.Date >= startOfMonth && u.CreatedAt.Value.Date <= globalToday.Date);
+    var adminUserCount = allUsers.Count(u => u.Role == "Admin");
+    var regularUserCount = totalUserCount - adminUserCount;
+    var verifiedUserCount = allUsers.Count(u => u.IsVerified.GetValueOrDefault());
+    var unverifiedUserCount = totalUserCount - verifiedUserCount;
+    var userPercentChange = newUsersYesterdayCount > 0 ? ((decimal)(newUsersTodayCount - newUsersYesterdayCount) / newUsersYesterdayCount * 100) : (newUsersTodayCount > 0 ? 100 : 0);
+    var userChangeIcon = userPercentChange >= 0 ? "fa-arrow-up" : "fa-arrow-down";
+    var userChangeClass = userPercentChange == 0 ? "text-muted" : (userPercentChange > 0 ? "text-success" : "text-danger");
+    
+    // Product/Cards Stats
+    var allProducts = Model._allCards.ToList();
+    var totalProductCount = allProducts.Count();
+    var productsInStockCount = allProducts.Count(c => c.StockQuantity > 0);
+    var productsOutOfStockCount = totalProductCount - productsInStockCount;
+    var productsLowStockCount = allProducts.Count(c => c.StockQuantity > 0 && c.StockQuantity <= 5);
+    var totalStockValue = allProducts.Sum(c => c.StockQuantity * c.Price);
+    
+    // Category Stats
+    var allCategories = allProducts.Select(p => p.Category).Distinct().ToList();
+    var totalCategoryCount = allCategories.Count();
+    
+    // Find categories with most products
+    var categoriesWithProductCount = allProducts
+        .GroupBy(p => p.Category.CategoryName)
+        .Select(g => new { Category = g.Key, Count = g.Count() })
+        .OrderByDescending(x => x.Count)
+        .Take(5)
+        .ToList();
+    
+    // Favorites Stats
+    var allFavorites = Model._allFavorites != null ? Model._allFavorites.ToList() : new List<Favorite>();
+    var totalFavoritesCount = allFavorites.Count();
+    
+    // Most favorited products
+    var mostFavoritedProducts = allFavorites
+        .GroupBy(f => f.CardId)
+        .Select(g => new { CardID = g.Key, Count = g.Count() })
+        .OrderByDescending(x => x.Count)
+        .Take(5)
+        .ToList();
+    
+    // Cart Stats
+    var allCarts = Model._allCarts != null ? Model._allCarts.ToList() : new List<Cart>();
+    var activeCartsCount = allCarts.Count();
+    var totalCartValue = allCarts.SelectMany(c => c.CartItems).Sum(ci => ci.Quantity * ci.Price);
+    var avgItemsPerCart = activeCartsCount > 0 ? 
+        allCarts.Select(c => c.CartItems.Sum(ci => ci.Quantity)).Average() : 0;
+    
+    // Feedback Stats
+    var allFeedback = Model._allFeedbacks != null ? Model._allFeedbacks.ToList() : new List<ContactFeedBack>();
+    var totalFeedbackCount = allFeedback.Count();
+    var unreadFeedbackCount = allFeedback.Count(f => !f.IsPublished); // Using !IsPublished as a proxy for unread
+    var publishedFeedbackCount = allFeedback.Count(f => f.IsPublished);
+    
+    // Discount Stats
+    var allDiscounts = Model._allDiscounts.ToList();
+    var totalDiscountCount = allDiscounts.Count();
+    var activeDiscountCount = allDiscounts.Count(d => d.IsActive);
+    var percentageDiscountCount = allDiscounts.Count(d => d.IsPercentage);
+    var fixedDiscountCount = totalDiscountCount - percentageDiscountCount;
+    var totalDiscountValue = completedOrdersForRevenue.Sum(o => o.DiscountValue);
+    
+    // Order Statuses
+    var pendingOrdersCount = allOrders.Count(o => o.Status != null && o.Status.Equals("Pending", StringComparison.OrdinalIgnoreCase));
+    var processingOrdersCount = allOrders.Count(o => o.Status != null && o.Status.Equals("Processing", StringComparison.OrdinalIgnoreCase));
+    var shippedOrdersCount = allOrders.Count(o => o.Status != null && o.Status.Equals("Shipped", StringComparison.OrdinalIgnoreCase));
+    var deliveredOrdersCount = allOrders.Count(o => o.Status != null && (o.Status.Equals("Completed", StringComparison.OrdinalIgnoreCase) || o.Status.Equals("Delivered", StringComparison.OrdinalIgnoreCase)));
+    var cancelledOrdersCount = allOrders.Count(o => o.Status != null && o.Status.Equals("Cancelled", StringComparison.OrdinalIgnoreCase));
+    
+    // Monthly Revenue and Order Trends (Last 6 months)
+    var lastSixMonths = Enumerable.Range(0, 6).Select(i => globalToday.AddMonths(-i)).ToList();
+    
+    var monthlyRevenue = new List<decimal>();
+    var monthlyOrders = new List<int>();
+    var monthNames = new List<string>();
+    
+    foreach (var month in lastSixMonths) {
+        var firstDayOfMonth = new DateTime(month.Year, month.Month, 1);
+        var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+        
+        var ordersInMonth = allOrders.Where(o => o.CreatedAt.HasValue && 
+            o.CreatedAt.Value.Date >= firstDayOfMonth && o.CreatedAt.Value.Date <= lastDayOfMonth);
+        
+        var revenueInMonth = ordersInMonth
+            .Where(o => o.Status != null && (o.Status.Equals("Completed", StringComparison.OrdinalIgnoreCase) || o.Status.Equals("Delivered", StringComparison.OrdinalIgnoreCase)))
+            .Sum(o => o.TotalAmount);
+        
+        monthlyRevenue.Add(revenueInMonth);
+        monthlyOrders.Add(ordersInMonth.Count());
+        monthNames.Add(month.ToString("MMM"));
+    }
+    
+    // Reverse lists to show oldest month first
+    monthlyRevenue.Reverse();
+    monthlyOrders.Reverse();
+    monthNames.Reverse();
+    
+    // Recent Data
+    var recentOrders = allOrders.OrderByDescending(o => o.CreatedAt).Take(5).ToList();
+    var recentUsers = allUsers.OrderByDescending(u => u.CreatedAt).Take(5).ToList();
+    var recentFeedback = allFeedback.OrderByDescending(f => f.CreatedAt).Take(5).ToList();
+}
+
+<main class="main-wrapper">
+    <div class="axil-dashboard-area axil-section-gap">
+        <div class="container">
+            <div class="axil-dashboard-warp">
+                <div class="axil-dashboard-author">
+                    <div class="media" style="display:flex">
+                        <div class="thumbnail">
+                            <img src="~/assets/images/profile/@Model._user.ProfileImageUrl" alt="Hello UserProfileImage" style="width:20vh">
+                        </div>
+                        <div class="media-body" style="margin-left:4vh">
+                            <h5 class="title mb-0">Hello @Model._user.Username <img src="~/assets/images/profile/icons8-verified-badge-48.png" style="width:3vh" /></h5>
+                            <span class="joining-date">Sem;Colon Member Since @Model._user.CreatedAt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+

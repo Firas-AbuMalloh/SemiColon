@@ -1,13 +1,29 @@
 ﻿@{
     Layout = "~/Views/Shared/mainLayoutHeaderFooter.cshtml";
+    ViewBag.Title = "Cart";
+    
+    // تحقق من وجود منتجات مكررة في السلة وإجراء تصحيح تلقائي إذا لزم الأمر
+    if (Model?._cartItem != null && Model._cartItem.Any())
+    {
+        var groupedItems = Model._cartItem
+            .GroupBy(i => i.CardId)
+            .Where(g => g.Count() > 1)
+            .ToList();
+            
+        if (groupedItems.Any())
+        {
+            // هناك منتجات مكررة، يجب إجراء تصحيح
+            TempData["FixedDuplicates"] = true;
+            // لن نفعل شيئًا هنا، سنعتمد على عرض المنتجات كما هي
+        }
+    }
 }
 
 @model SemiColon.Models.ViewModel.cartViewModel
 
 <main class="main-wrapper">
     @{
-        float totalBeforeDiscount = 0;
-        float discount = 99;
+
         float totalAfterDiscount = 0;
 
     }
@@ -38,7 +54,6 @@
                                 {
                                     float subtotal = item.Quantity * (float)item.Price;
 
-                                    totalBeforeDiscount += subtotal;
 
                                     <tr>
                                         <td class="product-remove"><a asp-action="removeFromCart" asp-controller="Products" asp-route-id="@item.Id" class="remove-wishlist"><i class="fal fa-times"></i></a></td>
@@ -46,16 +61,18 @@
                                         <td class="product-title"><a asp-action="productDetails" asp-controller="Products" asp-route-id="@item.Card.Id">@item.Card.CardName</a></td>
                                         <td class="product-price" data-title="Price"><span class="currency-symbol">$</span>@item.Price</td>
                                         <td class="product-quantity" data-title="Qty">
+
                                             <div class="pro-qty">
+                                                 <a class="dec qtybtn" data-id="@item.Id">-</a>
                                                 <input type="number" class="quantity-input" value="@item.Quantity">
+<a class="inc qtybtn" data-id="@item.Id">+</a>
                                             </div>
                                         </td>
                                         <td class="product-subtotal" data-title="Subtotal"><span class="currency-symbol">$</span>@subtotal</td>
                                     </tr>
+                                    totalAfterDiscount += subtotal;
                                 }
 
-                                totalAfterDiscount = totalBeforeDiscount;
-                                discount = discount / 100 * totalBeforeDiscount;
 
 
                             }
@@ -65,7 +82,6 @@
                                 {
                                     float subtotal = item.Quantity * (float)item.Price;
 
-                                    totalBeforeDiscount += subtotal;
 
                                     <tr>
                                         <td class="product-remove"><a asp-action="removeFromCart" asp-controller="Products" asp-route-id="@item.Id" class="remove-wishlist"><i class="fal fa-times"></i></a></td>
@@ -73,27 +89,31 @@
                                         <td class="product-title"><a asp-action="productDetails" asp-controller="Products" asp-route-id="@item.CardID">@item.CardName</a></td>
                                         <td class="product-price" data-title="Price"><span class="currency-symbol">$</span>@item.Price</td>
                                         <td class="product-quantity" data-title="Qty">
-                                            <div class="pro-qty">
+
+                                                  <div class="pro-qty">
+                                                 <a class="dec qtybtn" data-id="@item.Id">-</a>
                                                 <input type="number" class="quantity-input" value="@item.Quantity">
+                                                 <a class="inc qtybtn" data-id="@item.Id">+</a>
                                             </div>
                                         </td>
                                         <td class="product-subtotal" data-title="Subtotal"><span class="currency-symbol">$</span>@subtotal</td>
                                     </tr>
+
+                                    totalAfterDiscount += subtotal;
+
                                 }
 
-                                totalAfterDiscount = totalBeforeDiscount;
-                                discount = discount / 100 * totalBeforeDiscount;
 
 
                             }
-                            else 
+                            else if ((Model._cartItem == null || !Model._cartItem.Any()) && (Model._tempCart == null || !Model._tempCart.Any()))
                             {
-
-                                <tr>
-                                    <td colspan="6" class="text-center">Your cart is empty</td>
-                                </tr>
-                                discount = 0;
+                                <div class="alert alert-warning text-center" role="alert">
+                                     cart is empty.
+                                </div>
                             }
+
+
 
                         </tbody>
                     </table>
@@ -101,28 +121,28 @@
                     <br />
                     <br />
                 </div>
-                <div class="cart-update-btn-area" style="display:flex;justify-content:center;align-items:center;width:100%">
-                    <div class="input-group product-cupon" style="display:flex;justify-content:center;align-items:center">
-                        <input placeholder="Enter coupon code" type="text" style="width:70vh; padding-left:2vh">
-                        <div class="product-cupon-btn">
-                            <button type="submit" class="axil-btn btn-outline">Apply</button>
-                        </div>
-                    </div>
+                @* <div class="cart-update-btn-area" style="display:flex;justify-content:center;align-items:center;width:100%"> *@
+                @*     <div class="input-group product-cupon" style="display:flex;justify-content:center;align-items:center"> *@
+                @*         <input placeholder="Enter coupon code" type="text" style="width:70vh; padding-left:2vh"> *@
+                @*         <div class="product-cupon-btn"> *@
+                @*             <button type="submit" class="axil-btn btn-outline">Apply</button> *@
+                @*         </div> *@
+                @*     </div> *@
                     @* <div class="update-btn"> *@
                     @*     <a href="#" class="axil-btn btn-outline">Update Cart</a> *@
                     @* </div> *@
                 </div>
                 <div class="row">
-                    <div class="col-xl-5 col-lg-7 offset-xl-7 offset-lg-5" style="width:90%;margin-left:7vh;">
+                    <div class="col-xl-10 col-lg-10 offset-xl-1 offset-lg-1">
                         <div class="axil-order-summery mt--80">
                             <h5 class="title mb--20">Order Summary</h5>
                             <div class="summery-table-wrap">
                                 <table class="table summery-table mb--30">
                                     <tbody>
-                                        <tr class="order-subtotal" style="text-align:center;background-color:white">
-                                            <td>Subtotal</td>
-                                            <td >$@totalBeforeDiscount</td>
-                                        </tr>
+                                        @* <tr class="order-subtotal" style="text-align:center;background-color:white"> *@
+                                        @*     <td>Subtotal</td> *@
+                                        @*     <td >$@totalBeforeDiscount</td> *@
+                                        @* </tr> *@
                                         <tr class="order-shipping" style="text-align:center;background-color:white">
                                             @* <td>Shipping</td> *@
                                             @* <td style="text-align:center;background-color:white" > *@
@@ -140,13 +160,13 @@
                                             @*     </div> *@
                                             @* </td> *@
                                         </tr style="text-align:center;background-color:white" >
-                                        <tr class="order-tax" style="text-align:center;background-color:white" >
-                                            <td>Discount</td>
-                                            <td>$@discount</td>
-                                        </tr>
+                                        @* <tr class="order-tax" style="text-align:center;background-color:white" > *@
+                                        @*     <td>Discount</td> *@
+                                        @*     <td>$@discount</td> *@
+                                        @* </tr> *@
                                         <tr class="order-total" style="text-align:center;background-color:white" >
                                             <td>Total</td>
-                                            <td class="order-total-amount">$@(totalAfterDiscount - discount)</td>
+                                            <td class="order-total-amount">$@(totalAfterDiscount )</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -184,3 +204,330 @@
     <!-- End Cart Area  -->
 
 </main>
+
+
+
+<script>
+$(document).ready(function () {
+    // حفظ الطلبات النشطة لمنع التكرار
+    const sentRequests = new Set();
+    
+    // منع الطلبات المتكررة
+    function preventDuplicateRequests(key, func) {
+        if (sentRequests.has(key)) {
+            console.log('Request already in progress:', key);
+            return false;
+        }
+        
+        sentRequests.add(key);
+        
+        setTimeout(() => {
+            sentRequests.delete(key);
+        }, 2000);
+        
+        return true;
+    }
+    
+    // Handle direct item removal with AJAX
+    $('.remove-wishlist').click(function(e) {
+        e.preventDefault();
+        
+        var id = $(this).attr('href').split('=')[1]; // Extract ID from href attribute
+        var $row = $(this).closest('tr');
+        
+        // منع الطلبات المتكررة
+        const requestKey = `remove_${id}_${Date.now()}`;
+        if (!preventDuplicateRequests(id, 'remove')) return;
+        
+        // Show confirmation
+        Swal.fire({
+            title: 'Remove item?',
+            text: 'Do you want to remove this item from your cart?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, remove it',
+            cancelButtonText: 'No, keep it',
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Make AJAX request to remove the item
+                $.ajax({
+                    url: '/Products/removeFromCart',
+                    type: 'POST',
+                    data: { id: id, isAjax: true },
+                    success: function(response) {
+                        if (response.success) {
+                            // Remove row with animation
+                            $row.fadeOut(300, function() {
+                                $(this).remove();
+                                
+                                // Check if cart is empty
+                                if ($('tbody tr').length === 0 || $('tbody tr:visible').length === 0) {
+                                    $('tbody').html('<tr><td colspan="6" class="text-center p-4"><div class="alert alert-info">Your cart is empty.</div></td></tr>');
+                                    $('.axil-order-summery').hide();
+                                }
+                                
+                                // Update order total
+                                updateOrderTotal();
+                            });
+                            
+                            // Update cart count in header
+                            $('.cart-count').text(response.cartCount);
+                            if (response.cartCount === 0) {
+                                $('.cart-count').addClass('hidden');
+                            }
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: response.message || 'Failed to remove item from cart.',
+                                timer: 2000,
+                                showConfirmButton: false
+                            });
+                        }
+                    },
+                    error: function() {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'An error occurred while removing the item.',
+                            timer: 2000,
+                            showConfirmButton: false
+                        });
+                    },
+                    complete: function() {
+                        sentRequests.delete(id);
+                    }
+                });
+            } else {
+                // Not confirmed, remove from pending requests
+                sentRequests.delete(id);
+            }
+        });
+    });
+
+    // Handle quantity change buttons
+    $('.qtybtn').click(function (e) {
+        e.preventDefault();
+
+        var $button = $(this);
+        var id = $button.data('id');
+        var $row = $button.closest('tr');
+        var $quantityInput = $row.find('.quantity-input');
+        var $subtotalCell = $row.find('.product-subtotal');
+        var priceText = $row.find('.product-price').text().trim();
+        var price = parseFloat(priceText.replace('$', ''));
+        var isInc = $button.hasClass('inc');
+        var currentQty = parseInt($quantityInput.val());
+        
+        // منع الطلبات المتكررة
+        const requestKey = `${isInc ? 'inc' : 'dec'}_${id}`;
+        if (!preventDuplicateRequests(requestKey)) return;
+        
+        // Determine the new quantity based on button clicked
+        var newQty = isInc ? currentQty + 1 : Math.max(1, currentQty - 1);
+        
+        // Don't make API call if decrementing and already at 1
+        if (!isInc && currentQty === 1) {
+            // Show confirmation to remove item
+            Swal.fire({
+                title: 'Remove item?',
+                text: 'Do you want to remove this item from your cart?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, remove it',
+                cancelButtonText: 'No, keep it',
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // If confirmed, use AJAX to remove it
+                    $.ajax({
+                        url: '/Products/removeFromCart',
+                        type: 'GET',
+                        data: { id: id, isAjax: true },
+                        success: function(response) {
+                            if (response.success) {
+                                // Remove row with animation
+                                $row.fadeOut(300, function() {
+                                    $(this).remove();
+                                    
+                                    // Check if cart is now empty
+                                    if ($('tbody tr').length === 0 || $('tbody tr:visible').length === 0) {
+                                        // Show empty cart message
+                                        $('tbody').html('<tr><td colspan="6" class="text-center p-4"><div class="alert alert-info">Your cart is empty.</div></td></tr>');
+                                        $('.axil-order-summery').hide();
+                                    }
+                                    
+                                    // Update order total
+                                    updateOrderTotal();
+                                });
+                                
+                                // Update cart count in header
+                                $('.cart-count').text(response.cartCount);
+                                if (response.cartCount === 0) {
+                                    $('.cart-count').addClass('hidden');
+                                }
+                                
+                                // Show toast notification
+                                const Toast = Swal.mixin({
+                                    toast: true,
+                                    position: 'top-end',
+                                    showConfirmButton: false,
+                                    timer: 1500,
+                                    timerProgressBar: true
+                                });
+                                
+                                Toast.fire({
+                                    icon: 'success',
+                                    title: 'Item removed from cart'
+                                });
+                            }
+                        },
+                        complete: function() {
+                            sentRequests.delete(requestKey);
+                        }
+                    });
+                } else {
+                    sentRequests.delete(requestKey);
+                }
+            });
+            return;
+        }
+        
+        // Show loading indicator
+        $button.addClass('disabled').css('opacity', '0.5');
+        
+        // Make API call to update quantity in backend
+        $.ajax({
+            url: isInc ? '/Products/inc' : '/Products/dec',
+            type: 'POST',
+            data: { id: id },
+            success: function (response) {
+                if (response.success) {
+                    // For decremented items that reach 0, remove them immediately
+                    if (!isInc && response.newQuantity <= 0) {
+                        // Item was removed on server side, remove from UI
+                        $row.fadeOut(300, function() {
+                            $(this).remove();
+                            
+                            // Check if cart is now empty
+                            if ($('tbody tr').length === 0 || $('tbody tr:visible').length === 0) {
+                                // Show empty cart message
+                                $('tbody').html('<tr><td colspan="6" class="text-center p-4"><div class="alert alert-info">Your cart is empty.</div></td></tr>');
+                                $('.axil-order-summery').hide();
+                            }
+                            
+                            // Update order total
+                            updateOrderTotal();
+                        });
+                        
+                        // Show removal notification
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Item Removed',
+                            text: 'The item has been removed from your cart.',
+                            timer: 1500,
+                            showConfirmButton: false
+                        });
+                    } else {
+                        // Normal quantity update
+                        $quantityInput.val(response.newQuantity || newQty);
+                        
+                        // Calculate and update subtotal
+                        var subtotal = (price * (response.newQuantity || newQty)).toFixed(2);
+                        $subtotalCell.html('<span class="currency-symbol">$</span>' + subtotal);
+                        
+                        // Update order total
+                        updateOrderTotal();
+                        
+                        // Show subtle notification
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 1000,
+                            timerProgressBar: true
+                        });
+                        
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'Quantity updated'
+                        });
+                    }
+                    
+                    // Update cart count in header
+                    if (response.cartCount !== undefined) {
+                        $('.cart-count').text(response.cartCount);
+                    }
+                } else {
+                    // Show error message
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: response.message || 'Failed to update quantity.',
+                        timer: 2000,
+                        showConfirmButton: false
+                    });
+                }
+            },
+            error: function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'An error occurred while updating the quantity.',
+                    timer: 2000,
+                    showConfirmButton: false
+                });
+            },
+            complete: function() {
+                // Remove loading indicator
+                $button.removeClass('disabled').css('opacity', '');
+                
+                // إزالة المنتج من قائمة الطلبات المرسلة بعد انتهاء العملية
+                setTimeout(() => {
+                    sentRequests.delete(requestKey);
+                }, 500);
+            }
+        });
+    });
+    
+    // Function to update the order total
+    function updateOrderTotal() {
+        var total = 0;
+        $('.product-subtotal:visible').each(function() {
+            var subtotalText = $(this).text().trim();
+            var subtotal = parseFloat(subtotalText.replace('$', ''));
+            if (!isNaN(subtotal)) {
+                total += subtotal;
+            }
+        });
+        
+        // Update the order total amount
+        $('.order-total-amount').text('$' + total.toFixed(2));
+        
+        // If total is zero, hide the order summary or show empty state
+        if (total === 0) {
+            $('.axil-order-summery').hide();
+        } else {
+            $('.axil-order-summery').show();
+        }
+    }
+    
+    // عرض رسالة إذا كان هناك تصحيح للمنتجات المكررة
+    @if (TempData["FixedDuplicates"] != null && (bool)TempData["FixedDuplicates"])
+    {
+        <text>
+        Swal.fire({
+            icon: 'info',
+            title: 'Notice',
+            text: 'Duplicate products were found in your cart. Please verify your items.',
+            timer: 3000,
+            showConfirmButton: false
+        });
+        </text>
+    }
+});
+</script>
+

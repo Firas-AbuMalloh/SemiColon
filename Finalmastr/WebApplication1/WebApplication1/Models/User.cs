@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SemiColon.Models;
 
@@ -15,9 +14,6 @@ public partial class User
     public byte[] PasswordHash { get; set; } = null!;
 
     public byte[] PasswordSalt { get; set; } = null!;
-
-    [NotMapped]  // تحديد هذه الخاصية كـ NotMapped لتجنب تخزينها في قاعدة البيانات
-    public string Password { get; set; }  // خاصية كلمة المرور المؤقتة
 
     public string? FirstName { get; set; }
 
@@ -34,6 +30,8 @@ public partial class User
     public DateTime? LastLogin { get; set; }
 
     public DateTime? CreatedAt { get; set; }
+
+    public string? Country { get; set; }
 
     public virtual ICollection<AuditLog> AuditLogs { get; set; } = new List<AuditLog>();
 
@@ -54,4 +52,6 @@ public partial class User
     public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
 
     public virtual ICollection<Seller> Sellers { get; set; } = new List<Seller>();
+
+    public virtual ICollection<Testimonial> Testimonials { get; set; } = new List<Testimonial>();
 }

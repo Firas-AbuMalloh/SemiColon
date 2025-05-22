@@ -4,10 +4,72 @@
 
 @{
     Layout = "~/Views/Shared/mainLayoutHeaderFooter.cshtml";
+    ViewBag.Title = "Home";
     var productList = Model.Products.ToList();
 
 }
+<style>
+    .productss {
+        height: 800px !important;
+        padding-bottom: 40rem !important;
+        overflow-y: scroll !important;
+        scrollbar-width: auto; /* يظهر شريط التمرير بشكل واضح في Firefox */
+        scrollbar-color: #3A3A3A #F5F5F5; /* لون الشريط + الخلفية */
+    }
 
+        /* تنسيق شريط التمرير لمتصفحات Chrome/Edge/Safari */
+        .productss::-webkit-scrollbar {
+            width: 12px; /* عرض أكبر للوضوح */
+        }
+
+        .productss::-webkit-scrollbar-track {
+            background: #F5F5F5;
+            border-radius: 10px;
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); /* تأثير عمق */
+            border: 1px solid #E0E0E0; /* حدود لتوضيح المسار */
+        }
+
+        .productss::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #3A3A3A, #6D6D6D); /* تدرج لوني */
+            border-radius: 10px;
+            border: 2px solid #F5F5F5; /* حدود بيضاء لفصل الشريط عن المسار */
+            transition: all 0.3s ease; /* حركة سلسة */
+        }
+
+            .productss::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(45deg, #2C2C2C, #5A5A5A); /* تدرج داكن عند التحويم */
+                transform: scale(1.05); /* تكبير بسيط للإشارة إلى التفاعل */
+                cursor: grab; /* أيقونة اليد للإمساك */
+            }
+
+            .productss::-webkit-scrollbar-thumb:active {
+                cursor: grabbing; /* أيقونة اليد أثناء السحب */
+                background: linear-gradient(45deg, #1E1E1E, #4A4A4A);
+            }
+
+    /* رسوم متحركة لفتح الانتباه */
+    @@keyframes pulse-scrollbar {
+        0%
+
+    {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+
+    }
+
+    /* تطبيق الرسوم المتحركة عند التحميل */
+    .productss::-webkit-scrollbar-thumb {
+        animation: pulse-scrollbar 2s infinite;
+    }
+</style>
 <main class="main-wrapper">
     <!-- Start Slider Area -->
     <div class="axil-main-slider-area main-slider-style-3">
@@ -19,7 +81,7 @@
                         <h1 class="title">Discover, collect, and sell extraordinary cards</h1>
                         <h1 class="title"> @Context.Session.GetInt32("CartIDDDDD")</h1>
                         <div class="shop-btn">
-                            <a href="shop.html" class="axil-btn btn-bg-white right-icon">Explore <i class="fal fa-long-arrow-right"></i></a>
+                            <a asp-action="categoryShop" asp-controller="Products" class="axil-btn btn-bg-white right-icon">Explore <i class="fal fa-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -31,15 +93,15 @@
                                 <div class="single-slide slick-slide">
                                     <div class="axil-product product-style-five">
                                         <div class="thumbnail">
-                                            <a asp-action="shop" asp-controller="Products" asp-route-id="@categoryItem.Id">
-                                                <img src="/assets/images/product/categories/@categoryItem.ImageUrl" alt="Category Image">
+                                            <a asp-action="shop" asp-controller="Products" asp-route-id="@categoryItem.Id" >
+                                                <img src="~/assets/images/product/categories/categories/@categoryItem.ImageUrl" alt="Category Image">
                                             </a>
                                         </div>
                                         <div class="product-content">
                                             <div class="inner">
                                                 <h5 class="title fw-bold text-dark fs-3"><a asp-action="shop" asp-controller="Products" asp-route-id="@categoryItem.Id">@categoryItem.CategoryName</a></h5>
                                                 <div class="product-price-variant">
-                                                    <span class="fs-4">@categoryItem.Description</span>
+                                                    @* <span class="fs-4">@categoryItem.Description</span> *@
                                                 </div>
                                                 <ul class="cart-action">
                                                     <li class="select-option"><a asp-action="shop" asp-controller="Products" asp-route-id="@categoryItem.Id">Buy Products</a></li>
@@ -58,7 +120,7 @@
     <!-- End Slider Area -->
     
     <!-- Start Categorie Area  -->
-    <div class="axil-categorie-area bg-color-white axil-section-gap pb--0">
+    <div class="axil-categorie-area bg-color-white axil-section-gap pb--0" id="mainCategory">
         <div class="container">
             <div class="product-area pb--50">
                 <div class="section-title-wrapper">
@@ -66,13 +128,13 @@
                     <h2 class="title">Browse by Category</h2>
                 </div>
                 <div class="categrie-product-activation-3 slick-layout-wrapper--15 axil-slick-arrow arrow-top-slide">
-                    @foreach (var categotyItem in Model.Categories)
+                    @foreach (var categotyItem in Model.MainCategories)
                     {
                         <div class="slick-single-layout">
                             <div class="categrie-product categrie-product-3" data-sal="zoom-out" data-sal-delay="100" data-sal-duration="500">
-                                <a asp-action="shop" asp-controller="Products" asp-route-id="@categotyItem.Id">
-                                    <img class="img-fluid" src="~/assets/images/product/categories/@categotyItem.ImageUrl" alt="product categorie">
-                                    <h6 class="cat-title">@categotyItem?.CategoryName</h6>
+                                <a asp-action="categoryShop" asp-controller="Products" asp-route-id="@categotyItem.Id">
+                                    <img class="img-fluid" src="~/assets/images/product/categories/MainCategories/@categotyItem.ImageUrl" alt="product categorie">
+                                    <h6 class="cat-title">@categotyItem?.MainCategoryName</h6>
                                 </a>
                             </div>
                         </div>
@@ -84,220 +146,233 @@
     <!-- End Categorie Area  -->
     
     <!-- Start Best Sellers Product Area  -->
-    <div class="axil-best-seller-product-area bg-color-white axil-section-gap pb--0">
+    <div class="axil-best-seller-product-area bg-color-white axil-section-gap pb--0" id="bestSellers">
         <div class="container">
             <div class="product-area pb--50">
                 <div class="section-title-wrapper">
                     <span class="title-highlighter highlighter-primary"> <i class="far fa-shopping-basket"></i>This Month</span>
                     <h2 class="title">Best Sellers</h2>
                 </div>
+
+
                 <div class="new-arrivals-product-activation-2 slick-layout-wrapper--15 axil-slick-arrow arrow-top-slide product-slide-mobile">
+
+
+                    @foreach (var card in Model.BestOrderSellers)
+                    {
+
                     <div class="slick-single-layout">
                         <div class="axil-product product-style-six">
                             <div class="thumbnail">
-                                <a href="single-product-7.html">
-                                    <img data-sal="fade" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-30.png" alt="Product Images">
+                                    <a asp-action="productDetails" asp-controller="Products" asp-route-id="@card.CardId">
+                                    <img data-sal="fade" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/@card.CardImage" alt="Product Images">
                                 </a>
                             </div>
                             <div class="product-content">
                                 <div class="inner">
                                     <div class="product-price-variant">
-                                        <span class="price current-price">$30</span>
+                                        <span class="price current-price">$@card.CardPrice</span>
                                     </div>
-                                    <h5 class="title"><a href="single-product-7.html">Anime #001 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h5>
+                                    <h5 class="title"><a href="single-product-7.html">@card.CardName <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h5>
                                     <div class="product-hover-action">
                                         <ul class="cart-action">
-                                            <li class="select-option"><a href="single-product-7.html">Buy Product</a></li>
+                                                <li class="select-option"><a asp-action="productDetails" asp-controller="Products" asp-route-id="@card.CardId">Buy Product</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    }
                     <!-- End .slick-single-layout -->
-                    <div class="slick-single-layout">
-                        <div class="axil-product product-style-six">
-                            <div class="thumbnail">
-                                <a href="single-product-7.html">
-                                    <img data-sal="fade" data-sal-delay="200" data-sal-duration="1500" src="~/assets/images/product/nft/product-31.png" alt="Product Images">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <div class="inner">
-                                    <div class="product-price-variant">
-                                        <span class="price current-price">$3000</span>
-                                    </div>
-                                    <h5 class="title"><a href="single-product-7.html">Anime #002</a></h5>
-                                    <div class="product-hover-action">
-                                        <ul class="cart-action">
-                                            <li class="select-option"><a href="single-product-7.html">Buy Product</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End .slick-single-layout -->
-                    <div class="slick-single-layout">
-                        <div class="axil-product product-style-six">
-                            <div class="thumbnail">
-                                <a href="single-product-7.html">
-                                    <img data-sal="fade" data-sal-delay="300" data-sal-duration="1500" src="~/assets/images/product/nft/product-32.png" alt="Product Images">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <div class="inner">
-                                    <div class="product-price-variant">
-                                        <span class="price current-price">$100</span>
-                                    </div>
-                                    <h5 class="title"><a href="single-product-7.html">Anime #003 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h5>
-                                    <div class="product-hover-action">
-                                        <ul class="cart-action">
-                                            <li class="select-option"><a href="single-product-7.html">Buy Product</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End .slick-single-layout -->
-                    <div class="slick-single-layout">
-                        <div class="axil-product product-style-six">
-                            <div class="thumbnail">
-                                <a href="single-product-7.html">
-                                    <img data-sal="fade" data-sal-delay="400" data-sal-duration="1500" src="~/assets/images/product/nft/product-29.png" alt="Product Images">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <div class="inner">
-                                    <div class="product-price-variant">
-                                        <span class="price current-price">$2000</span>
-                                    </div>
-                                    <h5 class="title"><a href="single-product-7.html">Anime #004 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h5>
-                                    <div class="product-hover-action">
-                                        <ul class="cart-action">
-                                            <li class="select-option"><a href="single-product-7.html">Buy Product</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End .slick-single-layout -->
-                    <div class="slick-single-layout">
-                        <div class="axil-product product-style-six">
-                            <div class="thumbnail">
-                                <a href="single-product-7.html">
-                                    <img data-sal="fade" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-33.png" alt="Product Images">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <div class="inner">
-                                    <div class="product-price-variant">
-                                        <span class="price current-price">$5000</span>
-                                    </div>
-                                    <h5 class="title"><a href="single-product-7.html">Anime #005</a></h5>
-                                    <div class="product-hover-action">
-                                        <ul class="cart-action">
-                                            <li class="select-option"><a href="single-product-7.html">Buy Product</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End .slick-single-layout -->
-                    <div class="slick-single-layout">
-                        <div class="axil-product product-style-six">
-                            <div class="thumbnail">
-                                <a href="single-product-7.html">
-                                    <img data-sal="fade" data-sal-delay="200" data-sal-duration="1500" src="~/assets/images/product/nft/product-32.png" alt="Product Images">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <div class="inner">
-                                    <div class="product-price-variant">
-                                        <span class="price current-price">$3000</span>
-                                    </div>
-                                    <h5 class="title"><a href="single-product-7.html">Anime #006</a></h5>
-                                    <div class="product-hover-action">
-                                        <ul class="cart-action">
-                                            <li class="select-option"><a href="single-product-7.html">Buy Product</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End .slick-single-layout -->
-                    <div class="slick-single-layout">
-                        <div class="axil-product product-style-six">
-                            <div class="thumbnail">
-                                <a href="single-product-7.html">
-                                    <img data-sal="fade" data-sal-delay="300" data-sal-duration="1500" src="~/assets/images/product/nft/product-31.png" alt="Product Images">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <div class="inner">
-                                    <div class="product-price-variant">
-                                        <span class="price current-price">$100</span>
-                                    </div>
-                                    <h5 class="title"><a href="single-product-7.html">Anime #007 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h5>
-                                    <div class="product-hover-action">
-                                        <ul class="cart-action">
-                                            <li class="select-option"><a href="single-product-7.html">Buy Product</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End .slick-single-layout -->
-                    <div class="slick-single-layout">
-                        <div class="axil-product product-style-six">
-                            <div class="thumbnail">
-                                <a href="single-product-7.html">
-                                    <img data-sal="fade" data-sal-delay="400" data-sal-duration="1500" src="~/assets/images/product/nft/product-30.png" alt="Product Images">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <div class="inner">
-                                    <div class="product-price-variant">
-                                        <span class="price current-price">$2000</span>
-                                    </div>
-                                    <h5 class="title"><a href="single-product-7.html">Anime #008 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h5>
-                                    <div class="product-hover-action">
-                                        <ul class="cart-action">
-                                            <li class="select-option"><a href="single-product-7.html">Buy Product</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End .slick-single-layout -->
-                    <div class="slick-single-layout">
-                        <div class="axil-product product-style-six">
-                            <div class="thumbnail">
-                                <a href="single-product-7.html">
-                                    <img data-sal="fade" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-29.png" alt="Product Images">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <div class="inner">
-                                    <div class="product-price-variant">
-                                        <span class="price current-price">$5000</span>
-                                    </div>
-                                    <h5 class="title"><a href="single-product-7.html">Anime #009</a></h5>
-                                    <div class="product-hover-action">
-                                        <ul class="cart-action">
-                                            <li class="select-option"><a href="single-product-7.html">Buy Product</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @* <div class="slick-single-layout"> *@
+                    @*     <div class="axil-product product-style-six"> *@
+                    @*         <div class="thumbnail"> *@
+                    @*             <a href="single-product-7.html"> *@
+                    @*                 <img data-sal="fade" data-sal-delay="200" data-sal-duration="1500" src="~/assets/images/product/nft/product-31.png" alt="Product Images"> *@
+                    @*             </a> *@
+                    @*         </div> *@
+                    @*         <div class="product-content"> *@
+                    @*             <div class="inner"> *@
+                    @*                 <div class="product-price-variant"> *@
+                    @*                     <span class="price current-price">$3000</span> *@
+                    @*                 </div> *@
+                    @*                 <h5 class="title"><a href="single-product-7.html">Anime #002</a></h5> *@
+                    @*                 <div class="product-hover-action"> *@
+                    @*                     <ul class="cart-action"> *@
+                    @*                         <li class="select-option"><a href="single-product-7.html">Buy Product</a></li> *@
+                    @*                     </ul> *@
+                    @*                 </div> *@
+                    @*             </div> *@
+                    @*         </div> *@
+                    @*     </div> *@
+                    @* </div> *@
+                    @* <!-- End .slick-single-layout --> *@
+                    @* <div class="slick-single-layout"> *@
+                    @*     <div class="axil-product product-style-six"> *@
+                    @*         <div class="thumbnail"> *@
+                    @*             <a href="single-product-7.html"> *@
+                    @*                 <img data-sal="fade" data-sal-delay="300" data-sal-duration="1500" src="~/assets/images/product/nft/product-32.png" alt="Product Images"> *@
+                    @*             </a> *@
+                    @*         </div> *@
+                    @*         <div class="product-content"> *@
+                    @*             <div class="inner"> *@
+                    @*                 <div class="product-price-variant"> *@
+                    @*                     <span class="price current-price">$100</span> *@
+                    @*                 </div> *@
+                    @*                 <h5 class="title"><a href="single-product-7.html">Anime #003 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h5> *@
+                    @*                 <div class="product-hover-action"> *@
+                    @*                     <ul class="cart-action"> *@
+                    @*                         <li class="select-option"><a href="single-product-7.html">Buy Product</a></li> *@
+                    @*                     </ul> *@
+                    @*                 </div> *@
+                    @*             </div> *@
+                    @*         </div> *@
+                    @*     </div> *@
+                    @* </div> *@
+                    @* <!-- End .slick-single-layout --> *@
+                    @* <div class="slick-single-layout"> *@
+                    @*     <div class="axil-product product-style-six"> *@
+                    @*         <div class="thumbnail"> *@
+                    @*             <a href="single-product-7.html"> *@
+                    @*                 <img data-sal="fade" data-sal-delay="400" data-sal-duration="1500" src="~/assets/images/product/nft/product-29.png" alt="Product Images"> *@
+                    @*             </a> *@
+                    @*         </div> *@
+                    @*         <div class="product-content"> *@
+                    @*             <div class="inner"> *@
+                    @*                 <div class="product-price-variant"> *@
+                    @*                     <span class="price current-price">$2000</span> *@
+                    @*                 </div> *@
+                    @*                 <h5 class="title"><a href="single-product-7.html">Anime #004 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h5> *@
+                    @*                 <div class="product-hover-action"> *@
+                    @*                     <ul class="cart-action"> *@
+                    @*                         <li class="select-option"><a href="single-product-7.html">Buy Product</a></li> *@
+                    @*                     </ul> *@
+                    @*                 </div> *@
+                    @*             </div> *@
+                    @*         </div> *@
+                    @*     </div> *@
+                    @* </div> *@
+                    @* <!-- End .slick-single-layout --> *@
+                    @* <div class="slick-single-layout"> *@
+                    @*     <div class="axil-product product-style-six"> *@
+                    @*         <div class="thumbnail"> *@
+                    @*             <a href="single-product-7.html"> *@
+                    @*                 <img data-sal="fade" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-33.png" alt="Product Images"> *@
+                    @*             </a> *@
+                    @*         </div> *@
+                    @*         <div class="product-content"> *@
+                    @*             <div class="inner"> *@
+                    @*                 <div class="product-price-variant"> *@
+                    @*                     <span class="price current-price">$5000</span> *@
+                    @*                 </div> *@
+                    @*                 <h5 class="title"><a href="single-product-7.html">Anime #005</a></h5> *@
+                    @*                 <div class="product-hover-action"> *@
+                    @*                     <ul class="cart-action"> *@
+                    @*                         <li class="select-option"><a href="single-product-7.html">Buy Product</a></li> *@
+                    @*                     </ul> *@
+                    @*                 </div> *@
+                    @*             </div> *@
+                    @*         </div> *@
+                    @*     </div> *@
+                    @* </div> *@
+                    @* <!-- End .slick-single-layout --> *@
+                    @* <div class="slick-single-layout"> *@
+                    @*     <div class="axil-product product-style-six"> *@
+                    @*         <div class="thumbnail"> *@
+                    @*             <a href="single-product-7.html"> *@
+                    @*                 <img data-sal="fade" data-sal-delay="200" data-sal-duration="1500" src="~/assets/images/product/nft/product-32.png" alt="Product Images"> *@
+                    @*             </a> *@
+                    @*         </div> *@
+                    @*         <div class="product-content"> *@
+                    @*             <div class="inner"> *@
+                    @*                 <div class="product-price-variant"> *@
+                    @*                     <span class="price current-price">$3000</span> *@
+                    @*                 </div> *@
+                    @*                 <h5 class="title"><a href="single-product-7.html">Anime #006</a></h5> *@
+                    @*                 <div class="product-hover-action"> *@
+                    @*                     <ul class="cart-action"> *@
+                    @*                         <li class="select-option"><a href="single-product-7.html">Buy Product</a></li> *@
+                    @*                     </ul> *@
+                    @*                 </div> *@
+                    @*             </div> *@
+                    @*         </div> *@
+                    @*     </div> *@
+                    @* </div> *@
+                    @* <!-- End .slick-single-layout --> *@
+                    @* <div class="slick-single-layout"> *@
+                    @*     <div class="axil-product product-style-six"> *@
+                    @*         <div class="thumbnail"> *@
+                    @*             <a href="single-product-7.html"> *@
+                    @*                 <img data-sal="fade" data-sal-delay="300" data-sal-duration="1500" src="~/assets/images/product/nft/product-31.png" alt="Product Images"> *@
+                    @*             </a> *@
+                    @*         </div> *@
+                    @*         <div class="product-content"> *@
+                    @*             <div class="inner"> *@
+                    @*                 <div class="product-price-variant"> *@
+                    @*                     <span class="price current-price">$100</span> *@
+                    @*                 </div> *@
+                    @*                 <h5 class="title"><a href="single-product-7.html">Anime #007 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h5> *@
+                    @*                 <div class="product-hover-action"> *@
+                    @*                     <ul class="cart-action"> *@
+                    @*                         <li class="select-option"><a href="single-product-7.html">Buy Product</a></li> *@
+                    @*                     </ul> *@
+                    @*                 </div> *@
+                    @*             </div> *@
+                    @*         </div> *@
+                    @*     </div> *@
+                    @* </div> *@
+                    @* <!-- End .slick-single-layout --> *@
+                    @* <div class="slick-single-layout"> *@
+                    @*     <div class="axil-product product-style-six"> *@
+                    @*         <div class="thumbnail"> *@
+                    @*             <a href="single-product-7.html"> *@
+                    @*                 <img data-sal="fade" data-sal-delay="400" data-sal-duration="1500" src="~/assets/images/product/nft/product-30.png" alt="Product Images"> *@
+                    @*             </a> *@
+                    @*         </div> *@
+                    @*         <div class="product-content"> *@
+                    @*             <div class="inner"> *@
+                    @*                 <div class="product-price-variant"> *@
+                    @*                     <span class="price current-price">$2000</span> *@
+                    @*                 </div> *@
+                    @*                 <h5 class="title"><a href="single-product-7.html">Anime #008 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h5> *@
+                    @*                 <div class="product-hover-action"> *@
+                    @*                     <ul class="cart-action"> *@
+                    @*                         <li class="select-option"><a href="single-product-7.html">Buy Product</a></li> *@
+                    @*                     </ul> *@
+                    @*                 </div> *@
+                    @*             </div> *@
+                    @*         </div> *@
+                    @*     </div> *@
+                    @* </div> *@
+                    @* <!-- End .slick-single-layout --> *@
+                    @* <div class="slick-single-layout"> *@
+                    @*     <div class="axil-product product-style-six"> *@
+                    @*         <div class="thumbnail"> *@
+                    @*             <a href="single-product-7.html"> *@
+                    @*                 <img data-sal="fade" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-29.png" alt="Product Images"> *@
+                    @*             </a> *@
+                    @*         </div> *@
+                    @*         <div class="product-content"> *@
+                    @*             <div class="inner"> *@
+                    @*                 <div class="product-price-variant"> *@
+                    @*                     <span class="price current-price">$5000</span> *@
+                    @*                 </div> *@
+                    @*                 <h5 class="title"><a href="single-product-7.html">Anime #009</a></h5> *@
+                    @*                 <div class="product-hover-action"> *@
+                    @*                     <ul class="cart-action"> *@
+                    @*                         <li class="select-option"><a href="single-product-7.html">Buy Product</a></li> *@
+                    @*                     </ul> *@
+                    @*                 </div> *@
+                    @*             </div> *@
+                    @*         </div> *@
+                    @*     </div> *@
+                    @* </div> *@
+
+
+
+
+
                     <!-- End .slick-single-layout -->
                 </div>
             </div>
@@ -306,47 +381,62 @@
     <!-- End  Best Sellers Product Area  -->
     
     <!-- Start Expolre Product Area  -->
-    <div class="axil-product-area bg-color-white axil-section-gap">
+    <div class="axil-product-area bg-color-white axil-section-gap" id="ourProducts">
         <div class="container">
             <div class="section-title-wrapper">
                 <span class="title-highlighter highlighter-primary"> <i class="far fa-shopping-basket"></i> Our Products</span>
                 <h2 class="title">Explore our Products</h2>
+                <h6 class="">main category</h6>
+                <div class="isotope-button">
+                    <button data-filter="*" class="is-checked"><span class="filter-text">All</span></button>
+                    <button data-filter=".1" class=""><span class="filter-text">App Store</span></button>
+                    <button data-filter=".2"><span class="filter-text">Gaming</span></button>
+                    <button data-filter=".3"><span class="filter-text">Cash Card</span></button>
+                    <button data-filter=".4"><span class="filter-text">Telecom Recharge</span></button>
+                    <button data-filter=".5"><span class="filter-text">Shopping</span></button>
+                    <button data-filter=".6"><span class="filter-text">Video & Entertainment</span></button>
+                    <button data-filter=".7"><span class="filter-text">Music Subscriptions</span></button>
+                    <button data-filter=".8"><span class="filter-text">Delivery</span></button>
+                    <button data-filter=".9"><span class="filter-text">Travel & Experiences</span></button>
+                </div>
+               
             </div>
             <div class="explore-product-activation slick-layout-wrapper slick-layout-wrapper--15 axil-slick-arrow arrow-top-slide">
                 <div class="slick-single-layout">
-                    <div class="row row--15">
+                    <div class="row row--15 grid row productss">
                         @* @foreach (var product in Model.Products) *@
-                        @for (int i = 0; i < 12 && i < productList.Count; i++)
+                        @* @for (int i = 0; i < 12 && i < productList.Count; i++) *@
+                        @foreach(var product in Model.Products)
                         {
-                            var product = productList[i];
+                            @* var product = productList[i]; *@
 
                             <input type="number" name="Id" hidden />
-                            <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb--30">
+                            <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb--30 grid-item @product.Category.MainCategory.Id">
                                 <div class="axil-product product-style-one">
                                     <div class="thumbnail">
                                         <a asp-action="productDetails" asp-controller="Products" asp-route-id="@product.Id">
                                             <img data-sal="zoom-out" data-sal-delay="200" data-sal-duration="800" loading="lazy" class="main-img" src="~/assets/images/product/@product.ImageUrl" alt="Product Images" />
-                                            <img class="hover-img" src="@product.ImageUrl" alt="Product Images" />
+                                            <img class="hover-img" src="~/assets/images/product/@product.ImageUrl" alt="Product Images" />
                                         </a>
 
-                                        <div class="label-block label-right">
-                                            <div class="product-badget">20% Off</div>
-                                        </div>
+                                        @* <div class="label-block label-right"> *@
+                                        @*     <div class="product-badget">20% Off</div> *@
+                                        @* </div> *@
 
                                         <div class="product-hover-action">
                                             <ul class="cart-action">
                                                 <li class="quickview">
-                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view-modal">
+                                                    <a asp-action="productDetails" asp-controller="Products" asp-route-id="@product.Id">
                                                         <i class="far fa-eye"></i>
                                                     </a>
                                                 </li>
                                                 <li class="select-option">
-                                                    <a asp-action="addToCart" asp-controller="Products" asp-route-id="@product.Id">
+                                                    <a href="#" class="addToCartBtn" data-product-id="@product.Id">
                                                         Add to Cart
                                                     </a>
                                                 </li>
                                                 <li class="wishlist">
-                                                    <a href="wishlist.html">
+                                                    <a href="#" class="addToFavoritesBtn" data-product-id="@product.Id">
                                                         <i class="far fa-heart"></i>
                                                     </a>
                                                 </li>
@@ -356,20 +446,20 @@
 
                                     <div class="product-content">
                                         <div class="inner">
-                                            <div class="product-rating">
-                                                <span class="icon">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </span>
-                                                <span class="rating-number">(64)</span>
-                                            </div>
+                                            @* <div class="product-rating"> *@
+                                            @*     <span class="icon"> *@
+                                            @*         <i class="fas fa-star"></i> *@
+                                            @*         <i class="fas fa-star"></i> *@
+                                            @*         <i class="fas fa-star"></i> *@
+                                            @*         <i class="fas fa-star"></i> *@
+                                            @*         <i class="fas fa-star"></i> *@
+                                            @*     </span> *@
+                                            @*     <span class="rating-number">(64)</span> *@
+                                            @* </div> *@
                                             <h5 class="title"><a asp-action="productDetails" asp-controller="Products" asp-route-id="@product.Id">@product.CardName</a></h5>
                                             <div class="product-price-variant">
-                                                <span class="price current-price">@product.Price</span>
-                                                <span class="price old-price">$49.99</span>
+                                                <span class="price current-price">$@product.Price</span>
+                                                @* <span class="price old-price">$49.99</span> *@
                                             </div>
                                         </div>
                                     </div>
@@ -390,278 +480,214 @@
     <!-- End Expolre Product Area  -->
     
     <!-- Start Most Sold Product Area  -->
-    <div class="axil-most-sold-product axil-section-gap pb--0">
-        <div class="container">
-            <div class="product-area pb--50">
-                <div class="section-title-wrapper section-title-center">
-                    <span class="title-highlighter highlighter-primary"><i class="fas fa-star"></i> Most Sold</span>
-                    <h2 class="title">Most Sold Last 7 Days</h2>
-                </div>
-                <div class="row row-cols-xl-3 row-cols-md-2 row-cols-1 row--15">
-                    <div class="col">
-                        <div class="axil-product-list product-list-style-2">
-                            <div class="thumbnail">
-                                <a href="single-product-7.html">
-                                    <img data-sal="zoom-in" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-18.jpg" alt="NFT">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <h6 class="product-title"><a href="single-product-7.html">Anime #200 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h6>
-                                <div class="product-price-variant">
-                                    <span class="price current-price">$5000</span>
-                                </div>
-                                <div class="product-cart">
-                                    <a href="single-product-7.html" class="cart-btn">Buy Product</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="axil-product-list product-list-style-2">
-                            <div class="thumbnail">
-                                <a href="single-product-7.html">
-                                    <img data-sal="zoom-in" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-22.jpg" alt="NFT">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <h6 class="product-title"><a href="single-product-7.html">Anime #201 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h6>
-                                <div class="product-price-variant">
-                                    <span class="price current-price">$7955</span>
-                                </div>
-                                <div class="product-cart">
-                                    <a href="single-product-7.html" class="cart-btn">Buy Product</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="axil-product-list product-list-style-2">
-                            <div class="thumbnail">
-                                <a href="single-product-7.html">
-                                    <img data-sal="zoom-in" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-19.jpg" alt="NFT">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <h6 class="product-title"><a href="single-product-7.html">Anime #202 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h6>
-                                <div class="product-price-variant">
-                                    <span class="price current-price">$2999</span>
-                                </div>
-                                <div class="product-cart">
-                                    <a href="single-product-7.html" class="cart-btn">Buy Product</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="axil-product-list product-list-style-2">
-                            <div class="thumbnail">
-                                <a href="single-product-7.html">
-                                    <img data-sal="zoom-in" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-23.jpg" alt="NFT">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <h6 class="product-title"><a href="single-product-7.html">Anime #200 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h6>
-                                <div class="product-price-variant">
-                                    <span class="price current-price">$5000</span>
-                                </div>
-                                <div class="product-cart">
-                                    <a href="single-product-7.html" class="cart-btn">Buy Product</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="axil-product-list product-list-style-2">
-                            <div class="thumbnail">
-                                <a href="single-product-7.html">
-                                    <img data-sal="zoom-in" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-20.jpg" alt="NFT">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <h6 class="product-title"><a href="single-product-7.html">Anime #201</a></h6>
-                                <div class="product-price-variant">
-                                    <span class="price current-price">$7955</span>
-                                </div>
-                                <div class="product-cart">
-                                    <a href="single-product-7.html" class="cart-btn">Buy Product</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="axil-product-list product-list-style-2">
-                            <div class="thumbnail">
-                                <a href="single-product-7.html">
-                                    <img data-sal="zoom-in" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-24.jpg" alt="NFT">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <h6 class="product-title"><a href="single-product-7.html">Anime #202 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h6>
-                                <div class="product-price-variant">
-                                    <span class="price current-price">$2999</span>
-                                </div>
-                                <div class="product-cart">
-                                    <a href="single-product-7.html" class="cart-btn">Buy Product</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="axil-product-list product-list-style-2">
-                            <div class="thumbnail">
-                                <a href="single-product-7.html">
-                                    <img data-sal="zoom-in" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-28.jpg" alt="NFT">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <h6 class="product-title"><a href="single-product-7.html">Anime #200 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h6>
-                                <div class="product-price-variant">
-                                    <span class="price current-price">$5000</span>
-                                </div>
-                                <div class="product-cart">
-                                    <a href="single-product-7.html" class="cart-btn">Buy Product</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="axil-product-list product-list-style-2">
-                            <div class="thumbnail">
-                                <a href="single-product-7.html">
-                                    <img data-sal="zoom-in" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-25.jpg" alt="NFT">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <h6 class="product-title"><a href="single-product-7.html">Anime #201 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h6>
-                                <div class="product-price-variant">
-                                    <span class="price current-price">$7955</span>
-                                </div>
-                                <div class="product-cart">
-                                    <a href="single-product-7.html" class="cart-btn">Buy Product</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="axil-product-list product-list-style-2">
-                            <div class="thumbnail">
-                                <a href="single-product-7.html">
-                                    <img data-sal="zoom-in" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-26.jpg" alt="NFT">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <h6 class="product-title"><a href="single-product-7.html">Anime #202 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h6>
-                                <div class="product-price-variant">
-                                    <span class="price current-price">$2999</span>
-                                </div>
-                                <div class="product-cart">
-                                    <a href="single-product-7.html" class="cart-btn">Buy Product</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @* <div class="axil-most-sold-product axil-section pb--0" id="mostSold"> *@
+    @*     <div class="container"> *@
+    @*         <div class="product-area pb--50"> *@
+    @*             <div class="section-title-wrapper section-title-center"> *@
+    @*                 <span class="title-highlighter highlighter-primary"><i class="fas fa-star"></i> Most Sold</span> *@
+    @*                 <h2 class="title">Most Sold Last 7 Days</h2> *@
+    @*             </div> *@
+    @*             <div class="row row-cols-xl-3 row-cols-md-2 row-cols-1 row--15"> *@
+    @*                 <div class="col"> *@
+    @*                     <div class="axil-product-list product-list-style-2"> *@
+    @*                         <div class="thumbnail"> *@
+    @*                             <a href="single-product-7.html"> *@
+    @*                                 <img data-sal="zoom-in" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-18.jpg" alt="NFT"> *@
+    @*                             </a> *@
+    @*                         </div> *@
+    @*                         <div class="product-content"> *@
+    @*                             <h6 class="product-title"><a href="single-product-7.html">Anime #200 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h6> *@
+    @*                             <div class="product-price-variant"> *@
+    @*                                 <span class="price current-price">$5000</span> *@
+    @*                             </div> *@
+    @*                             <div class="product-cart"> *@
+    @*                                 <a href="single-product-7.html" class="cart-btn">Buy Product</a> *@
+    @*                             </div> *@
+    @*                         </div> *@
+    @*                     </div> *@
+    @*                 </div> *@
+    @*                 <div class="col"> *@
+    @*                     <div class="axil-product-list product-list-style-2"> *@
+    @*                         <div class="thumbnail"> *@
+    @*                             <a href="single-product-7.html"> *@
+    @*                                 <img data-sal="zoom-in" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-22.jpg" alt="NFT"> *@
+    @*                             </a> *@
+    @*                         </div> *@
+    @*                         <div class="product-content"> *@
+    @*                             <h6 class="product-title"><a href="single-product-7.html">Anime #201 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h6> *@
+    @*                             <div class="product-price-variant"> *@
+    @*                                 <span class="price current-price">$7955</span> *@
+    @*                             </div> *@
+    @*                             <div class="product-cart"> *@
+    @*                                 <a href="single-product-7.html" class="cart-btn">Buy Product</a> *@
+    @*                             </div> *@
+    @*                         </div> *@
+    @*                     </div> *@
+    @*                 </div> *@
+    @*                 <div class="col"> *@
+    @*                     <div class="axil-product-list product-list-style-2"> *@
+    @*                         <div class="thumbnail"> *@
+    @*                             <a href="single-product-7.html"> *@
+    @*                                 <img data-sal="zoom-in" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-19.jpg" alt="NFT"> *@
+    @*                             </a> *@
+    @*                         </div> *@
+    @*                         <div class="product-content"> *@
+    @*                             <h6 class="product-title"><a href="single-product-7.html">Anime #202 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h6> *@
+    @*                             <div class="product-price-variant"> *@
+    @*                                 <span class="price current-price">$2999</span> *@
+    @*                             </div> *@
+    @*                             <div class="product-cart"> *@
+    @*                                 <a href="single-product-7.html" class="cart-btn">Buy Product</a> *@
+    @*                             </div> *@
+    @*                         </div> *@
+    @*                     </div> *@
+    @*                 </div> *@
+    @*                 <div class="col"> *@
+    @*                     <div class="axil-product-list product-list-style-2"> *@
+    @*                         <div class="thumbnail"> *@
+    @*                             <a href="single-product-7.html"> *@
+    @*                                 <img data-sal="zoom-in" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-23.jpg" alt="NFT"> *@
+    @*                             </a> *@
+    @*                         </div> *@
+    @*                         <div class="product-content"> *@
+    @*                             <h6 class="product-title"><a href="single-product-7.html">Anime #200 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h6> *@
+    @*                             <div class="product-price-variant"> *@
+    @*                                 <span class="price current-price">$5000</span> *@
+    @*                             </div> *@
+    @*                             <div class="product-cart"> *@
+    @*                                 <a href="single-product-7.html" class="cart-btn">Buy Product</a> *@
+    @*                             </div> *@
+    @*                         </div> *@
+    @*                     </div> *@
+    @*                 </div> *@
+    @*                 <div class="col"> *@
+    @*                     <div class="axil-product-list product-list-style-2"> *@
+    @*                         <div class="thumbnail"> *@
+    @*                             <a href="single-product-7.html"> *@
+    @*                                 <img data-sal="zoom-in" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-20.jpg" alt="NFT"> *@
+    @*                             </a> *@
+    @*                         </div> *@
+    @*                         <div class="product-content"> *@
+    @*                             <h6 class="product-title"><a href="single-product-7.html">Anime #201</a></h6> *@
+    @*                             <div class="product-price-variant"> *@
+    @*                                 <span class="price current-price">$7955</span> *@
+    @*                             </div> *@
+    @*                             <div class="product-cart"> *@
+    @*                                 <a href="single-product-7.html" class="cart-btn">Buy Product</a> *@
+    @*                             </div> *@
+    @*                         </div> *@
+    @*                     </div> *@
+    @*                 </div> *@
+    @*                 <div class="col"> *@
+    @*                     <div class="axil-product-list product-list-style-2"> *@
+    @*                         <div class="thumbnail"> *@
+    @*                             <a href="single-product-7.html"> *@
+    @*                                 <img data-sal="zoom-in" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-24.jpg" alt="NFT"> *@
+    @*                             </a> *@
+    @*                         </div> *@
+    @*                         <div class="product-content"> *@
+    @*                             <h6 class="product-title"><a href="single-product-7.html">Anime #202 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h6> *@
+    @*                             <div class="product-price-variant"> *@
+    @*                                 <span class="price current-price">$2999</span> *@
+    @*                             </div> *@
+    @*                             <div class="product-cart"> *@
+    @*                                 <a href="single-product-7.html" class="cart-btn">Buy Product</a> *@
+    @*                             </div> *@
+    @*                         </div> *@
+    @*                     </div> *@
+    @*                 </div> *@
+    @*                 <div class="col"> *@
+    @*                     <div class="axil-product-list product-list-style-2"> *@
+    @*                         <div class="thumbnail"> *@
+    @*                             <a href="single-product-7.html"> *@
+    @*                                 <img data-sal="zoom-in" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-28.jpg" alt="NFT"> *@
+    @*                             </a> *@
+    @*                         </div> *@
+    @*                         <div class="product-content"> *@
+    @*                             <h6 class="product-title"><a href="single-product-7.html">Anime #200 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h6> *@
+    @*                             <div class="product-price-variant"> *@
+    @*                                 <span class="price current-price">$5000</span> *@
+    @*                             </div> *@
+    @*                             <div class="product-cart"> *@
+    @*                                 <a href="single-product-7.html" class="cart-btn">Buy Product</a> *@
+    @*                             </div> *@
+    @*                         </div> *@
+    @*                     </div> *@
+    @*                 </div> *@
+    @*                 <div class="col"> *@
+    @*                     <div class="axil-product-list product-list-style-2"> *@
+    @*                         <div class="thumbnail"> *@
+    @*                             <a href="single-product-7.html"> *@
+    @*                                 <img data-sal="zoom-in" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-25.jpg" alt="NFT"> *@
+    @*                             </a> *@
+    @*                         </div> *@
+    @*                         <div class="product-content"> *@
+    @*                             <h6 class="product-title"><a href="single-product-7.html">Anime #201 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h6> *@
+    @*                             <div class="product-price-variant"> *@
+    @*                                 <span class="price current-price">$7955</span> *@
+    @*                             </div> *@
+    @*                             <div class="product-cart"> *@
+    @*                                 <a href="single-product-7.html" class="cart-btn">Buy Product</a> *@
+    @*                             </div> *@
+    @*                         </div> *@
+    @*                     </div> *@
+    @*                 </div> *@
+    @*                 <div class="col"> *@
+    @*                     <div class="axil-product-list product-list-style-2"> *@
+    @*                         <div class="thumbnail"> *@
+    @*                             <a href="single-product-7.html"> *@
+    @*                                 <img data-sal="zoom-in" data-sal-delay="100" data-sal-duration="1500" src="~/assets/images/product/nft/product-26.jpg" alt="NFT"> *@
+    @*                             </a> *@
+    @*                         </div> *@
+    @*                         <div class="product-content"> *@
+    @*                             <h6 class="product-title"><a href="single-product-7.html">Anime #202 <span class="verified-icon"><i class="fas fa-badge-check"></i></span></a></h6> *@
+    @*                             <div class="product-price-variant"> *@
+    @*                                 <span class="price current-price">$2999</span> *@
+    @*                             </div> *@
+    @*                             <div class="product-cart"> *@
+    @*                                 <a href="single-product-7.html" class="cart-btn">Buy Product</a> *@
+    @*                             </div> *@
+    @*                         </div> *@
+    @*                     </div> *@
+    @*                 </div> *@
+    @*             </div> *@
+    @*         </div> *@
+    @*     </div> *@
+    @* </div> *@
     <!-- End Most Sold Product Area  -->
     
     <!-- Start Testimonila Area  -->
-    <div class="axil-testimoial-area axil-section-gap bg-vista-white">
+    <div class="axil-testimoial-area axil-section-gap bg-vista-white" id="feedback">
         <div class="container">
-            <div class="section-title-wrapper">
+            <div class="section-title-wrapper section-title-center">
                 <span class="title-highlighter highlighter-secondary"> <i class="fal fa-quote-left"></i>Testimonials</span>
                 <h2 class="title">Users Feedback</h2>
             </div>
             <!-- End .section-title -->
             <div class="testimonial-slick-activation testimonial-style-one-wrapper slick-layout-wrapper--20 axil-slick-arrow arrow-top-slide">
+               
+                @foreach (var testimonial in Model.Testimonials)
+                {
                 <div class="slick-single-layout testimonial-style-one">
                     <div class="review-speech">
                         <p>
-                            " It's amazing how much easier it has been to
-                            meet new people and create instantly non
-                            connections. I have the exact same personal
-                            the only thing that has changed is my mind
-                            set and a few behaviors. "
+                            " @testimonial.Message "
                         </p>
                     </div>
                     <div class="media">
                         <div class="thumbnail">
-                            <img src="~/assets/images/testimonial/image-1.png" alt="testimonial image">
+                            <img src="~/assets/images/profile/@testimonial.User?.ProfileImageUrl" alt="testimonial image" style="width:9vh">
                         </div>
                         <div class="media-body">
-                            <span class="designation">Head Of Idea</span>
-                            <h6 class="title">James C. Anderson</h6>
+                            <span class="designation">@testimonial.CreatedAt</span>
+                            <h6 class="title">@testimonial.UserName</h6>
                         </div>
                     </div>
                     <!-- End .thumbnail -->
                 </div>
-                <!-- End .slick-single-layout -->
-                <div class="slick-single-layout testimonial-style-one">
-                    <div class="review-speech">
-                        <p>
-                            " It's amazing how much easier it has been to
-                            meet new people and create instantly non
-                            connections. I have the exact same personal
-                            the only thing that has changed is my mind
-                            set and a few behaviors. "
-                        </p>
-                    </div>
-                    <div class="media">
-                        <div class="thumbnail">
-                            <img src="~/assets/images/testimonial/image-2.png" alt="testimonial image">
-                        </div>
-                        <div class="media-body">
-                            <span class="designation">Head Of Idea</span>
-                            <h6 class="title">James C. Anderson</h6>
-                        </div>
-                    </div>
-                    <!-- End .thumbnail -->
-                </div>
-                <!-- End .slick-single-layout -->
-                <div class="slick-single-layout testimonial-style-one">
-                    <div class="review-speech">
-                        <p>
-                            " It's amazing how much easier it has been to
-                            meet new people and create instantly non
-                            connections. I have the exact same personal
-                            the only thing that has changed is my mind
-                            set and a few behaviors. "
-                        </p>
-                    </div>
-                    <div class="media">
-                        <div class="thumbnail">
-                            <img src="~/assets/images/testimonial/image-3.png" alt="testimonial image">
-                        </div>
-                        <div class="media-body">
-                            <span class="designation">Head Of Idea</span>
-                            <h6 class="title">James C. Anderson</h6>
-                        </div>
-                    </div>
-                    <!-- End .thumbnail -->
-                </div>
-                <!-- End .slick-single-layout -->
-                <div class="slick-single-layout testimonial-style-one">
-                    <div class="review-speech">
-                        <p>
-                            " It's amazing how much easier it has been to
-                            meet new people and create instantly non
-                            connections. I have the exact same personal
-                            the only thing that has changed is my mind
-                            set and a few behaviors. "
-                        </p>
-                    </div>
-                    <div class="media">
-                        <div class="thumbnail">
-                            <img src="~/assets/images/testimonial/image-2.png" alt="testimonial image">
-                        </div>
-                        <div class="media-body">
-                            <span class="designation">Head Of Idea</span>
-                            <h6 class="title">James C. Anderson</h6>
-                        </div>
-                    </div>
-                    <!-- End .thumbnail -->
-                </div>
+               }
+
+
                 <!-- End .slick-single-layout -->
             </div>
         </div>
@@ -670,6 +696,8 @@
     
     <!-- Start Why Choose Area  -->
     <div class="axil-why-choose-area pb--50 pb_sm--30">
+        <br />
+        <br />
         <div class="container">
             <div class="section-title-wrapper section-title-center">
                 <span class="title-highlighter highlighter-secondary"><i class="fal fa-thumbs-up"></i>Why Us</span>
@@ -721,28 +749,35 @@
     </div>
     <!-- End Why Choose Area  -->
 
-    <div class="axil-section-gap">
+    <div class="axil-section-gap" id="post">
         <div class="container">
             <div class="section-title-wrapper section-title-center">
                 <span class="title-highlighter highlighter-primary"><i class="fas fa-fire"></i> Regular Post</span>
-                <h3 class="title">Latest NFT News</h3>
+                <h3 class="title">Latest Posts & News</h3>
             </div>
-            <div class="row g-5">
-                <div class="col-lg-4">
+            <div class="row g-5 testimonial-slick-activation  slick-layout-wrapper--20 axil-slick-arrow arrow-top-slide">
+                <div class="col-lg-4 ">
                     <div class="content-blog blog-grid">
                         <div class="inner">
                             <div class="thumbnail">
-                                <a href="blog-details.html">
-                                    <img src="~/assets/images/blog/blog-10.png" alt="Blog Images">
+                                <a asp-action="blogdetails1" asp-controller="Home">
+                                    <img src="~/assets/images/blog/blog1.webp" alt="Gift Card">
                                 </a>
                                 <div class="blog-category">
-                                    <a href="#">Digital Art's</a>
+                                    <a asp-action="categoryShop" asp-controller="Products">Gift Cards</a>
                                 </div>
                             </div>
                             <div class="content">
-                                <h5 class="title"><a href="blog-details.html">Keeping yourself safe when buying NFTs on eTrade</a></h5>
+                                <h5 class="title">
+                                    <a asp-action="blogdetails1" asp-controller="Home">Surprise Your Friend with a Digital Gift Card!</a>
+                                </h5>
+                                @* <p> *@
+                                @*     Gift cards are the perfect way to show appreciation or celebrate a special occasion. Through our platform, you can instantly purchase and send a digital gift card to your friend or loved one. It's fast, easy, and always a great idea! *@
+                                @* </p> *@
                                 <div class="read-more-btn">
-                                    <a class="axil-btn right-icon" href="blog-details.html">Read More <i class="fal fa-long-arrow-right"></i></a>
+                                    <a class="axil-btn right-icon" asp-action="blogdetails1" asp-controller="Home">
+                                        Read More <i class="fal fa-long-arrow-right"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -752,43 +787,554 @@
                     <div class="content-blog blog-grid">
                         <div class="inner">
                             <div class="thumbnail">
-                                <a href="blog-details.html">
-                                    <img src="~/assets/images/blog/blog-11.png" alt="Blog Images">
+                                <a asp-action="blogdetails2" asp-controller="Home">
+                                    <img src="~/assets/images/blog/blog2.webp" alt="Steam Gift Card">
                                 </a>
                                 <div class="blog-category">
-                                    <a href="#">Photography</a>
+                                    <a asp-action="shop" asp-controller="Products" asp-route-id="1028">Steam</a>
                                 </div>
                             </div>
                             <div class="content">
-                                <h5 class="title"><a href="blog-details.html">Important updates for listing and delisting your NFTs</a></h5>
+                                <h5 class="title">
+                                    <a asp-action="blogdetails2" asp-controller="Home">Steam Gift Card – The Perfect Gift for Gamers</a>
+                                </h5>
+                                @* <p> *@
+                                @*     Gift cards are the perfect way to show appreciation or celebrate a special occasion. Through our platform, you can instantly purchase and send a digital gift card to your friend or loved one. It's fast, easy, and always a great idea! *@
+                                @* </p> *@
                                 <div class="read-more-btn">
-                                    <a class="axil-btn right-icon" href="blog-details.html">Read More <i class="fal fa-long-arrow-right"></i></a>
+                                    <a class="axil-btn right-icon" asp-action="blogdetails2" asp-controller="Home">
+                                        Read More <i class="fal fa-long-arrow-right"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4">
                     <div class="content-blog blog-grid">
                         <div class="inner">
                             <div class="thumbnail">
                                 <a href="blog-details.html">
-                                    <img src="~/assets/images/blog/blog-12.png" alt="Blog Images">
+                                    <img src="~/assets/images/blog/blog4.jpg" alt="Visa Gift Card">
                                 </a>
                                 <div class="blog-category">
-                                    <a href="#">Music</a>
+                                    <a href="#">Visa % Cash Gift Cards</a>
                                 </div>
                             </div>
                             <div class="content">
-                                <h5 class="title"><a href="blog-details.html">10 tips for avoiding scams and staying safe on the decentralized web</a></h5>
+                                <h5 class="title">
+                                    <a href="blog-details.html">Worldwide Visa Gift Cards – Spend Anywhere</a>
+                                </h5>
+                                @* <p> *@
+                                @*     Visa gift cards offer unmatched flexibility and global usability. Buy one today and enjoy shopping, subscriptions, or even gifting – no matter where you are in the world. *@
+                                @* </p> *@
                                 <div class="read-more-btn">
-                                    <a class="axil-btn right-icon" href="blog-details.html">Read More <i class="fal fa-long-arrow-right"></i></a>
+                                    <a class="axil-btn right-icon" href="blog-details.html">
+                                        Read More <i class="fal fa-long-arrow-right"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="col-lg-4">
+                    <div class="content-blog blog-grid">
+                        <div class="inner">
+                            <div class="thumbnail">
+                                <a href="blog-details.html">
+                                    <img src="~/assets/images/blog/blog3.jpeg" alt="PlayStation Gift Card">
+                                </a>
+                                <div class="blog-category">
+                                    <a href="#">Playstation Gift Cards</a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h5 class="title">
+                                    <a href="blog-details.html">PlayStation Gift Cards for Every Country</a>
+                                </h5>
+                                @* <p> *@
+                                @*     Explore our wide selection of PlayStation gift cards available for different regions including the US, UK, Saudi Arabia, UAE, and more. Choose the right card for your account and enjoy smooth top-ups without regional issues! *@
+                                @* </p> *@
+                                <div class="read-more-btn">
+                                    <a class="axil-btn right-icon" href="blog-details.html">
+                                        Read More <i class="fal fa-long-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 </main>
+
+<script>
+    // تأكد من أن الصفحة حملت بالكامل
+    document.addEventListener('DOMContentLoaded', function () {
+      var iso = new Isotope('.grid', {
+        itemSelector: '.grid-item',
+        layoutMode: 'fitRows'
+      });
+
+      // أزرار الفلترة
+      var filtersElem = document.querySelector('.isotope-button');
+      filtersElem.addEventListener('click', function (event) {
+        if (!event.target.closest('button')) return;
+        var filterValue = event.target.closest('button').getAttribute('data-filter');
+        iso.arrange({ filter: filterValue });
+
+        // تبديل الكلاسات لتحديد الزر المفعّل
+        filtersElem.querySelectorAll('button').forEach(btn => btn.classList.remove('is-checked'));
+        event.target.closest('button').classList.add('is-checked');
+      });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        let isCartProcessing = false;
+        // استخدم Set لتتبع المنتجات قيد المعالجة في المفضلة
+        const favProcessingSet = new Set();
+        
+        // Initialize once on page load
+        loadUserFavorites();
+        
+        // Unbind any existing handlers first to prevent duplicates
+        $(document).off('click', '.addToCartBtn').on('click', '.addToCartBtn', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            if (isCartProcessing) return;
+            isCartProcessing = true;
+            
+            var $button = $(this);
+            var productId = $button.data('product-id');
+            
+            // Show loading state
+            var originalText = $button.text();
+            $button.text('Adding...').addClass('disabled');
+            
+            $.ajax({
+                url: '/Products/addToCart',
+                type: 'POST',
+                data: { id: productId },
+                success: function (response) {
+                    if (response.success) {
+                        // Update cart count
+                        $('.cart-count').text(response.cartCount);
+                        if (response.cartCount > 0) {
+                            $('.cart-count').removeClass('hidden');
+                        }
+                        
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Added To Cart',
+                            text: response.message || 'Product added to cart successfully.',
+                            timer: 1500,
+                            showConfirmButton: false
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: response.message || 'Failed to add product to cart.'
+                        });
+                    }
+                },
+                error: function () {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'An error occurred while processing your request.'
+                    });
+                },
+                complete: function () {
+                    // Reset button state
+                    $button.text(originalText).removeClass('disabled');
+                    
+                    // Delay re-enabling the button to prevent accidental double-clicks
+                    setTimeout(function() {
+                        isCartProcessing = false;
+                    }, 500);
+                }
+            });
+        });
+        
+        // إعادة تعريف معالج أحداث المفضلة لضمان عمله بعد كل عملية
+        function attachFavoritesHandlers() {
+            // إلغاء أي معالج سابق ثم ربط معالج جديد
+            $(document).off('click', '.addToFavoritesBtn');
+            $('.addToFavoritesBtn').off('click').on('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var $button = $(this);
+                var $heartIcon = $button.find('i');
+                var productId = $button.data('product-id');
+                if (favProcessingSet.has(productId)) return; // منع التكرار لنفس المنتج
+                favProcessingSet.add(productId);
+                $button.addClass('disabled');
+                // Show loading state
+                $heartIcon.removeClass('far fas').addClass('fa-spinner fa-spin');
+                $.ajax({
+                    url: '/Products/addToFavorites',
+                    type: 'POST',
+                    data: { id: productId },
+                    success: function(response) {
+                        if (response.success) {
+                            // Update favorites count in header
+                            $.ajax({
+                                url: '/Products/GetFavoritesCount',
+                                type: 'GET',
+                                success: function(countResponse) {
+                                    if (countResponse.success) {
+                                        const favCount = parseInt(countResponse.favoritesCount);
+                                        $('.favorites-count').text(favCount);
+                                        if (favCount === 0) {
+                                            $('.favorites-count').addClass('hidden');
+                                        } else {
+                                            $('.favorites-count').removeClass('hidden');
+                                        }
+                                    }
+                                }
+                            });
+                            
+                            // Reset icon and apply appropriate class based on response
+                            $heartIcon.removeClass('fa-spinner fa-spin');
+                            if (response.added) {
+                                $heartIcon.removeClass('far').addClass('fas');
+                                
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Added to Wishlist',
+                                    text: response.message || 'Product added to your wishlist.',
+                                    timer: 1500,
+                                    showConfirmButton: false
+                                });
+                            } else {
+                                $heartIcon.removeClass('fas').addClass('far');
+                                
+                                Swal.fire({
+                                    icon: 'info',
+                                    title: 'Removed from Wishlist',
+                                    text: response.message || 'Product removed from your wishlist.',
+                                    timer: 1500,
+                                    showConfirmButton: false
+                                });
+                            }
+                        } else {
+                            // Reset icon on error
+                            $heartIcon.removeClass('fa-spinner fa-spin').addClass('far');
+                            
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: response.message
+                            });
+                        }
+                    },
+                    error: function() {
+                        // Reset icon on error
+                        $heartIcon.removeClass('fa-spinner fa-spin').addClass('far');
+                        
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'An error occurred while updating your wishlist.'
+                        });
+                    },
+                    complete: function() {
+                        $button.removeClass('disabled');
+                        favProcessingSet.delete(productId);
+                        // إعادة تعريف معالج الأحداث بعد الانتهاء من الطلب
+                        attachFavoritesHandlers();
+                    }
+                });
+            });
+        }
+        
+        // تفعيل معالج الأحداث الأول
+        attachFavoritesHandlers();
+    });
+    
+    function loadUserFavorites() {
+        console.log("Index: Loading user favorites...");
+        $.ajax({
+            url: '/Products/GetUserFavorites',
+            type: 'GET',
+            success: function(response) {
+                console.log("Index: Favorites data:", response);
+                if (response.success && response.favorites) {
+                    // Update heart icons for user's favorite items
+                    $('.addToFavoritesBtn').each(function() {
+                        const $btn = $(this);
+                        const productId = $btn.data('product-id');
+                        if (response.favorites.includes(productId)) {
+                            console.log("Product " + productId + " is in favorites");
+                            $btn.find('i').removeClass('far').addClass('fas');
+                        } else {
+                            $btn.find('i').removeClass('fas').addClass('far');
+                        }
+                    });
+                }
+                else {
+                    console.log("No favorites found or error in response");
+                }
+            },
+            error: function() {
+                console.log('Error loading user favorites');
+            }
+        });
+    }
+</script>
+
+
+<script>
+    // Set up the scroll event listener for product scrolling
+    document.querySelector('.productss').addEventListener('scroll', function() {
+        this.style.setProperty('--scrollbar-animation', 'none');
+    }, { once: true });
+</script>
+
+@section Scripts {
+    <script>
+        // Create Toast notification style
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        });
+
+        // تتبع الطلبات المرسلة لمنع التكرار
+        const sentRequests = new Set();
+
+        $(document).ready(function () {
+            // تنظيف أي event handlers قديمة
+            $('.addToCartBtn').off('click');
+            $('.addToFavoritesBtn').off('click');
+            
+            // إيقاف أي معالجات أحداث مرتبطة بالوثيقة
+            $(document).off('click', '.addToCartBtn');
+            $(document).off('click', '.addToFavoritesBtn');
+            
+            let isCartProcessing = false;
+            let isFavProcessing = false;
+            
+            // Initialize once on page load
+            loadUserFavorites();
+            
+            // Scroll animation
+            document.querySelector('.productss')?.addEventListener('scroll', function() {
+                this.style.setProperty('--scrollbar-animation', 'none');
+            }, { once: true });
+            
+            // استخدام حدث نقر مباشر بدلاً من تفويض الحدث
+            $('.addToCartBtn').on('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                if (isCartProcessing) return;
+                isCartProcessing = true;
+                
+                var $button = $(this);
+                var productId = $button.data('product-id');
+                
+                // إنشاء معرف فريد للطلب
+                const requestId = `cart_${productId}_${Date.now()}`;
+                
+                // التحقق مما إذا كان الطلب مرسل بالفعل
+                if (sentRequests.has(productId)) {
+                    console.log('Request already sent for product:', productId);
+                    $button.text('Already added').addClass('disabled');
+                    
+                    setTimeout(function() {
+                        $button.text('Add to Cart').removeClass('disabled');
+                        isCartProcessing = false;
+                    }, 1500);
+                    
+                    return;
+                }
+                
+                // تعليم المنتج كمرسل
+                sentRequests.add(productId);
+                
+                // Show loading state
+                var originalText = $button.text();
+                $button.text('Adding...').addClass('disabled');
+                
+                $.ajax({
+                    url: '/Products/addToCart',
+                    type: 'POST',
+                    data: { 
+                        id: productId,
+                        _requestId: requestId // إضافة معرف الطلب
+                    },
+                    success: function (response) {
+                        if (response.success) {
+                            // Update cart count
+                            $('.cart-count').text(response.cartCount);
+                            if (response.cartCount > 0) {
+                                $('.cart-count').removeClass('hidden');
+                            }
+                            
+                            Toast.fire({
+                                icon: 'success',
+                                title: 'Added To Cart'
+                            });
+                        } else {
+                            Toast.fire({
+                                icon: 'error',
+                                title: 'Error adding to cart'
+                            });
+                        }
+                    },
+                    error: function () {
+                        Toast.fire({
+                            icon: 'error',
+                            title: 'Error occurred'
+                        });
+                    },
+                    complete: function () {
+                        // Reset button state
+                        $button.text(originalText).removeClass('disabled');
+                        
+                        // إزالة المنتج من قائمة الطلبات المرسلة بعد فترة
+                        setTimeout(function() {
+                            sentRequests.delete(productId);
+                            isCartProcessing = false;
+                        }, 2000);
+                    }
+                });
+            });
+            
+            // Wishlist functionality
+            $('.addToFavoritesBtn').on('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                if (isFavProcessing) return;
+                isFavProcessing = true;
+                
+                var $button = $(this);
+                var $heartIcon = $button.find('i');
+                var productId = $button.data('product-id');
+                
+                // Show loading state
+                $heartIcon.removeClass('far fas').addClass('fa-spinner fa-spin');
+                
+                $.ajax({
+                    url: '/Products/addToFavorites',
+                    type: 'POST',
+                    data: { id: productId },
+                    success: function(response) {
+                        if (response.success) {
+                            // Update favorites count in header
+                            $.ajax({
+                                url: '/Products/GetFavoritesCount',
+                                type: 'GET',
+                                success: function(countResponse) {
+                                    if (countResponse.success) {
+                                        const favCount = parseInt(countResponse.favoritesCount);
+                                        $('.favorites-count').text(favCount);
+                                        if (favCount === 0) {
+                                            $('.favorites-count').addClass('hidden');
+                                        } else {
+                                            $('.favorites-count').removeClass('hidden');
+                                        }
+                                    }
+                                }
+                            });
+                            
+                            // Reset icon and apply appropriate class based on response
+                            $heartIcon.removeClass('fa-spinner fa-spin');
+                            if (response.added) {
+                                $heartIcon.removeClass('far').addClass('fas');
+                                
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Added to Wishlist',
+                                    text: response.message || 'Product added to your wishlist.',
+                                    timer: 1500,
+                                    showConfirmButton: false
+                                });
+                            } else {
+                                $heartIcon.removeClass('fas').addClass('far');
+                                
+                                Swal.fire({
+                                    icon: 'info',
+                                    title: 'Removed from Wishlist',
+                                    text: response.message || 'Product removed from your wishlist.',
+                                    timer: 1500,
+                                    showConfirmButton: false
+                                });
+                            }
+                        } else {
+                            // Reset icon on error
+                            $heartIcon.removeClass('fa-spinner fa-spin').addClass('far');
+                            
+                            Toast.fire({
+                                icon: 'error',
+                                title: 'Failed to update wishlist'
+                            });
+                        }
+                    },
+                    error: function() {
+                        // Reset icon on error
+                        $heartIcon.removeClass('fa-spinner fa-spin').addClass('far');
+                        
+                        Toast.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'An error occurred while updating your wishlist.'
+                        });
+                    },
+                    complete: function() {
+                        // Delay re-enabling the button to prevent accidental double-clicks
+                        setTimeout(function() {
+                            isFavProcessing = false;
+                        }, 2000);
+                    }
+                });
+            });
+        });
+        
+        // Function to load and display user's favorites
+        function loadUserFavorites() {
+            console.log("Index: Loading user favorites...");
+            $.ajax({
+                url: '/Products/GetUserFavorites',
+                type: 'GET',
+                success: function(response) {
+                    console.log("Index: Favorites data:", response);
+                    if (response.success && response.favorites) {
+                        // Update heart icons for user's favorite items
+                        $('.addToFavoritesBtn').each(function() {
+                            const $btn = $(this);
+                            const productId = $btn.data('product-id');
+                            if (response.favorites.includes(productId)) {
+                                console.log("Product " + productId + " is in favorites");
+                                $btn.find('i').removeClass('far').addClass('fas');
+                            } else {
+                                $btn.find('i').removeClass('fas').addClass('far');
+                            }
+                        });
+                    }
+                    else {
+                        console.log("No favorites found or error in response");
+                    }
+                },
+                error: function() {
+                    console.log('Error loading user favorites');
+                }
+            });
+        }
+    </script>
+}

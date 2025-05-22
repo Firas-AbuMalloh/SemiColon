@@ -6,6 +6,8 @@ using WebApplication1.Models;
 using Microsoft.AspNetCore.Http;
 using SemiColon.Models.ViewModel;
 using Newtonsoft.Json;
+using System.Net.Mail;
+using System.Net;
 
 namespace SemiColon.Controllers
 {
@@ -15,22 +17,58 @@ namespace SemiColon.Controllers
 
 
         private readonly MyDbContext _Db;
+        private readonly IConfiguration _configuration;
 
-        public HomeController(ILogger<HomeController> logger, MyDbContext dbContext)
+        public HomeController(ILogger<HomeController> logger, MyDbContext dbContext, IConfiguration configuration)
         {
             _logger = logger;
             _Db = dbContext;
+            _configuration = configuration;
         }
 
         public async Task<IActionResult> index()
         {
             var products = await _Db.Cards.ToListAsync();
             var categories = await _Db.Categories.ToListAsync();
+            var main = await _Db.MainCategories.ToListAsync();
 
+            var mostFrequentCards = await _Db.OrderDetails
+                .GroupBy(od => od.CardId)
+                .Select(group => new { CardId = group.Key, Count = group.Count() })
+                .OrderByDescending(x => x.Count)
+                .Take(10)
+                .ToListAsync();
+
+            var frequentCardIds = mostFrequentCards.Select(mfc => mfc.CardId).ToList();
+
+            // تحسين الأداء باستخدام Dictionary
+            var frequentCardDict = mostFrequentCards.ToDictionary(mfc => mfc.CardId, mfc => mfc.Count);
+
+            var bestSellingCardsInfo = _Db.Cards
+                .Where(c => frequentCardIds.Contains(c.Id))
+                .AsEnumerable()
+                .Select(c =>
+                {
+                    frequentCardDict.TryGetValue(c.Id, out int count);
+                    return new bestOrderSellerViewModels
+                    {
+                        CardId = c.Id,
+                        CardName = c.CardName,
+                        CardPrice = c.Price,
+                        CardImage = c.ImageUrl,
+                        CardCount = count
+                    };
+                })
+                .OrderByDescending(vm => vm.CardCount)
+                .ToList();
+            var testimonials = await _Db.Testimonials.Include(t => t.User).ToListAsync();
             var viewModelIndex = new indexViewModel
             {
-                Products = products, 
-                Categories = categories 
+                Products = products,
+                Categories = categories,
+                MainCategories = main,
+                BestOrderSellers = bestSellingCardsInfo,
+                Testimonials = testimonials
             };
 
             if (viewModelIndex.Products.Any() || viewModelIndex.Categories.Any())
@@ -43,6 +81,8 @@ namespace SemiColon.Controllers
                 return View();
             }
         }
+
+
         public IActionResult aboutUs()
         {
             return View();
@@ -53,56 +93,109 @@ namespace SemiColon.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> contactUs(ContactFeedBack dataForm)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ContactUs(ContactFeedBack dataForm)
         {
-
             if (ModelState.IsValid)
             {
                 var recaptchaResponse = Request.Form["g-recaptcha-response"];
-                var secretKey = "6LdpQCIrAAAAACT0zYj5o7LrzIwzgAVJck-BLGbK";
-                var client = new HttpClient();
-                var result = await client.PostAsync($"https://www.google.com/recaptcha/api/siteverify?secret={secretKey}&response={recaptchaResponse}", null);
-                var responseString = await result.Content.ReadAsStringAsync();
-                dynamic json = Newtonsoft.Json.JsonConvert.DeserializeObject(responseString);
+                var recaptchaSecretKey = _configuration["Recaptcha:SecretKey"];
 
-                if (json.success != true)
+                // 1. التحقق من مفتاح ReCaptcha
+                if (string.IsNullOrEmpty(recaptchaSecretKey))
                 {
-                    ModelState.AddModelError("", "CAPTCHA validation failed. Please try again.");
-                    return View(dataForm); // أو ممكن ترجع نفس View مع البيانات إذا تحب
+                    // Log error: ReCaptcha secret key not configured! (Use a logging framework)
+                    ModelState.AddModelError("", "ReCaptcha is not configured correctly.");
+                    return View(dataForm);
                 }
-                else
+
+                if (string.IsNullOrEmpty(recaptchaResponse))
                 {
-                    if (dataForm != null)
+                    ModelState.AddModelError("", "Please complete the CAPTCHA.");
+                    return View(dataForm);
+                }
+
+                using (HttpClient client = new HttpClient())
+                {
+                    var recaptchaResult = await client.PostAsync(
+                        $"https://www.google.com/recaptcha/api/siteverify?secret={recaptchaSecretKey}&response={recaptchaResponse}", null);
+
+                    if (recaptchaResult.IsSuccessStatusCode)
                     {
-                        dataForm.UserId = Convert.ToInt32(HttpContext.Session.GetString("UserId"));
-                        if (dataForm.Email == null)
+                        var recaptchaResponseString = await recaptchaResult.Content.ReadAsStringAsync();
+                        dynamic recaptchaJson = JsonConvert.DeserializeObject(recaptchaResponseString);
+
+                        if (recaptchaJson.success != true)
                         {
-                            dataForm.Email = HttpContext.Session.GetString("Useremail");
+                            ModelState.AddModelError("", "CAPTCHA validation failed. Please try again.");
+                            return View(dataForm);
                         }
+                        else
+                        {
+                            // 2. Process the form data (Database interaction, etc.)
+                            try
+                            {
+                                _Db.ContactFeedBacks.Add(dataForm);
+                                dataForm.CreatedAt = DateOnly.FromDateTime(DateTime.Now);
+                                await _Db.SaveChangesAsync();
 
-                        dataForm.CreatedAt = DateOnly.FromDateTime(DateTime.Now);  // فقط التاريخ اتذكر يا فراس لا تنساها
-                        _Db.ContactFeedBacks.Add(dataForm);
-                        _Db.SaveChanges();
-
-                        return RedirectToAction("contactUs");
+                                // Success!
+                                TempData["SuccessMessage"] = "Your message has been sent successfully!";
+                                return RedirectToAction("ContactUs");
+                            }
+                            catch (Exception dbEx)
+                            {
+                                // Log the database exception (Use a logging framework)
+                                ModelState.AddModelError("", "An error occurred while saving your message. Please try again.");
+                                return View(dataForm);
+                            }
+                        }
                     }
                     else
                     {
-                        return RedirectToAction("contactUs");
+                        // Log error: ReCaptcha verification failed (HTTP error)
+                        ModelState.AddModelError("", "Error verifying ReCaptcha. Please try again.");
+                        return View(dataForm);
                     }
                 }
             }
             else
+            {
                 return View(dataForm);
+            }
         }
-           
-                
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+
+
+        public async Task<IActionResult> blog()
+        {
+
+            return View();
+        }
+        public async Task<IActionResult> blogDetails1()
+        {
+
+            return View();
+        }
+        public async Task<IActionResult> blogDetails2()
+        {
+
+            return View();
+        }
+        public async Task<IActionResult> blogDetails3()
+        {
+
+            return View();
+        } public async Task<IActionResult> blogDetails4()
+        {
+
+            return View();
         }
     }
 }

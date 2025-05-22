@@ -17,6 +17,28 @@ public partial class Order
 
     public DateTime? CreatedAt { get; set; }
 
+    public string? PhoneNumber { get; set; }
+
+    public string? Email { get; set; }
+
+    public bool IsSendAsGift { get; set; }
+
+    public string? FirstNameGift { get; set; }
+
+    public string? LastNameGift { get; set; }
+
+    public string? PhoneNumberGift { get; set; }
+
+    public string? EmailGift { get; set; }
+
+    public string? MassegeGift { get; set; }
+
+    public string? PaymentMethod { get; set; }
+
+    public decimal? DiscountValue { get; set; }
+
+    public decimal Subtotal { get; set; }
+
     public virtual ICollection<Dispute> Disputes { get; set; } = new List<Dispute>();
 
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();

@@ -1,5 +1,7 @@
-﻿@{
+﻿@using SemiColon.Models
+@{
     Layout = "~/Views/Shared/mainLayoutHeaderFooter.cshtml";
+    ViewBag.Title = "Profile";
 }
 
 @model SemiColon.Models.ViewModel.profileViewModel
@@ -14,7 +16,7 @@
                             <img src="~/assets/images/profile/@Model._user.ProfileImageUrl" alt="Hello UserProfileImage" style="width:20vh">
                         </div>
                         <div class="media-body" style="margin-left:4vh">
-                            <h5 class="title mb-0">Hello @Model._user.FirstName</h5>
+                            <h5 class="title mb-0">Hello @Model._user.Username</h5>
                             <span class="joining-date">Sem;Colon Member Since @Model._user.CreatedAt</span>
                         </div>
                     </div>
@@ -27,7 +29,7 @@
                                     <a class="nav-item nav-link active" data-bs-toggle="tab" href="#nav-dashboard" role="tab" aria-selected="true"><i class="fas fa-th-large"></i>Dashboard</a>
                                     <a class="nav-item nav-link" data-bs-toggle="tab" href="#nav-orders" role="tab" aria-selected="false"><i class="fas fa-shopping-basket"></i>Orders</a>
                                     <a class="nav-item nav-link" data-bs-toggle="tab" href="#nav-downloads" role="tab" aria-selected="false"><i class="fas fa-file-download"></i>Downloads</a>
-                                    <a class="nav-item nav-link" data-bs-toggle="tab" href="#nav-address" role="tab" aria-selected="false"><i class="fas fa-home"></i>Addresses</a>
+                                    @* <a class="nav-item nav-link" data-bs-toggle="tab" href="#nav-address" role="tab" aria-selected="false"><i class="fas fa-home"></i>Addresses</a> *@
                                     <a class="nav-item nav-link" data-bs-toggle="tab" href="#nav-account" role="tab" aria-selected="false"><i class="fas fa-user"></i>Account Details</a>
                                     <a class="nav-item nav-link" style="color:red" asp-action="signOut" asp-controller="User"><i class="fal fa-sign-out"></i>Logout</a>
                                 </div>
@@ -38,42 +40,402 @@
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="nav-dashboard" role="tabpanel">
                                 <div class="axil-dashboard-overview">
-                                    <div class="welcome-text">Hello @Model._user.FirstName (not <span>@Model._user.FirstName?</span> <a asp-action="signOut" asp-controller="User">Log Out</a>)</div>
+                                    <div class="welcome-text">Hello @Model._user.FirstName <span class="text-muted fs-6">(not @Model._user.FirstName? <a asp-action="signOut" asp-controller="User">Log Out</a>)</span></div>
                                     <p>From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.</p>
+                                    
+                                    <!-- User Statistics -->
+                                    <div class="row mt-4">
+                                        <!-- Total Orders -->
+                                        <div class="col-md-3 mb-4">
+                                            <div class="card border-0 shadow-sm h-100 bg-gradient" style="--bs-gradient: linear-gradient(to right, rgba(255, 73, 124, 0.1), rgba(255, 73, 124, 0.05));">
+                                                <div class="card-body text-center">
+                                                    <div class="stat-icon mb-3" style="color: #FF497C; font-size: 2.5rem;">
+                                                        <i class="fas fa-shopping-bag"></i>
+                                                    </div>
+                                                    <h3 class="stat-value">@Model._orders.Count()</h3>
+                                                    <p class="stat-label mb-0">Total Orders</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Total Amount Spent -->
+                                        <div class="col-md-3 mb-4">
+                                            <div class="card border-0 shadow-sm h-100 bg-gradient" style="--bs-gradient: linear-gradient(to right, rgba(92, 188, 107, 0.1), rgba(92, 188, 107, 0.05));">
+                                                <div class="card-body text-center">
+                                                    <div class="stat-icon mb-3" style="color: #5CBC6B; font-size: 2.5rem;">
+                                                        <i class="fas fa-dollar-sign"></i>
+                                                    </div>
+                                                    <h3 class="stat-value">$@Model._orders.Sum(o => o.TotalAmount).ToString("0.00")</h3>
+                                                    <p class="stat-label mb-0">Total Spent</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Favorite Items -->
+                                        <div class="col-md-3 mb-4">
+                                            <div class="card border-0 shadow-sm h-100 bg-gradient" style="--bs-gradient: linear-gradient(to right, rgba(255, 107, 107, 0.1), rgba(255, 107, 107, 0.05));">
+                                                <div class="card-body text-center">
+                                                    <div class="stat-icon mb-3" style="color: #FF6B6B; font-size: 2.5rem;">
+                                                        <i class="fas fa-heart"></i>
+                                                    </div>
+                                                    @{
+                                                        var favCount = Model._user.Favorites?.Count() ?? 0;
+                                                    }
+                                                    <h3 class="stat-value">@favCount</h3>
+                                                    <p class="stat-label mb-0">Favorite Items</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Last Login -->
+                                        <div class="col-md-3 mb-4">
+                                            <div class="card border-0 shadow-sm h-100 bg-gradient" style="--bs-gradient: linear-gradient(to right, rgba(81, 145, 240, 0.1), rgba(81, 145, 240, 0.05));">
+                                                <div class="card-body text-center">
+                                                    <div class="stat-icon mb-3" style="color: #5191F0; font-size: 2.5rem;">
+                                                        <i class="fas fa-clock"></i>
+                                                    </div>
+                                                    <h3 class="stat-value" style="font-size: 1rem;">@(Model._user.LastLogin?.ToString("dd MMM, yyyy") ?? "Not logged in yet")</h3>
+                                                    <p class="stat-label mb-0">Last Login</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row mt-3">
+                                        <!-- Recent Orders -->
+                                        <div class="col-lg-7">
+                                            <div class="card border-0 shadow-sm">
+                                                <div class="card-header bg-transparent border-bottom-0">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h5 class="mb-0"><i class="fas fa-shopping-basket me-2 text-primary"></i> Recent Orders</h5>
+                                                        @if(Model._orders.Any())
+                                                        {
+                                                            <a class="btn btn-sm btn-outline-primary" data-bs-toggle="tab" href="#nav-orders" role="tab">View All</a>
+                                                        }
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    @if(Model._orders.Any())
+                                                    {
+                                                        <div class="table-responsive">
+                                                            <table class="table table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Order ID</th>
+                                                                        <th>Date</th>
+                                                                        <th>Status</th>
+                                                                        <th>Total</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    @foreach(var order in Model._orders.OrderByDescending(o => o.CreatedAt).Take(3))
+                                                                    {
+                                                                        <tr>
+                                                                            <td><span class="fw-bold">#@order.Id</span></td>
+                                                                            <td>@order.CreatedAt?.ToString("MMM dd, yyyy")</td>
+                                                                            <td>
+                                                                                @{
+                                                                                    var statusClass = order.Status switch
+                                                                                    {
+                                                                                        "Processing" => "bg-info",
+                                                                                        "Shipped" => "bg-primary",
+                                                                                        "Delivered" => "bg-success",
+                                                                                        "Completed" => "bg-success",
+                                                                                        "Cancelled" => "bg-danger",
+                                                                                        _ => "bg-secondary"
+                                                                                    };
+                                                                                }
+                                                                                <span class="badge @statusClass">
+                                                                                    @order.Status
+                                                                                </span>
+                                                                            </td>
+                                                                            <td><span class="fw-bold">$@order.TotalAmount.ToString("0.00")</span></td>
+                                                                        </tr>
+                                                                    }
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    }
+                                                    else
+                                                    {
+                                                        <div class="text-center py-4">
+                                                            <div class="empty-icon mb-3" style="color: #6c757d; font-size: 3rem;">
+                                                                <i class="fas fa-shopping-cart"></i>
+                                                            </div>
+                                                            <p class="text-muted">You haven't placed any orders yet.</p>
+                                                            <a asp-controller="Products" asp-action="shop" class="axil-btn">Start Shopping</a>
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Favorite Items -->
+                                        <div class="col-lg-5">
+                                            <div class="card border-0 shadow-sm">
+                                                <div class="card-header bg-transparent border-bottom-0">
+                                                    <h5 class="mb-0"><i class="fas fa-heart me-2 text-danger"></i> Favorite Items</h5>
+                                                </div>
+                                                <div class="card-body">
+                                                    @if(Model._user.Favorites != null && Model._user.Favorites.Any())
+                                                    {
+                                                        <div class="favorite-items-carousel">
+                                                            @foreach(var fav in Model._user.Favorites.OrderByDescending(f => f.CreatedAt).Take(3))
+                                                            {
+                                                                <div class="favorite-item mb-3 d-flex align-items-center border-bottom pb-3">
+                                                                    <div class="favorite-thumb me-3" style="width: 60px; height: 60px; overflow: hidden;">
+                                                                        <img src="~/assets/images/product/@(fav.Card?.ImageUrl ?? "default-card.jpg")" 
+                                                                            alt="@(fav.Card?.CardName ?? "Card")" 
+                                                                            class="img-fluid" style="object-fit: cover; width: 100%; height: 100%;">
+                                                                    </div>
+                                                                    <div class="favorite-content flex-grow-1">
+                                                                        <h6 class="mb-1">@(fav.Card?.CardName ?? "Unknown Card")</h6>
+                                                                        <div class="d-flex justify-content-between align-items-center">
+                                                                            <span class="text-primary fw-bold">$@(fav.Card?.Price.ToString("0.00") ?? "0.00")</span>
+                                                                            <a asp-action="productDetails" asp-controller="Products" asp-route-id="@fav.CardId" class="btn btn-sm btn-outline-primary">View</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            }
+                                                            <div class="text-center mt-3">
+                                                                <a href="/Products/favorites" class="btn btn-sm btn-outline-danger">View All Favorites</a>
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                    else
+                                                    {
+                                                        <div class="text-center py-4">
+                                                            <div class="empty-icon mb-3" style="color: #6c757d; font-size: 3rem;">
+                                                                <i class="fas fa-heart-broken"></i>
+                                                            </div>
+                                                            <p class="text-muted">No items in favorites.</p>
+                                                            <a asp-controller="Products" asp-action="shop" class="axil-btn">Browse Products</a>
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Account Information Card -->
+                                    <div class="card border-0 shadow-sm mt-4">
+                                        <div class="card-header bg-transparent border-bottom-0">
+                                            <h5 class="mb-0"><i class="fas fa-user-shield me-2 text-secondary"></i> Account Information</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <div class="d-flex align-items-center account-info-item">
+                                                        <div class="icon-box me-3" style="width: 40px; height: 40px; background-color: rgba(81, 145, 240, 0.1); color: #5191F0; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                                            <i class="fas fa-envelope"></i>
+                                                        </div>
+                                                        <div>
+                                                            <small class="text-muted d-block">Email Address</small>
+                                                            <div class="fw-bold">@Model._user.Email</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <div class="d-flex align-items-center account-info-item">
+                                                        <div class="icon-box me-3" style="width: 40px; height: 40px; background-color: rgba(92, 188, 107, 0.1); color: #5CBC6B; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                                            <i class="fas fa-phone-alt"></i>
+                                                        </div>
+                                                        <div>
+                                                            <small class="text-muted d-block">Phone Number</small>
+                                                            <div class="fw-bold">@(string.IsNullOrEmpty(Model._user.PhoneNumber) ? "Not specified" : Model._user.PhoneNumber)</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <div class="d-flex align-items-center account-info-item">
+                                                        <div class="icon-box me-3" style="width: 40px; height: 40px; background-color: rgba(255, 73, 124, 0.1); color: #FF497C; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                                            <i class="fas fa-map-marker-alt"></i>
+                                                        </div>
+                                                        <div>
+                                                            <small class="text-muted d-block">Country</small>
+                                                            <div class="fw-bold">@(string.IsNullOrEmpty(Model._user.Country) ? "Not specified" : Model._user.Country)</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <div class="d-flex align-items-center account-info-item">
+                                                        <div class="icon-box me-3" style="width: 40px; height: 40px; background-color: rgba(255, 193, 7, 0.1); color: #FFC107; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                                            <i class="fas fa-calendar-alt"></i>
+                                                        </div>
+                                                        <div>
+                                                            <small class="text-muted d-block">Member Since</small>
+                                                            <div class="fw-bold">@Model._user.CreatedAt?.ToString("dd MMM, yyyy")</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 mt-2 text-center">
+                                                    <a class="axil-btn" data-bs-toggle="tab" href="#nav-account" role="tab">Edit Account Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="nav-orders" role="tabpanel">
                                 <div class="axil-dashboard-order">
-                                    <div class="table-responsive">
-                                        <table class=" table table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">Order</th>
-                                                    <th scope="col">Date</th>
-                                                    <th scope="col">Status</th>
-                                                    <th scope="col">Total</th>
-                                                    <th scope="col">Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach (var order1 in Model._orders)
-                                                {
-                                                    <tr>
-                                                        <td>#@order1.Id</td>
-                                                        <td>@order1.CreatedAt</td>
-                                                        <td>@order1.Status</td>
-                                                        <td>@order1.TotalAmount</td>
-                                                        <td><a class="axil-btn view-btn showPopupButton">View</a></td>
-                                                    </tr>
-                                                }
-                                            </tbody>
-                                        </table>
+                                    <h4 class="mb-4">Your Orders History</h4>
+                                    
+                                    <!-- Orders Filter and Search -->
+                                    <div class="mb-4 d-flex justify-content-between align-items-center">
+                                        <div class="form-group mb-0">
+                                            <select id="orderStatusFilter" class="form-select">
+                                                <option value="">All Statuses</option>
+                                                <option value="Processing">Processing</option>
+                                                <option value="Shipped">Shipped</option>
+                                                <option value="Delivered">Delivered</option>
+                                                <option value="Completed">Completed</option>
+                                                <option value="Cancelled">Cancelled</option>
+                                            </select>
+                                        </div>
+                                        <div class="d-flex">
+                                            <input type="text" id="orderSearchInput" class="form-control" placeholder="Search orders...">
+                                        </div>
                                     </div>
+
+                                    @if (Model._orders.Any())
+                                    {
+                                        <div class="table-responsive">
+                                            <table class="table table-hover orders-table">
+                                                <thead class="bg-light">
+                                                    <tr>
+                                                        <th scope="col">Order ID</th>
+                                                        <th scope="col">Date</th>
+                                                        <th scope="col">Status</th>
+                                                        <th scope="col">Total</th>
+                                                        <th scope="col">Items</th>
+                                                        <th scope="col">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="ordersTableBody">
+                                                    @foreach (var order in Model._orders)
+                                                    {
+                                                        <tr class="order-row" data-status="@order.Status" data-order-id="@order.Id">
+                                                            <td class="fw-bold">
+                                                                <span class="order-icon"><i class="fas fa-shopping-basket"></i></span>
+                                                                #@order.Id
+                                                            </td>
+                                                            <td>
+                                                                <div>@order.CreatedAt?.ToString("MMM dd, yyyy")</div>
+                                                                <small class="text-muted">@order.CreatedAt?.ToString("hh:mm tt")</small>
+                                                            </td>
+                                                            <td>
+                                                                @{
+                                                                    var statusClass = order.Status switch
+                                                                    {
+                                                                        "Processing" => "bg-info",
+                                                                        "Shipped" => "bg-primary",
+                                                                        "Delivered" => "bg-success",
+                                                                        "Completed" => "bg-success",
+                                                                        "Cancelled" => "bg-danger",
+                                                                        _ => "bg-secondary"
+                                                                    };
+                                                                }
+                                                                <span class="badge @statusClass">@order.Status</span>
+                                                            </td>
+                                                            <td class="fw-bold">$@order.TotalAmount</td>
+                                                            <td>@(order.OrderDetails?.Count() ?? 0) items</td>
+                                                            <td>
+                                                                <button class="axil-btn btn-sm view-btn showOrderDetails" data-order-id="@order.Id">
+                                                                    View Details
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="text-center py-5">
+                                            <div class="empty-orders mb-3">
+                                                <i class="fas fa-shopping-cart fa-3x text-muted"></i>
+                                            </div>
+                                            <h5>No Orders Found</h5>
+                                            <p class="text-muted">You haven't placed any orders yet.</p>
+                                            <a asp-controller="Products" asp-action="shop" class="axil-btn">Start Shopping</a>
+                                        </div>
+                                    }
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="nav-downloads" role="tabpanel">
                                 <div class="axil-dashboard-order">
-                                    <p>You don't have any download</p>
+                                    <h4 class="mb-4">Your Downloadable Items</h4>
+                                    
+                                    <div class="row">
+                                        @{
+                                            // Get all unique cards from orders
+                                            var purchasedCards = new List<Card>();
+                                            if (Model._orders != null && Model._orders.Any())
+                                            {
+                                                foreach (var order in Model._orders)
+                                                {
+                                                    if (order.OrderDetails != null)
+                                                    {
+                                                        foreach (var item in order.OrderDetails)
+                                                        {
+                                                            if (item.Card != null && !purchasedCards.Any(c => c.Id == item.Card.Id))
+                                                            {
+                                                                purchasedCards.Add(item.Card);
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        @if (purchasedCards.Any())
+                                        {
+                                            <div class="downloads-filter mb-4">
+                                                <div class="form-group">
+                                                    <input type="text" id="downloadSearchInput" class="form-control" placeholder="Search downloads...">
+                                                </div>
+                                            </div>
+
+                                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4" id="downloadsGrid">
+                                                @foreach (var card in purchasedCards)
+                                                {
+                                                    <div class="col download-item">
+                                                        <div class="card h-100 border-0 shadow-sm">
+                                                            <div class="card-img-top position-relative">
+                                                                <img src="~/assets/images/product/@card.ImageUrl" alt="@card.CardName" class="img-fluid" style="height: 200px; object-fit: contain; width: 100%;">
+                                                                <div class="download-overlay">
+                                                                    <button class="btn btn-primary download-btn" data-card-id="@card.Id" data-image-url="/assets/images/product/@card.ImageUrl" data-card-name="@card.CardName">
+                                                                        <i class="fas fa-download"></i> Download
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">@card.CardName</h5>
+                                                                <p class="card-text text-muted">
+                                                                    <small>Purchased on: @Model._orders.FirstOrDefault(o => o.OrderDetails.Any(od => od.CardId == card.Id))?.CreatedAt?.ToString("MMM dd, yyyy")</small>
+                                                                </p>
+                                                            </div>
+                                                            <div class="card-footer bg-transparent border-0 text-center">
+                                                                <a href="/Products/productDetails/@card.Id" class="btn btn-outline-primary">View Details</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="text-center py-5">
+                                                <div class="empty-downloads mb-3">
+                                                    <i class="fas fa-cloud-download-alt fa-3x text-muted"></i>
+                                                </div>
+                                                <h5>No Downloads Available</h5>
+                                                <p class="text-muted">You haven't purchased any downloadable items yet.</p>
+                                                <a asp-controller="Products" asp-action="shop" class="axil-btn">Start Shopping</a>
+                                            </div>
+                                        }
+                                    </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="nav-address" role="tabpanel">
@@ -120,99 +482,250 @@
                             <div class="tab-pane fade" id="nav-account" role="tabpanel">
                                 <div class="col-lg-9">
                                     <div class="axil-dashboard-account">
-                                        <form class="account-details-form">
+                                        <form class="account-details-form" method="post" asp-action="updateProfile" asp-controller="User">
+                                            @Html.AntiForgeryToken()
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>First Name</label>
-                                                        <input type="text" class="form-control" value="Annie">
+                                                        <input asp-for="_update.FirstName" class="form-control" value="@Model._user.FirstName" />
+                                                        <span asp-validation-for="_update.FirstName" class="text-danger"></span>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>Last Name</label>
-                                                        <input type="text" class="form-control" value="Mario">
+                                                        <input asp-for="_update.LastName" class="form-control" value="@Model._user.LastName" />
+                                                        <span asp-validation-for="_update.LastName" class="text-danger"></span>
                                                     </div>
                                                 </div>
+
                                                 <div class="col-12">
-                                                    <div class="form-group mb--40">
-                                                        <label>Country/ Region</label>
-                                                        <select class="select2">
-                                                            <option value="1">United Kindom (UK)</option>
-                                                            <option value="1">United States (USA)</option>
-                                                            <option value="1">United Arab Emirates (UAE)</option>
-                                                            <option value="1">Australia</option>
-                                                        </select>
-                                                        <p class="b3 mt--10">This will be how your name will be displayed in the account section and in reviews</p>
+                                                    <h5 class="title">UserName</h5>
+                                                    <div class="form-group">
+                                                        <label>UserName</label>
+                                                        <input asp-for="_update.Username" class="form-control" value="@Model._user.Username" />
+                                                        <span asp-validation-for="_update.Username" class="text-danger"></span>
                                                     </div>
                                                 </div>
+
                                                 <div class="col-12">
-                                                    <h5 class="title">Password Change</h5>
+                                                    <h5 class="title">Phone Number</h5>
                                                     <div class="form-group">
-                                                        <label>Password</label>
-                                                        <input type="password" class="form-control" value="123456789101112131415">
+                                                        <label>Phone Number</label>
+                                                        <input asp-for="_update.PhoneNumber" class="form-control" value="@Model._user.PhoneNumber" />
+                                                        <span asp-validation-for="_update.PhoneNumber" class="text-danger"></span>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label>New Password</label>
-                                                        <input type="password" class="form-control">
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <div class="toggle-bar">
+                                                        <input asp-for="_update.ChangePassword" type="checkbox" id="changePasswordCheckbox" />
+                                                        <label for="changePasswordCheckbox"><h5>Change Password</h5></label>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label>Confirm New Password</label>
-                                                        <input type="password" class="form-control">
+
+                                                    <div class="toggle-open collapsed" id="passwordChangeSection">
+                                                        <br />
+                                                        <div class="form-group">
+                                                            <label>Current Password</label>
+                                                            <input asp-for="_update.OldPassword" class="form-control" />
+                                                            <span asp-validation-for="_update.OldPassword" class="text-danger"></span>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>New Password</label>
+                                                            <input asp-for="_update.NewPassword" class="form-control" />
+                                                            <span asp-validation-for="_update.NewPassword" class="text-danger"></span>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Confirm New Password</label>
+                                                            <input asp-for="_update.ConfirmPassword" class="form-control" />
+                                                            <span asp-validation-for="_update.ConfirmPassword" class="text-danger"></span>
+                                                        </div>
                                                     </div>
+                                                </div>
+
+
+                                                <div class="col-12 mt-3">
                                                     <div class="form-group mb--0">
-                                                        <input type="submit" class="axil-btn" value="Save Changes">
+                                                        <input type="submit" class="axil-btn" value="Save Changes" />
                                                     </div>
                                                 </div>
                                             </div>
                                         </form>
+
+
                                     </div>
                                 </div>
                             </div>
-                            <div id="myPopup" class="modal fade" tabindex="-1" role="dialog">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div id="orderDetailsModal" class="modal fade" tabindex="-1" role="dialog">
+                                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                                     <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Your Order</h5>
-                                            @* <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"> *@
-                                            @*     <span aria-hidden="true">&times;</span> *@
-                                            @* </button> *@
+                                        <div class="modal-header bg-light d-flex justify-content-between align-items-center py-2 px-3 border-0">
+                                            <div>
+                                                <h5 class="modal-title fw-bold">Order #<span id="modalOrderId"></span></h5>
+                                                <small id="modalOrderDate" class="text-muted"></small>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <button type="button" class="btn btn-sm btn-outline-primary me-2" id="downloadInvoiceBtn">
+                                                    <i class="fas fa-file-pdf me-1"></i> Download Bill
+                                                </button>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
                                         </div>
-                                       
-
-                                            <table class="table table-hover">
-                                                <thead>
-                                                    <tr>
-
-                                                        <th scope="col">Card Name</th>
-                                                        <th scope="col">Quantity</th>
-                                                        <th scope="col">Price</th>
-                                                       
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-
-                                                @foreach (var ordersDetails in Model._ordersDetails)
-                                                {
-                                                    <tr>
-                                                        <td>@ordersDetails.Card.CardName</td>
-                                                        <td> @ordersDetails.Quantity</td>
-                                                        <td>$@ordersDetails.Price</td>
-                                                       
-                                                       
-                                                    </tr>
-                                                    }
-                                              
-                                                </tbody>
-                                            </table>
-
-                                        @* <div class="modal-body" > *@
-                                        @*         <p>#@ordersDetails.Card.CardName *     <b>Price:  </b></p> *@
-                                        @*     <p><p> *@
-                                        @* </div> *@
+                                        <div class="modal-body">
+                                            <!-- Invoice Section - This will be used for both display and printing/download -->
+                                            <div id="invoiceContent" class="invoice-container">
+                                                <!-- Invoice Header -->
+                                                <div class="invoice-header mb-4">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-md-6">
+                                                            <div class="logo mb-3 text-center text-md-start">
+                                                                <img src="/assets/images/logo/image_red_neon.png" style="max-width:65%" alt="Sem;Colon" height="55">
+                                                            </div>
+                                                            <div class="company-info text-center text-md-start">
+                                                                <h5 class="mb-1">Sem;Colon</h5>
+                                                                <p class="mb-0 text-muted small">Your premier source for cards</p>
+                                                                <p class="mb-0 text-muted small">info@semicolon.com | +962 799 258 206</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                                                            <div class="invoice-details">
+                                                                <div class="invoice-id-container">
+                                                                    <h3 class="invoice-title mb-2">INVOICE</h3>
+                                                                    <div class="invoice-number mb-1">#<span id="invoiceOrderId"></span></div>
+                                                                </div>
+                                                                <div class="invoice-date mb-1"><i class="far fa-calendar-alt me-1"></i> <span id="invoiceOrderDate"></span></div>
+                                                                <div class="invoice-status mb-2">
+                                                                    <span class="badge" id="invoiceOrderStatus"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="invoice-separator mt-3"></div>
+                                                </div>
+                                                
+                                                <!-- Customer Information -->
+                                                <div class="row mb-4">
+                                                    <div class="col-md-12 mb-3 mb-md-0">
+                                                        <div class="info-card">
+                                                            <div class="info-card-header">
+                                                                <i class="fas fa-user me-2"></i> Customer Information
+                                                            </div>
+                                                            <div class="info-card-body py-2">
+                                                                <div class="row">
+                                                                    <div class="col-md-4 mb-2">
+                                                                        <strong class="text-muted">Full Name:</strong>
+                                                                        <div class="customer-name" id="customerName"></div>
+                                                                    </div>
+                                                                    <div class="col-md-4 mb-2">
+                                                                        <strong class="text-muted">Email:</strong>
+                                                                        <div class="customer-email" id="customerEmail"></div>
+                                                                    </div>
+                                                                    <div class="col-md-4 mb-2">
+                                                                        <strong class="text-muted">Phone:</strong>
+                                                                        <div class="customer-phone" id="customerPhone"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Order Items -->
+                                                <div class="invoice-items mb-4">
+                                                    <div class="invoice-section-title">
+                                                        <i class="fas fa-shopping-cart me-2"></i> Order Items
+                                                    </div>
+                                                    <div class="table-responsive">
+                                                        <table class="table invoice-items-table table-sm">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col" width="45%">Product</th>
+                                                                    <th scope="col" class="text-end">Price</th>
+                                                                    <th scope="col" class="text-center">Quantity</th>
+                                                                    <th scope="col" class="text-end">Total</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="invoiceItemsTable">
+                                                                <!-- Will be filled by JS -->
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Invoice Summary -->
+                                                <div class="row">
+                                                    <div class="col-md-7">
+                                                        <div class="payment-info">
+                                                            <div class="invoice-section-title mb-2">
+                                                                <i class="fas fa-credit-card me-2"></i> Payment Information
+                                                            </div>
+                                                            <p class="mb-1"><strong class="text-muted">Payment Method:</strong> <span id="paymentMethod">Credit Card</span></p>
+                                                            <p class="mb-1"><strong class="text-muted">Payment Status:</strong> <span class="badge bg-success">Paid</span></p>
+                                                            <p class="mb-0 payment-note"><small>For any payment inquiries, please contact our customer support.</small></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <div class="invoice-totals">
+                                                            <div class="invoice-section-title mb-2">
+                                                                <i class="fas fa-money-bill-wave me-2"></i> Order Summary
+                                                            </div>
+                                                            <div class="totals-table">
+                                                                <div class="totals-row">
+                                                                    <div class="totals-label">Subtotal</div>
+                                                                    <div class="totals-value" id="invoiceSubtotal">$0.00</div>
+                                                                </div>
+                                                                <div class="totals-row" id="discountRow">
+                                                                    <div class="totals-label">Discount</div>
+                                                                    <div class="totals-value discount-value" id="invoiceDiscount">$0.00</div>
+                                                                </div>
+                                                                <div class="totals-row totals-final">
+                                                                    <div class="totals-label">Total Amount</div>
+                                                                    <div class="totals-value" id="invoiceTotalAmount">$0.00</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Thank You Note -->
+                                                <div class="thank-you-note mt-4 pt-3">
+                                                    <div class="text-center">
+                                                        <h6 class="mb-1">Thank You for Your Purchase!</h6>
+                                                        <p class="small text-muted mb-2">If you have any questions about your order, please contact our customer support team.</p>
+                                                    </div>
+                                                    <div class="barcode-container text-center mt-3">
+                                                        <div class="barcode">
+                                                            <div class="barcode-text">SC-<span id="barcode-order-id"></span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Loading Indicator -->
+                                            <div id="orderLoading" class="text-center py-5">
+                                                <div class="spinner-border text-primary" role="status">
+                                                    <span class="visually-hidden">Loading...</span>
+                                                </div>
+                                                <p class="mt-2">Loading order details...</p>
+                                            </div>
+                                            
+                                            <!-- Error Message -->
+                                            <div id="orderError" class="alert alert-danger d-none">
+                                                An error occurred while loading the order details. Please try again.
+                                            </div>
+                                        </div>
                                         
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <div class="modal-footer py-2 px-3 border-top bg-light">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal">
+                                                    <i class="fas fa-times me-1"></i> Close
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-primary" id="downloadInvoiceBtn2">
+                                                    <i class="fas fa-file-download me-1"></i> Download Invoice
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -228,15 +741,856 @@
 
 <script>
     $(document).ready(function () {
-        $(".showPopupButton").click(function () {
-            $("#myPopup").modal('show');
-        });
-
-        $('#myPopup').modal({
-            backdrop: true,
-            keyboard: true,
-            focus: true,
-            show: false
+        // Remove old popup code
+        
+        $('#changePasswordCheckbox').change(function () {
+            if ($(this).is(':checked')) {
+                $('#passwordChangeSection').removeClass('collapsed');
+            } else {
+                $('#passwordChangeSection').addClass('collapsed');
+            }
         });
     });
 </script>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const checkbox = document.getElementById('changePasswordCheckbox');
+        const section = document.getElementById('passwordChangeSection');
+
+        // الحالة الابتدائية عند تحميل الصفحة
+        checkbox.checked = false;
+        section.classList.add('collapsed');
+
+        // عند تغيير حالة الـ checkbox
+        checkbox.addEventListener('change', function () {
+            if (checkbox.checked) {
+                section.classList.remove('collapsed'); // فتح
+            } else {
+                section.classList.add('collapsed');    // إغلاق
+            }
+        });
+    });
+</script>
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+            // Order filtering and search
+            $("#orderStatusFilter").on("change", function() {
+                filterOrders();
+            });
+            
+            $("#orderSearchInput").on("keyup", function() {
+                filterOrders();
+            });
+            
+            function filterOrders() {
+                var status = $("#orderStatusFilter").val().toLowerCase();
+                var searchText = $("#orderSearchInput").val().toLowerCase();
+                
+                $(".order-row").each(function() {
+                    var rowStatus = $(this).data("status").toLowerCase();
+                    var orderId = $(this).data("order-id").toString();
+                    var rowText = $(this).text().toLowerCase();
+                    
+                    var statusMatch = status === "" || rowStatus === status;
+                    var searchMatch = searchText === "" || 
+                                     rowText.indexOf(searchText) > -1 || 
+                                     orderId.indexOf(searchText) > -1;
+                    
+                    $(this).toggle(statusMatch && searchMatch);
+                });
+                
+                // Show no results message if needed
+                var visibleRows = $(".order-row:visible").length;
+                if (visibleRows === 0) {
+                    if ($("#noFilterResults").length === 0) {
+                        $("#ordersTableBody").append(
+                            '<tr id="noFilterResults"><td colspan="6" class="text-center py-4">' +
+                            '<i class="fas fa-search me-2"></i> No orders matching your filters' +
+                            '</td></tr>'
+                        );
+                    }
+                } else {
+                    $("#noFilterResults").remove();
+                }
+            }
+            
+            // Order details modal
+            $(".showOrderDetails").click(function() {
+                var orderId = $(this).data("order-id");
+                loadOrderDetails(orderId);
+            });
+            
+            function loadOrderDetails(orderId) {
+                // Reset and show modal
+                resetOrderModal();
+                $("#modalOrderId").text(orderId);
+                $("#invoiceOrderId").text(orderId);
+                $("#barcode-order-id").text(orderId);
+                $("#orderDetailsModal").modal("show");
+                
+                // Show loading indicator
+                $("#orderLoading").show();
+                $("#invoiceContent").hide();
+                $("#orderError").addClass("d-none");
+                
+                // Fetch order details
+                $.ajax({
+                    url: '/User/GetOrderDetails',
+                    type: 'GET',
+                    data: { orderId: orderId },
+                    success: function(data) {
+                        handleOrderDetailsSuccess(data, orderId);
+                    },
+                    error: function() {
+                        handleOrderDetailsError();
+                    }
+                });
+                
+                // Additional request to get order metadata
+                $.ajax({
+                    url: '/User/GetOrderMetadata',
+                    type: 'GET',
+                    data: { orderId: orderId },
+                    success: function(metadata) {
+                        populateOrderMetadata(metadata);
+                    },
+                    error: function() {
+                        // Silently handle this error, the UI can still function without metadata
+                        console.log("Failed to load order metadata");
+                    }
+                });
+            }
+            
+            function handleOrderDetailsSuccess(data, orderId) {
+                $("#orderLoading").hide();
+                $("#invoiceContent").show();
+                
+                // If we have order items
+                if (data && data.length > 0) {
+                    // Clear and populate table
+                    var tbody = $('#invoiceItemsTable');
+                    tbody.empty();
+                    
+                    var subtotal = 0;
+                    var discountValue = 0;
+                    
+                    // Get discount from the first item (they all have the same order reference)
+                    if (data[0] && data[0].order) {
+                        // Use discountValue field directly from order
+                        if (data[0].order.discountValue !== null && data[0].order.discountValue !== undefined) {
+                            discountValue = parseFloat(data[0].order.discountValue);
+                        }
+                        
+                        // Use provided subtotal if available, otherwise calculate
+                        if (data[0].order.subtotal !== null && data[0].order.subtotal !== undefined) {
+                            subtotal = parseFloat(data[0].order.subtotal);
+                        }
+                    }
+                    
+                    // If no subtotal provided, calculate from items
+                    if (subtotal === 0) {
+                        // Add order items and calculate subtotal
+                        data.forEach(function(detail, index) {
+                            var itemTotal = detail.price * detail.quantity;
+                            subtotal += itemTotal;
+                            
+                            var row = `
+                                <tr class="invoice-item">
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="product-img me-2">
+                                                <img src="/assets/images/product/${detail.imageUrl || 'default.jpg'}" alt="${detail.cardName}" class="img-fluid" style="width: 35px; height: 35px; object-fit: contain;">
+                                            </div>
+                                            <div>
+                                                <div class="fw-medium">${detail.cardName}</div>
+                                                <small class="text-muted" style="font-size: 11px;">${detail.sku || 'SKU: N/A'}</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-end">$${detail.price.toFixed(2)}</td>
+                                    <td class="text-center">${detail.quantity}</td>
+                                    <td class="text-end">$${itemTotal.toFixed(2)}</td>
+                                </tr>
+                            `;
+                            tbody.append(row);
+                        });
+                    } else {
+                        // Subtotal is provided, still add all items to the table
+                        data.forEach(function(detail, index) {
+                            var itemTotal = detail.price * detail.quantity;
+                            
+                            var row = `
+                                <tr class="invoice-item">
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="product-img me-2">
+                                                <img src="/assets/images/product/${detail.imageUrl || 'default.jpg'}" alt="${detail.cardName}" class="img-fluid" style="width: 35px; height: 35px; object-fit: contain;">
+                                            </div>
+                                            <div>
+                                                <div class="fw-medium">${detail.cardName}</div>
+                                                <small class="text-muted" style="font-size: 11px;">${detail.sku || 'SKU: N/A'}</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-end">$${detail.price.toFixed(2)}</td>
+                                    <td class="text-center">${detail.quantity}</td>
+                                    <td class="text-end">$${itemTotal.toFixed(2)}</td>
+                                </tr>
+                            `;
+                            tbody.append(row);
+                        });
+                    }
+                    
+                    // Calculate total amount (subtotal - discount)
+                    var totalAmount = data[0].order.totalAmount || (subtotal - discountValue);
+                    
+                    // Update financial summary
+                    $("#invoiceSubtotal").text("$" + subtotal.toFixed(2));
+                    
+                    // Always show discount row for clarity
+                    if (discountValue > 0) {
+                        $("#invoiceDiscount").text("-$" + discountValue.toFixed(2)).addClass("text-success");
+                        $("#discountRow").show().addClass("highlight-discount");
+                    } else {
+                        $("#invoiceDiscount").text("$0.00");
+                        $("#discountRow").show();
+                    }
+                    
+                    $("#invoiceTotalAmount").text("$" + totalAmount.toFixed(2));
+                } else {
+                    // Show empty message
+                    $('#invoiceItemsTable').html(`
+                        <tr>
+                            <td colspan="4" class="text-center py-4">
+                                <div class="text-muted">
+                                    <i class="fas fa-box-open mb-2" style="font-size: 2rem;"></i>
+                                    <p>No items found in this order.</p>
+                                </div>
+                            </td>
+                        </tr>
+                    `);
+                    
+                    // Reset financial summary
+                    $("#invoiceSubtotal").text("$0.00");
+                    $("#invoiceDiscount").text("$0.00");
+                    $("#invoiceTotalAmount").text("$0.00");
+                    $("#discountRow").show();
+                }
+                
+                // Setup download invoice button
+                $("#downloadInvoiceBtn, #downloadInvoiceBtn2").off("click").on("click", function() {
+                    generatePDF();
+                });
+            }
+            
+            function handleOrderDetailsError() {
+                $("#orderLoading").hide();
+                $("#orderError").removeClass("d-none");
+                $("#invoiceContent").hide();
+            }
+            
+            function populateOrderMetadata(metadata) {
+                if (!metadata) return;
+                
+                // Order date
+                if (metadata.orderDate) {
+                    var formattedDate = new Date(metadata.orderDate).toLocaleDateString('en-US', { 
+                        year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' 
+                    });
+                    $("#modalOrderDate").text(formattedDate);
+                    $("#invoiceOrderDate").text(formattedDate);
+                }
+                
+                // Order status
+                if (metadata.status) {
+                    var statusClass = '';
+                    switch(metadata.status) {
+                        case "Processing": statusClass = "bg-info"; break;
+                        case "Shipped": statusClass = "bg-primary"; break;
+                        case "Delivered": statusClass = "bg-success"; break;
+                        case "Completed": statusClass = "bg-success"; break;
+                        case "Cancelled": statusClass = "bg-danger"; break;
+                        default: statusClass = "bg-secondary";
+                    }
+                    $("#invoiceOrderStatus").addClass(statusClass).text(metadata.status);
+                }
+                
+                // Payment information
+                if (metadata.paymentMethod) {
+                    $("#paymentMethod").text(metadata.paymentMethod);
+                }
+                
+                // Financial summary - update from metadata if available
+                if (metadata.subtotal !== undefined) {
+                    $("#invoiceSubtotal").text("$" + parseFloat(metadata.subtotal).toFixed(2));
+                }
+                
+                if (metadata.discountValue !== undefined && metadata.discountValue > 0) {
+                    $("#invoiceDiscount").text("-$" + parseFloat(metadata.discountValue).toFixed(2)).addClass("text-success");
+                    $("#discountRow").show().addClass("highlight-discount");
+                } else if (metadata.discountValue !== undefined) {
+                    $("#invoiceDiscount").text("$0.00");
+                    $("#discountRow").show();
+                }
+                
+                if (metadata.totalAmount !== undefined) {
+                    $("#invoiceTotalAmount").text("$" + parseFloat(metadata.totalAmount).toFixed(2));
+                }
+                
+                // Customer information
+                if (metadata.customer) {
+                    $("#customerName").text(metadata.customer.name || "N/A");
+                    $("#customerEmail").text(metadata.customer.email || "Email not available");
+                    $("#customerPhone").text(metadata.customer.phone || "Phone not available");
+                }
+                
+                // Shipping address
+                if (metadata.shippingAddress) {
+                    $("#invoiceShippingAddress").html(`
+                        <p class="mb-1">${metadata.shippingAddress.name || 'N/A'}</p>
+                        <p class="mb-1">${metadata.shippingAddress.street || 'N/A'}</p>
+                        <p class="mb-0">${metadata.shippingAddress.city || 'N/A'}, ${metadata.shippingAddress.state || 'N/A'} ${metadata.shippingAddress.zip || 'N/A'}</p>
+                    `);
+                } else {
+                    // Fallback if no address
+                    $("#invoiceShippingAddress").html(`<p class="mb-0">(Address not available)</p>`);
+                }
+            }
+            
+            function resetOrderModal() {
+                $("#invoiceItemsTable").empty();
+                $("#modalOrderId").text("");
+                $("#invoiceOrderId").text("");
+                $("#modalOrderDate").text("");
+                $("#invoiceOrderDate").text("");
+                $("#customerName").text("");
+                $("#customerEmail").text("");
+                $("#customerPhone").text("");
+                $("#invoiceOrderStatus").removeClass("bg-info bg-primary bg-success bg-danger bg-secondary").text("");
+                $("#invoiceSubtotal").text("$0.00");
+                $("#invoiceDiscount").text("$0.00");
+                $("#invoiceTotalAmount").text("$0.00");
+                $("#invoiceShippingAddress").html("");
+                $("#paymentMethod").text("Credit Card");
+                $("#paymentStatus").text("Paid");
+                $("#barcode-order-id").text("");
+                $("#discountRow").hide();
+            }
+            
+            function generatePDF() {
+                // Show loading state
+                var $downloadBtn = $("#downloadInvoiceBtn");
+                var originalText = $downloadBtn.html();
+                $downloadBtn.prop("disabled", true).html('<i class="fas fa-spinner fa-spin"></i> Generating...');
+                
+                // Clone the invoice content for printing
+                var invoiceContent = $("#invoiceContent").clone();
+                
+                // Get order data
+                var orderId = $("#invoiceOrderId").text();
+                var orderDate = $("#invoiceOrderDate").text();
+                
+                // Use html2pdf library to generate PDF
+                // If html2pdf is not already included, dynamically add it
+                if (!window.html2pdf) {
+                    var script = document.createElement('script');
+                    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';
+                    script.onload = function() {
+                        convertToPDF(invoiceContent, orderId, orderDate);
+                    };
+                    document.head.appendChild(script);
+                } else {
+                    convertToPDF(invoiceContent, orderId, orderDate);
+                }
+            }
+            
+            function convertToPDF(content, orderId, orderDate) {
+                // Create a container for the PDF content
+                var element = document.createElement('div');
+                element.appendChild(content[0]);
+                
+                // Set up PDF options
+                var opt = {
+                    margin:       [0.5, 0.5, 0.5, 0.5],
+                    filename:     'invoice-order-' + orderId + '.pdf',
+                    image:        { type: 'jpeg', quality: 0.98 },
+                    html2canvas:  { scale: 2, useCORS: true },
+                    jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+                };
+                
+                // Generate PDF
+                html2pdf().from(element).set(opt).save().then(function() {
+                    // Reset download button
+                    $("#downloadInvoiceBtn").prop("disabled", false).html(originalText);
+                });
+            }
+        });
+    </script>
+    
+    <style>
+        /* Invoice styling */
+        .invoice-container {
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+            color: #333;
+            padding: 15px;
+            max-width: 100%;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .invoice-header {
+            position: relative;
+        }
+        
+        .invoice-separator {
+            height: 2px;
+            background: linear-gradient(to right, #FF497C, #5191F0);
+            margin: 12px 0;
+            border-radius: 2px;
+        }
+        
+        .invoice-title {
+            font-size: 24px;
+            color: #FF497C;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .invoice-number {
+            font-size: 16px;
+            font-weight: 600;
+            color: #444;
+        }
+        
+        .invoice-section-title {
+            background-color: #f8f9fa;
+            padding: 8px 12px;
+            border-left: 3px solid #FF497C;
+            font-weight: 600;
+            margin-bottom: 12px;
+            border-radius: 0 4px 4px 0;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .info-card {
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            height: 100%;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            overflow: hidden;
+        }
+        
+        .info-card-header {
+            background-color: #f8f9fa;
+            padding: 8px 12px;
+            border-bottom: 1px solid #e9ecef;
+            font-weight: 600;
+            border-radius: 6px 6px 0 0;
+            font-size: 14px;
+        }
+        
+        .info-card-body {
+            padding: 10px 12px;
+        }
+        
+        .customer-name, .customer-email, .customer-phone {
+            margin-top: 3px;
+            font-size: 13px;
+        }
+        
+        .invoice-items-table {
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            overflow: hidden;
+            font-size: 13px;
+        }
+        
+        .invoice-items-table thead tr {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .invoice-items-table th {
+            font-weight: 600;
+            color: #555;
+            padding: 8px;
+            vertical-align: middle;
+        }
+        
+        .invoice-items-table tbody tr {
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .invoice-items-table tbody tr:last-child {
+            border-bottom: none;
+        }
+        
+        .invoice-item td {
+            padding: 8px;
+            vertical-align: middle;
+        }
+        
+        .product-img {
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            border-radius: 3px;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .totals-table {
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        .totals-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 12px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .totals-row:last-child {
+            border-bottom: none;
+        }
+        
+        .totals-label {
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .totals-value {
+            font-weight: 600;
+        }
+        
+        .discount-value {
+            color: #28a745;
+            font-weight: 600;
+        }
+        
+        .highlight-discount {
+            background-color: rgba(40, 167, 69, 0.05);
+            animation: pulse 2s infinite;
+        }
+        
+        @@keyframes pulse {
+            0% { background-color: rgba(40, 167, 69, 0.03); }
+            50% { background-color: rgba(40, 167, 69, 0.1); }
+            100% { background-color: rgba(40, 167, 69, 0.03); }
+        }
+        
+        .totals-final {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+        
+        .totals-final .totals-label,
+        .totals-final .totals-value {
+            color: #FF497C;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+        
+        .thank-you-note {
+            border-top: 1px solid #e9ecef;
+            padding-top: 15px;
+            margin-top: 20px;
+        }
+        
+        .barcode-container {
+            margin-top: 15px;
+        }
+        
+        .barcode {
+            display: inline-block;
+            padding: 8px 20px;
+            background: repeating-linear-gradient(
+                90deg,
+                #000,
+                #000 2px,
+                #fff 2px,
+                #fff 4px,
+                #000 4px,
+                #000 6px,
+                #fff 6px,
+                #fff 8px,
+                #000 8px,
+                #000 10px,
+                #fff 10px,
+                #fff 12px
+            );
+            position: relative;
+        }
+        
+        .barcode-text {
+            position: absolute;
+            bottom: -18px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 11px;
+            color: #666;
+        }
+        
+        .payment-info {
+            background-color: #f9f9f9;
+            padding: 12px;
+            border-radius: 6px;
+            height: 100%;
+            border: 1px solid #eee;
+            font-size: 13px;
+        }
+        
+        .payment-note {
+            color: #888;
+            border-top: 1px dashed #ddd;
+            padding-top: 8px;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        
+        #downloadInvoiceBtn {
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        
+        @@media print {
+            body * {
+                visibility: hidden;
+            }
+            #invoiceContent, #invoiceContent * {
+                visibility: visible;
+            }
+            #invoiceContent {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                padding: 15px;
+                background-color: white !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .modal-header, .modal-footer {
+                display: none !important;
+            }
+            
+            .invoice-section-title {
+                background-color: #f8f9fa !important;
+                color: #333 !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .info-card-header, .totals-final {
+                background-color: #f8f9fa !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .invoice-separator {
+                background: #FF497C !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+                height: 2px;
+            }
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            // Add custom styling for download cards on hover
+            $(".download-item").hover(
+                function() { $(this).find(".download-overlay").css("display", "flex").fadeIn(200); },
+                function() { $(this).find(".download-overlay").fadeOut(200); }
+            );
+            
+            // Search functionality for downloads
+            $("#downloadSearchInput").on("keyup", function() {
+                var searchText = $(this).val().toLowerCase();
+                $(".download-item").each(function() {
+                    var cardName = $(this).find(".card-title").text().toLowerCase();
+                    $(this).toggle(cardName.indexOf(searchText) > -1);
+                });
+            });
+            
+            // Handle download button click
+            $(".download-btn").click(function() {
+                var cardId = $(this).data("card-id");
+                var imageUrl = $(this).data("image-url");
+                var cardName = $(this).data("card-name");
+                
+                // Create a temporary anchor element for downloading
+                downloadCardImage(imageUrl, cardName);
+            });
+            
+            // Function to download the card image
+            function downloadCardImage(imageUrl, cardName) {
+                // Show loading indicator
+                $('<div class="download-loading">Preparing download...</div>')
+                    .css({
+                        'position': 'fixed',
+                        'top': '50%',
+                        'left': '50%',
+                        'transform': 'translate(-50%, -50%)',
+                        'background': 'rgba(0,0,0,0.7)',
+                        'color': 'white',
+                        'padding': '15px 20px',
+                        'border-radius': '5px',
+                        'z-index': '9999'
+                    })
+                    .appendTo('body');
+                
+                // Create a canvas to process the image
+                var canvas = document.createElement('canvas');
+                var ctx = canvas.getContext('2d');
+                var img = new Image();
+                
+                img.crossOrigin = "Anonymous"; // Handle cross-origin issues
+                img.onload = function() {
+                    // Set canvas size to image dimensions
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    
+                    // Draw image to canvas
+                    ctx.drawImage(img, 0, 0);
+                    
+                    try {
+                        // Convert to data URL and trigger download
+                        var dataURL = canvas.toDataURL("image/png");
+                        
+                        var link = document.createElement('a');
+                        link.download = cardName.replace(/[^a-z0-9]/gi, '_').toLowerCase() + '.png';
+                        link.href = dataURL;
+                        link.click();
+                        
+                        // Remove loading indicator
+                        $('.download-loading').remove();
+                    } catch (e) {
+                        console.error("Download failed:", e);
+                        $('.download-loading').text("Download failed. Please try again.").delay(2000).fadeOut(400, function() {
+                            $(this).remove();
+                        });
+                    }
+                };
+                
+                img.onerror = function() {
+                    console.error("Error loading image");
+                    $('.download-loading').text("Error loading image. Please try again.").delay(2000).fadeOut(400, function() {
+                        $(this).remove();
+                    });
+                };
+                
+                // Load the image from the server
+                img.src = imageUrl;
+            }
+        });
+    </script>
+    
+    <style>
+        /* Downloads tab styling */
+        .download-item .card {
+            transition: all 0.3s ease;
+        }
+        
+        .download-item .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+        
+        .download-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .download-btn {
+            transition: all 0.2s ease;
+        }
+        
+        .download-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Empty state styling */
+        .empty-downloads i {
+            opacity: 0.4;
+        }
+    </style>
+
+    /* Custom button styles */
+    <style>
+        .modal-header .btn, .modal-footer .btn {
+            border-radius: 4px;
+            font-size: 12px;
+            transition: all 0.2s;
+            padding: 0.35rem 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            box-shadow: none;
+        }
+
+        .modal-header .btn:hover, .modal-footer .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .btn-outline-primary {
+            border-color: #5191F0;
+            color: #5191F0;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #5191F0;
+            color: #fff;
+        }
+
+        .btn-outline-secondary {
+            border-color: #adb5bd;
+            color: #666;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: #f8f9fa;
+            color: #444;
+            border-color: #adb5bd;
+        }
+
+        .modal-header .btn-close {
+            padding: 0.5rem;
+            margin: 0 0 0 0.5rem;
+            background-color: #f8f9fa;
+            border-radius: 50%;
+            opacity: 0.7;
+            transition: all 0.2s;
+        }
+
+        .modal-header .btn-close:hover {
+            opacity: 1;
+            background-color: #e9ecef;
+            transform: none;
+        }
+    </style>
+
+}

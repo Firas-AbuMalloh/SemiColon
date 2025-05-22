@@ -15,5 +15,9 @@ public partial class Category
 
     public string? ImageUrl { get; set; }
 
+    public int? MainCategoryId { get; set; }
+
     public virtual ICollection<Card> Cards { get; set; } = new List<Card>();
+
+    public virtual MainCategory? MainCategory { get; set; }
 }

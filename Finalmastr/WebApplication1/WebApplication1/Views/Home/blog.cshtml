@@ -1,0 +1,131 @@
+﻿@{
+    Layout = "~/Views/Shared/mainLayoutHeaderFooter.cshtml";
+	ViewBag.Title = "Blog";
+
+}
+
+<main class="main-wrapper">
+
+    <div class="axil-section-gap" id="post">
+        <div class="container">
+            <div class="section-title-wrapper section-title-center">
+                @* <span class="title-highlighter highlighter-primary"><i class="fas fa-fire"></i> Regular Post</span> *@
+                <h3 class="title">Latest Posts & News</h3>
+            </div>
+            <div class="row g-5 testimonial-slick-activation  slick-layout-wrapper--20 axil-slick-arrow arrow-top-slide">
+                <div class="col-lg-4 ">
+                    <div class="content-blog blog-grid">
+                        <div class="inner">
+                            <div class="thumbnail">
+                                <a asp-action="blogDetails1"asp-controller="Home">
+                                    <img src="~/assets/images/blog/blog1.webp" alt="Gift Card">
+                                </a>
+                                <div class="blog-category">
+                                    <a asp-action="shop" asp-controller="Products">Gift Cards</a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h5 class="title">
+                                    <a asp-action="blogDetails1" asp-controller="Home">Surprise Your Friend with a Digital Gift Card!</a>
+                                </h5>
+                                @* <p> *@
+                                @*     Gift cards are the perfect way to show appreciation or celebrate a special occasion. Through our platform, you can instantly purchase and send a digital gift card to your friend or loved one. It’s fast, easy, and always a great idea! *@
+                                @* </p> *@
+                                <div class="read-more-btn">
+                                    <a class="axil-btn right-icon" asp-action="blogDetails1" asp-controller="Home">
+                                        Read More <i class="fal fa-long-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="content-blog blog-grid">
+                        <div class="inner">
+                            <div class="thumbnail">
+                                <a asp-action="blogdetails2" asp-controller="Home">
+                                    <img src="~/assets/images/blog/blog2.webp" alt="Steam Gift Card">
+                                </a>
+                                <div class="blog-category">
+                                    <a asp-action="shop" asp-controller="Products" asp-route-id="1028">Steam</a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h5 class="title">
+                                    <a asp-action="blogdetails2" asp-controller="Home">Steam Gift Card – The Perfect Gift for Gamers</a>
+                                </h5>
+                                @* <p> *@
+                                @*     Gift cards are the perfect way to show appreciation or celebrate a special occasion. Through our platform, you can instantly purchase and send a digital gift card to your friend or loved one. It’s fast, easy, and always a great idea! *@
+                                @* </p> *@
+                                <div class="read-more-btn">
+                                    <a class="axil-btn right-icon" asp-action="blogdetails2" asp-controller="Home">
+                                        Read More <i class="fal fa-long-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="content-blog blog-grid">
+                        <div class="inner">
+                            <div class="thumbnail">
+                                <a href="blog-details.html">
+                                    <img src="~/assets/images/blog/blog4.jpg" alt="Visa Gift Card">
+                                </a>
+                                <div class="blog-category">
+                                    <a href="#">Visa % Cash Gift Cards</a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h5 class="title">
+                                    <a href="blog-details.html">Worldwide Visa Gift Cards – Spend Anywhere</a>
+                                </h5>
+                                @* <p> *@
+                                @*     Visa gift cards offer unmatched flexibility and global usability. Buy one today and enjoy shopping, subscriptions, or even gifting – no matter where you are in the world. *@
+                                @* </p> *@
+                                <div class="read-more-btn">
+                                    <a class="axil-btn right-icon" href="blog-details.html">
+                                        Read More <i class="fal fa-long-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="content-blog blog-grid">
+                        <div class="inner">
+                            <div class="thumbnail">
+                                <a href="blog-details.html">
+                                    <img src="~/assets/images/blog/blog3.jpeg" alt="PlayStation Gift Card">
+                                </a>
+                                <div class="blog-category">
+                                    <a href="#">Playstation Gift Cards</a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h5 class="title">
+                                    <a href="blog-details.html">PlayStation Gift Cards for Every Country</a>
+                                </h5>
+                                @* <p> *@
+                                @*     Explore our wide selection of PlayStation gift cards available for different regions including the US, UK, Saudi Arabia, UAE, and more. Choose the right card for your account and enjoy smooth top-ups without regional issues! *@
+                                @* </p> *@
+                                <div class="read-more-btn">
+                                    <a class="axil-btn right-icon" href="blog-details.html">
+                                        Read More <i class="fal fa-long-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</main>
